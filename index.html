@@ -1,409 +1,1477 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2685.5">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
-  </style>
-</head>
-<body>
-<p class="p1">&lt;!doctype html&gt;</p>
-<p class="p1">&lt;html lang="pt-BR"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1">&lt;meta charset="utf-8"&gt;</p>
-<p class="p1">&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</p>
-<p class="p1">&lt;title&gt;Impugnação à Convenção — Viva Club da Ilha&lt;/title&gt;</p>
-<p class="p1">&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;</p>
-<p class="p1">&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;</p>
-<p class="p1">&lt;link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet"&gt;</p>
-<p class="p1">&lt;style&gt;</p>
-<p class="p1">:root{</p>
-<p class="p1"><span class="Apple-converted-space">  </span>--navy:#062a4e; --navy2:#0a3461; --navy3:#0e3f73;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>--ocean:#1273c0; --azure:#27b7d6; --azure-soft:#7fd8e8;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>--sand:#efe7d8; --paper:#f6f1e8; --ink:#072743;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>--text:#eaf2fa; --muted:#9fb6ce; --gold:#e7b65a;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>--red:#ff6b6b; --green:#27c79a; --yellow:#f2c94c;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>--line:rgba(255,255,255,.12); --line-d:rgba(7,39,67,.14);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>--display:"Outfit","Segoe UI",system-ui,sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>--body:"Inter",system-ui,sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>--mono:"Space Mono",ui-monospace,monospace;</p>
-<p class="p1">}</p>
-<p class="p1">*{box-sizing:border-box;margin:0;padding:0}</p>
-<p class="p1">html,body{height:100%}</p>
-<p class="p1">body{font-family:var(--body); background:#04203c; color:var(--text); overflow:hidden; -webkit-font-smoothing:antialiased}</p>
-<p class="p2"><br></p>
-<p class="p1">.deck{position:fixed; inset:0}</p>
-<p class="p1">.slide{position:absolute; inset:0; display:flex; flex-direction:column; justify-content:center;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>padding:clamp(30px,6vw,110px); opacity:0; visibility:hidden; transform:scale(1.02);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>transition:opacity .6s ease, transform .6s ease, visibility .6s; overflow:hidden}</p>
-<p class="p1">.slide.active{opacity:1; visibility:visible; transform:none}</p>
-<p class="p1">.slide .inner{max-width:1080px; width:100%; margin:0 auto; position:relative; z-index:3}</p>
-<p class="p2"><br></p>
-<p class="p1">/* dark vs light slides */</p>
-<p class="p1">.slide{background:radial-gradient(1100px 700px at 80% -10%, rgba(39,183,214,.16), transparent 60%),</p>
-<p class="p1"><span class="Apple-converted-space">        </span>radial-gradient(900px 600px at -5% 110%, rgba(18,115,192,.22), transparent 55%), var(--navy)}</p>
-<p class="p1">.slide.light{background:radial-gradient(900px 600px at 100% 0%, rgba(39,183,214,.18), transparent 55%), var(--paper); color:var(--ink)}</p>
-<p class="p1">.slide.ocean{background:linear-gradient(160deg,var(--ocean),var(--navy)); }</p>
-<p class="p2"><br></p>
-<p class="p1">/* type */</p>
-<p class="p1">.eyebrow{font-family:var(--mono); font-size:13px; letter-spacing:.16em; text-transform:uppercase; color:var(--azure); display:inline-flex; gap:10px; align-items:center}</p>
-<p class="p1">.eyebrow::before{content:""; width:24px;height:1px;background:var(--azure); display:inline-block}</p>
-<p class="p1">.light .eyebrow{color:var(--ocean)} .light .eyebrow::before{background:var(--ocean)}</p>
-<p class="p1">h1{font-family:var(--display); font-weight:800; font-size:clamp(38px,6.6vw,88px); line-height:1; letter-spacing:-.02em}</p>
-<p class="p1">h2{font-family:var(--display); font-weight:700; font-size:clamp(28px,4.6vw,56px); line-height:1.04; letter-spacing:-.02em}</p>
-<p class="p1">h3{font-family:var(--display); font-weight:700; font-size:clamp(19px,2.2vw,25px)}</p>
-<p class="p1">p.lead{font-size:clamp(16px,1.7vw,21px); color:var(--muted); max-width:60ch; margin-top:18px; line-height:1.6}</p>
-<p class="p1">.light p.lead{color:#3f5a76}</p>
-<p class="p1">.az{color:var(--azure)} .light .az{color:var(--ocean)} .gold{color:var(--gold)}</p>
-<p class="p2"><br></p>
-<p class="p1">/* reveal (per active slide, staggered) */</p>
-<p class="p1">.r{opacity:0; transform:translateY(22px); transition:opacity .6s cubic-bezier(.2,.7,.2,1), transform .6s cubic-bezier(.2,.7,.2,1)}</p>
-<p class="p1">.active .r{opacity:1; transform:none}</p>
-<p class="p1">.active .r1{transition-delay:.12s}.active .r2{transition-delay:.22s}.active .r3{transition-delay:.32s}</p>
-<p class="p1">.active .r4{transition-delay:.42s}.active .r5{transition-delay:.52s}.active .r6{transition-delay:.62s}</p>
-<p class="p2"><br></p>
-<p class="p1">/* chrome */</p>
-<p class="p1">.bar{position:fixed; top:0; left:0; height:3px; background:linear-gradient(90deg,var(--ocean),var(--azure)); z-index:60; transition:width .4s ease}</p>
-<p class="p1">.hud{position:fixed; z-index:60; bottom:20px; left:0; right:0; display:flex; align-items:center; justify-content:center; gap:18px; pointer-events:none}</p>
-<p class="p1">.hud .ct{font-family:var(--mono); font-size:12px; color:var(--muted); pointer-events:auto}</p>
-<p class="p1">.dots{display:flex; gap:8px; pointer-events:auto}</p>
-<p class="p1">.dots button{width:8px;height:8px;border-radius:50%;border:0;background:rgba(255,255,255,.28); cursor:pointer;padding:0;transition:all .25s}</p>
-<p class="p1">.dots button.on{background:var(--azure); width:22px; border-radius:5px}</p>
-<p class="p1">.nav{position:fixed; z-index:60; top:50%; transform:translateY(-50%); width:46px;height:46px;border-radius:50%;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>border:1px solid var(--line); background:rgba(7,42,78,.5); color:#fff; cursor:pointer; font-size:20px; display:flex; align-items:center; justify-content:center; backdrop-filter:blur(6px); transition:.2s}</p>
-<p class="p1">.nav:hover{background:var(--ocean); border-color:var(--ocean)}</p>
-<p class="p1">.nav.prev{left:18px} .nav.next{right:18px}</p>
-<p class="p1">.nav:disabled{opacity:.25; cursor:default}</p>
-<p class="p1">.brandmark{position:fixed; top:18px; left:22px; z-index:60; font-family:var(--display); font-weight:700; font-size:14px; letter-spacing:.02em; color:#fff; opacity:.9}</p>
-<p class="p1">.brandmark .d{color:var(--azure)}</p>
-<p class="p1">.light ~ .brandmark{color:var(--ink)}</p>
-<p class="p1">.hint{position:fixed; top:20px; right:22px; z-index:60; font-family:var(--mono); font-size:11px; color:var(--muted); letter-spacing:.08em}</p>
-<p class="p2"><br></p>
-<p class="p1">/* waves */</p>
-<p class="p1">.waves{position:absolute; left:0; right:0; bottom:-2px; width:100%; height:140px; z-index:1; opacity:.5}</p>
-<p class="p1">.float{position:absolute; border-radius:50%; filter:blur(36px); z-index:0}</p>
-<p class="p2"><br></p>
-<p class="p1">/* cover */</p>
-<p class="p1">.cover-tag{display:inline-block; font-family:var(--mono); font-size:12px; color:var(--text); border:1px solid var(--line); border-radius:999px; padding:7px 15px; margin-bottom:26px; background:rgba(255,255,255,.04)}</p>
-<p class="p2"><br></p>
-<p class="p1">/* clause card (redline motif) */</p>
-<p class="p1">.clause{background:rgba(255,255,255,.04); border:1px solid var(--line); border-radius:16px; padding:24px; box-shadow:0 30px 60px -34px rgba(0,0,0,.8)}</p>
-<p class="p1">.light .clause{background:#fff; border-color:var(--line-d); box-shadow:0 24px 50px -30px rgba(7,39,67,.35)}</p>
-<p class="p1">.clause .art{font-family:var(--mono); font-size:12px; color:var(--azure); margin-bottom:12px}</p>
-<p class="p1">.light .clause .art{color:var(--ocean)}</p>
-<p class="p1">.clause p{font-size:16.5px; line-height:1.75}</p>
-<p class="p1">.strike{position:relative; color:var(--red)}</p>
-<p class="p1">.active .strike::after{content:"";position:absolute;left:0;top:52%;height:2px;width:0;background:var(--red);animation:st .8s 1s forwards cubic-bezier(.6,0,.2,1)}</p>
-<p class="p1">@keyframes st{to{width:100%}}</p>
-<p class="p1">.ins{color:#0e9e78; font-weight:600; background:rgba(39,199,154,.16); border-radius:4px; padding:0 5px; opacity:0; display:inline-block}</p>
-<p class="p1">.active .ins{animation:io .5s 1.9s forwards}</p>
-<p class="p1">@keyframes io{to{opacity:1}}</p>
-<p class="p1">.legend{margin-top:18px; display:flex; gap:18px; flex-wrap:wrap; font-size:12px; color:var(--muted)}</p>
-<p class="p1">.legend i{width:12px;height:12px;border-radius:3px;display:inline-block;margin-right:6px;vertical-align:-1px}</p>
-<p class="p2"><br></p>
-<p class="p1">/* generic grids */</p>
-<p class="p1">.cols{display:grid; grid-template-columns:1.1fr .9fr; gap:clamp(26px,4vw,60px); align-items:center}</p>
-<p class="p1">.steps{display:grid; gap:14px; margin-top:26px}</p>
-<p class="p1">.step{display:flex; gap:16px; align-items:flex-start}</p>
-<p class="p1">.step .k{flex:0 0 auto; width:30px;height:30px;border-radius:9px; background:var(--ocean); color:#fff; font-family:var(--mono); font-size:13px; display:flex;align-items:center;justify-content:center; margin-top:2px}</p>
-<p class="p1">.light .step .k{background:var(--ocean)}</p>
-<p class="p1">.step p{font-size:15.5px; color:var(--muted)} .light .step p{color:#3f5a76}</p>
-<p class="p1">.step b{color:var(--text)} .light .step b{color:var(--ink)}</p>
-<p class="p2"><br></p>
-<p class="p1">.grid2{display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:28px}</p>
-<p class="p1">.tile{border:1px solid var(--line); border-radius:14px; padding:20px; background:rgba(255,255,255,.03)}</p>
-<p class="p1">.light .tile{border-color:var(--line-d); background:#fff}</p>
-<p class="p1">.tile .ic{font-size:22px} .tile h3{margin:10px 0 6px} .tile p{font-size:14.5px; color:var(--muted)} .light .tile p{color:#3f5a76}</p>
-<p class="p2"><br></p>
-<p class="p1">.tags{margin-top:16px;display:flex;gap:8px;flex-wrap:wrap}</p>
-<p class="p1">.tag{font-family:var(--mono);font-size:11px;color:var(--azure);border:1px solid rgba(39,183,214,.4);border-radius:6px;padding:4px 9px}</p>
-<p class="p1">.light .tag{color:var(--ocean);border-color:rgba(18,115,192,.4)}</p>
-<p class="p2"><br></p>
-<p class="p1">/* big numbers */</p>
-<p class="p1">.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,3vw,40px);margin-top:34px}</p>
-<p class="p1">.num .n{font-family:var(--display);font-weight:800;font-size:clamp(48px,9vw,120px);line-height:.85;letter-spacing:-.04em}</p>
-<p class="p1">.num.c1 .n{color:var(--azure)} .num.c2 .n{color:#7fd8e8} .num.c3 .n{color:var(--gold)}</p>
-<p class="p1">.num .l{margin-top:10px;color:var(--muted);font-size:14.5px;max-width:24ch}</p>
-<p class="p1">.subnums{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:46px}</p>
-<p class="p1">.subnum{border-top:1px solid var(--line);padding-top:14px}</p>
-<p class="p1">.subnum .n{font-family:var(--display);font-weight:700;font-size:clamp(26px,3.4vw,40px)}</p>
-<p class="p1">.subnum .l{color:var(--muted);font-size:13px;margin-top:6px}</p>
-<p class="p2"><br></p>
-<p class="p1">/* exhibits */</p>
-<p class="p1">.exh{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:28px}</p>
-<p class="p1">.ex{border:1px solid var(--line);border-left:3px solid var(--azure);border-radius:12px;padding:18px 20px;background:rgba(255,255,255,.03)}</p>
-<p class="p1">.ex .code{font-family:var(--mono);font-size:13px;color:var(--azure)}</p>
-<p class="p1">.ex p{margin-top:9px;font-size:15px} .ex small{display:block;margin-top:9px;color:var(--muted);font-size:12.5px}</p>
-<p class="p2"><br></p>
-<p class="p1">/* docs + legend bar */</p>
-<p class="p1">.docs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}</p>
-<p class="p1">.legbar{margin-top:26px;display:flex;gap:24px;flex-wrap:wrap;font-size:14.5px;color:var(--muted)}</p>
-<p class="p1">.tx-r{color:var(--red);text-decoration:line-through;text-decoration-color:var(--red)}</p>
-<p class="p1">.tx-g{color:#0e9e78;font-weight:600} .light .tx-g{color:#0b8a68}</p>
-<p class="p1">.tx-y{background:rgba(242,201,76,.3);padding:0 5px;border-radius:3px;color:inherit}</p>
-<p class="p2"><br></p>
-<p class="p1">/* closing */</p>
-<p class="p1">.date-big{font-family:var(--display);font-weight:800;font-size:clamp(60px,13vw,170px);line-height:.85;letter-spacing:-.04em;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>background:linear-gradient(180deg,#fff,var(--azure));-webkit-background-clip:text;background-clip:text;color:transparent}</p>
-<p class="p1">.center{text-align:center} .center .inner{display:flex;flex-direction:column;align-items:center}</p>
-<p class="p2"><br></p>
-<p class="p1">@media (max-width:820px){</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.cols{grid-template-columns:1fr} .grid2{grid-template-columns:1fr}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.nums{grid-template-columns:1fr;gap:22px} .subnums{grid-template-columns:repeat(2,1fr)}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.exh{grid-template-columns:1fr} .docs{grid-template-columns:1fr}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.nav{display:none} .hint{display:none}</p>
-<p class="p1">}</p>
-<p class="p1">@media (prefers-reduced-motion:reduce){</p>
-<p class="p1"><span class="Apple-converted-space">  </span>*{animation:none!important;transition:opacity .2s linear!important}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.slide{transform:none} .r{opacity:1;transform:none} .strike::after{width:100%} .ins{opacity:1}</p>
-<p class="p1">}</p>
-<p class="p1">&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p1">&lt;div class="bar" id="bar"&gt;&lt;/div&gt;</p>
-<p class="p1">&lt;div class="brandmark"&gt;Viva Club da Ilha &lt;span class="d"&gt;/&lt;/span&gt; Convenção&lt;/div&gt;</p>
-<p class="p1">&lt;div class="hint"&gt;← → para navegar&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;div class="deck" id="deck"&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- 1 CAPA --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;section class="slide active ocean center" data-bg="ocean"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="float" style="width:360px;height:360px;background:rgba(127,216,232,.25);top:-60px;right:8%" data-float="0.5"&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="float" style="width:300px;height:300px;background:rgba(18,115,192,.4);bottom:-40px;left:-40px" data-float="-0.4"&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="inner"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;span class="cover-tag r r1"&gt;Assembleia Geral de Instalação • 22 de junho de 2026&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="eyebrow r r1" style="justify-content:center"&gt;Proposta dos condôminos&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;h1 class="r r2" style="margin-top:16px"&gt;Impugnação à&lt;br&gt;Convenção do Condomínio&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="lead r r3" style="margin-left:auto;margin-right:auto;color:#cfe6f4"&gt;O que estamos propondo mudar na minuta, e por quê, explicado de forma simples para quem ainda não acompanhou.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;svg class="waves" viewBox="0 0 1440 140" preserveAspectRatio="none"&gt;&lt;path d="M0,60 C240,120 480,0 720,50 C960,100 1200,20 1440,70 L1440,140 L0,140 Z" fill="rgba(255,255,255,.06)"/&gt;&lt;path d="M0,90 C240,40 520,130 760,80 C1020,30 1220,110 1440,70 L1440,140 L0,140 Z" fill="rgba(255,255,255,.05)"/&gt;&lt;/svg&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- 2 O QUE É --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;section class="slide light"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="inner"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="eyebrow r r1"&gt;Começando do começo&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2 class="r r2" style="margin-top:14px"&gt;O que é essa impugnação?&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="steps" style="max-width:60ch"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="step r r3"&gt;&lt;span class="k"&gt;1&lt;/span&gt;&lt;p&gt;A &lt;b&gt;convenção&lt;/b&gt; é o regulamento maior do condomínio. Define como a gente se organiza, decide e divide custos.&lt;/p&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="step r r4"&gt;&lt;span class="k"&gt;2&lt;/span&gt;&lt;p&gt;A &lt;b&gt;incorporadora apresentou uma minuta&lt;/b&gt; (um rascunho) dessa convenção, que vai ser votada na assembleia.&lt;/p&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="step r r5"&gt;&lt;span class="k"&gt;3&lt;/span&gt;&lt;p&gt;Um grupo de condôminos &lt;b&gt;leu linha por linha&lt;/b&gt; e preparou propostas de mudança. Isso é a impugnação.&lt;/p&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="lead r r6"&gt;Em resumo: não é briga, é ajuste. A ideia é votar uma convenção mais equilibrada para todos.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- 3 POR QUE --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;section class="slide"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="inner cols"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="eyebrow r r1"&gt;Por que mexer&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2 class="r r2" style="margin-top:14px"&gt;A minuta concentrava&lt;br&gt;muito poder na &lt;span class="az"&gt;incorporadora&lt;/span&gt;.&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="lead r r3"&gt;Ela podia escolher os dirigentes, dispensar assembleias anuais e até vetar mudanças na convenção. A impugnação devolve essas decisões para quem mora aqui.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="clause r r3"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="art"&gt;Art. 26 — Escolha do Síndico&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;O Síndico será eleito &lt;span class="strike"&gt;pela Incorporadora, sem necessidade de Assembleia Geral&lt;/span&gt; &lt;span class="ins"&gt;em Assembleia Geral dos condôminos&lt;/span&gt;.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="legend"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;span&gt;&lt;i style="background:rgba(255,107,107,.4);border:1px solid var(--red)"&gt;&lt;/i&gt;sai&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;span&gt;&lt;i style="background:rgba(39,199,154,.35);border:1px solid var(--green)"&gt;&lt;/i&gt;entra&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;span&gt;&lt;i style="background:rgba(242,201,76,.4);border:1px solid var(--yellow)"&gt;&lt;/i&gt;em discussão&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- 4 COMO VOTA --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;section class="slide light"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="inner"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="eyebrow r r1"&gt;Como funciona na assembleia&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2 class="r r2" style="margin-top:14px"&gt;A votação, sem mistério.&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="steps" style="max-width:64ch"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="step r r3"&gt;&lt;span class="k"&gt;→&lt;/span&gt;&lt;p&gt;A convenção é o &lt;b&gt;item 4 da pauta&lt;/b&gt;. Ela é apresentada, discutida e votada.&lt;/p&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="step r r4"&gt;&lt;span class="k"&gt;→&lt;/span&gt;&lt;p&gt;As propostas são deliberadas &lt;b&gt;item a item&lt;/b&gt;, seguindo as marcações do Anexo I.&lt;/p&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="step r r5"&gt;&lt;span class="k"&gt;→&lt;/span&gt;&lt;p&gt;Depois de aprovada, mudar a convenção exige &lt;b&gt;quórum de 2/3&lt;/b&gt;. Por isso vale acertar agora.&lt;/p&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- 5 TESE / PREMISSAS --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;section class="slide ocean"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="inner"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="eyebrow r r1" style="color:#bfe9f4"&gt;Três premissas guiaram tudo&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2 class="r r2" style="margin-top:16px;max-width:20ch"&gt;O poder de decidir é de quem mora aqui.&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="grid2" style="grid-template-columns:repeat(3,1fr)"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="tile r r3" style="background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.18)"&gt;&lt;div class="ic"&gt;🪶&lt;/div&gt;&lt;h3&gt;Convenção enxuta&lt;/h3&gt;&lt;p style="color:#cfe6f4"&gt;Só o essencial fica na convenção, que é difícil de mudar.&lt;/p&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="tile r r4" style="background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.18)"&gt;&lt;div class="ic"&gt;⚖️&lt;/div&gt;&lt;h3&gt;Sem privilégios&lt;/h3&gt;&lt;p style="color:#cfe6f4"&gt;Nenhum poder especial para a incorporadora.&lt;/p&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="tile r r5" style="background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.18)"&gt;&lt;div class="ic"&gt;📘&lt;/div&gt;&lt;h3&gt;Detalhe ao regimento&lt;/h3&gt;&lt;p style="color:#cfe6f4"&gt;O que muda sempre vai para o regimento interno.&lt;/p&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- 6 TEMA 1 --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;section class="slide"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="inner"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="eyebrow r r1"&gt;Frente 1 — a principal&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2 class="r r2" style="margin-top:14px"&gt;De quem é a caneta?&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="lead r r3" style="max-width:62ch"&gt;A minuta deixava a incorporadora escolher dirigentes, dispensar assembleias anuais e condicionar qualquer mudança da convenção à própria aprovação. A impugnação retira todos esses poderes e devolve as decisões à assembleia e ao Corpo Diretivo.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="tags r r4"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="tag"&gt;CC art. 1.347 • escolha do síndico&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="tag"&gt;CC art. 1.350 • assembleia anual&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="tag"&gt;CC art. 1.333 • mudança por 2/3&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- 7 TEMAS 2-3-4 --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;section class="slide light"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="inner"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="eyebrow r r1"&gt;Frentes 2, 3 e 4&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2 class="r r2" style="margin-top:14px"&gt;Gestão com regra clara.&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="grid2" style="grid-template-columns:repeat(3,1fr)"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="tile r r3"&gt;&lt;div class="ic"&gt;🗳️&lt;/div&gt;&lt;h3&gt;Mandatos e continuidade&lt;/h3&gt;&lt;p&gt;Mandato de 1 para 2 anos, com reeleição única e rodízio. Cargo vago vai a assembleia em até 30 dias.&lt;/p&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="tile r r4"&gt;&lt;div class="ic"&gt;📘&lt;/div&gt;&lt;h3&gt;Detalhes ao regimento&lt;/h3&gt;&lt;p&gt;Condutas e regras operacionais saem da convenção e vão ao regimento, que muda por maioria simples.&lt;/p&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="tile r r5"&gt;&lt;div class="ic"&gt;💰&lt;/div&gt;&lt;h3&gt;Limite de gasto&lt;/h3&gt;&lt;p&gt;Teto sem assembleia cai de 20 para 3 a 5 salários mínimos. Prazos passam a contar em dias úteis.&lt;/p&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- 8 TEMA 5 --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;section class="slide"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="inner"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="eyebrow r r1"&gt;Frente 5&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2 class="r r2" style="margin-top:14px"&gt;Proteções que faltavam.&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="grid2"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="tile r r3"&gt;&lt;div class="ic"&gt;🔒&lt;/div&gt;&lt;h3&gt;Dados protegidos&lt;/h3&gt;&lt;p&gt;O cadastro de moradores passa a observar a LGPD.&lt;/p&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="tile r r4"&gt;&lt;div class="ic"&gt;🧾&lt;/div&gt;&lt;h3&gt;Voto auditável&lt;/h3&gt;&lt;p&gt;Assembleia eletrônica ou híbrida com registro rastreável.&lt;/p&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="tile r r3"&gt;&lt;div class="ic"&gt;🤝&lt;/div&gt;&lt;h3&gt;Procuração justa&lt;/h3&gt;&lt;p&gt;Uma procuração por representante, sem concentrar votos.&lt;/p&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="tile r r4"&gt;&lt;div class="ic"&gt;🛡️&lt;/div&gt;&lt;h3&gt;Responsabilidade real&lt;/h3&gt;&lt;p&gt;Fim da isenção total do condomínio; um funcionário pode causar dano e o condomínio deve responder.&lt;/p&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- 9 NÚMEROS --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;section class="slide ocean"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="inner"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="eyebrow r r1" style="color:#bfe9f4"&gt;Os números&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2 class="r r2" style="margin-top:14px"&gt;&lt;span data-count="89"&gt;0&lt;/span&gt; propostas, dispositivo a dispositivo.&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="nums"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="num c1 r r3"&gt;&lt;div class="n" data-count="32"&gt;0&lt;/div&gt;&lt;div class="l" style="color:#cfe6f4"&gt;supressões — trechos que saem&lt;/div&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="num c2 r r4"&gt;&lt;div class="n" data-count="29"&gt;0&lt;/div&gt;&lt;div class="l" style="color:#cfe6f4"&gt;alterações — trechos reescritos&lt;/div&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="num c3 r r5"&gt;&lt;div class="n" data-count="28"&gt;0&lt;/div&gt;&lt;div class="l" style="color:#cfe6f4"&gt;inclusões — trechos novos&lt;/div&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="subnums"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="subnum r r3"&gt;&lt;div class="n" data-count="32"&gt;0&lt;/div&gt;&lt;div class="l" style="color:#cfe6f4"&gt;artigos revisados&lt;/div&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="subnum r r4"&gt;&lt;div class="n" data-count="4"&gt;0&lt;/div&gt;&lt;div class="l" style="color:#cfe6f4"&gt;bases legais expressas&lt;/div&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="subnum r r5"&gt;&lt;div class="n"&gt;3&lt;/div&gt;&lt;div class="l" style="color:#cfe6f4"&gt;anexos na peça&lt;/div&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="subnum r r6"&gt;&lt;div class="n"&gt;240&lt;/div&gt;&lt;div class="l" style="color:#cfe6f4"&gt;casas representadas&lt;/div&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- 10 BASE LEGAL --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;section class="slide light"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="inner"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="eyebrow r r1"&gt;A base legal&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2 class="r r2" style="margin-top:14px"&gt;Onde a lei sustenta, a lei aparece.&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="lead r r3"&gt;Quatro pontos têm fundamento jurídico expresso. O restante é razão de gestão ou de boa técnica, sem invenção.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="exh"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="ex r r3"&gt;&lt;div class="code"&gt;Código Civil, art. 1.347&lt;/div&gt;&lt;p&gt;A escolha do síndico é da assembleia.&lt;/p&gt;&lt;small&gt;Tira esse poder da incorporadora (Art. 26).&lt;/small&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="ex r r4"&gt;&lt;div class="code"&gt;Código Civil, art. 1.350&lt;/div&gt;&lt;p&gt;A assembleia anual de contas e orçamento é obrigatória.&lt;/p&gt;&lt;small&gt;Derruba a dispensa de assembleias.&lt;/small&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="ex r r5"&gt;&lt;div class="code"&gt;Código Civil, art. 1.333&lt;/div&gt;&lt;p&gt;A convenção se altera por 2/3, sem veto de terceiro.&lt;/p&gt;&lt;small&gt;Remove o veto da incorporadora (Art. 33).&lt;/small&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="ex r r6" style="border-left-color:var(--gold)"&gt;&lt;div class="code" style="color:#b9852a"&gt;Lei nº 13.709/2018 — LGPD&lt;/div&gt;&lt;p&gt;O cadastro de moradores observa a proteção de dados.&lt;/p&gt;&lt;small&gt;Conformidade no cadastro (Art. 27).&lt;/small&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- 11 COMO LER --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;section class="slide"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="inner"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="eyebrow r r1"&gt;Como ler os documentos&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2 class="r r2" style="margin-top:14px"&gt;Dois arquivos, um caminho claro.&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="docs"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="tile r r3"&gt;&lt;div class="ic"&gt;📄&lt;/div&gt;&lt;h3&gt;Impugnação&lt;/h3&gt;&lt;p&gt;A peça da assembleia: corpo + Anexo I (minuta marcada), Anexo II (propostas e motivos) e Anexo III (adesão).&lt;/p&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="tile r r4"&gt;&lt;div class="ic"&gt;📘&lt;/div&gt;&lt;h3&gt;Minuta consolidada&lt;/h3&gt;&lt;p&gt;O texto final limpo, sem marcações, já renumerado. Para ler corrido.&lt;/p&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="tile r r5"&gt;&lt;div class="ic"&gt;🎨&lt;/div&gt;&lt;h3&gt;A legenda&lt;/h3&gt;&lt;p&gt;O código de cores do Anexo I, que mostra o que muda na minuta original.&lt;/p&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="legbar r r5"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span&gt;&lt;span class="tx-r"&gt;vermelho tachado&lt;/span&gt; = sai&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span&gt;&lt;span class="tx-g"&gt;verde&lt;/span&gt; = entra&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span&gt;&lt;span class="tx-y"&gt;amarelo&lt;/span&gt; = em discussão&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- 12 FECHAMENTO --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;section class="slide ocean center"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="float" style="width:340px;height:340px;background:rgba(127,216,232,.22);top:-40px;left:6%" data-float="0.5"&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="inner"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="eyebrow r r1" style="justify-content:center;color:#bfe9f4"&gt;22 de junho de 2026&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="date-big r r2"&gt;Sua casa,&lt;br&gt;seu voto.&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="lead r r3" style="margin:18px auto 0;color:#dff0f8"&gt;Leia a impugnação, confira a minuta consolidada e participe da assembleia. Toda proposta entra na pauta.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;svg class="waves" viewBox="0 0 1440 140" preserveAspectRatio="none"&gt;&lt;path d="M0,70 C240,20 520,120 760,70 C1020,20 1220,110 1440,60 L1440,140 L0,140 Z" fill="rgba(255,255,255,.06)"/&gt;&lt;/svg&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;button class="nav prev" id="prev" aria-label="Slide anterior"&gt;‹&lt;/button&gt;</p>
-<p class="p1">&lt;button class="nav next" id="next" aria-label="Próximo slide"&gt;›&lt;/button&gt;</p>
-<p class="p1">&lt;div class="hud"&gt;&lt;span class="ct" id="ct"&gt;01 / 12&lt;/span&gt;&lt;div class="dots" id="dots"&gt;&lt;/div&gt;&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;script&gt;</p>
-<p class="p1">(function(){</p>
-<p class="p1"><span class="Apple-converted-space">  </span>var slides=[].slice.call(document.querySelectorAll('.slide'));</p>
-<p class="p1"><span class="Apple-converted-space">  </span>var i=0, n=slides.length, reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>var bar=document.getElementById('bar'), ct=document.getElementById('ct'), dotsEl=document.getElementById('dots');</p>
-<p class="p1"><span class="Apple-converted-space">  </span>var prev=document.getElementById('prev'), next=document.getElementById('next');</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>slides.forEach(function(s,k){ var b=document.createElement('button'); b.addEventListener('click',function(){go(k)}); dotsEl.appendChild(b); });</p>
-<p class="p1"><span class="Apple-converted-space">  </span>var dots=[].slice.call(dotsEl.children);</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>function pad(x){return (x&lt;9?'0':'')+(x+1);}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>function counted(s){ s.querySelectorAll('[data-count]').forEach(function(el){</p>
-<p class="p1"><span class="Apple-converted-space">    </span>if(el.dataset.done) return; el.dataset.done=1; var t=+el.getAttribute('data-count');</p>
-<p class="p1"><span class="Apple-converted-space">    </span>if(reduce){el.textContent=t;return;} var st=null,dur=1000;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>function step(ts){if(!st)st=ts;var p=Math.min((ts-st)/dur,1);el.textContent=Math.round(t*(1-Math.pow(1-p,3)));if(p&lt;1)requestAnimationFrame(step);}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>requestAnimationFrame(step);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>});}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>function go(k){</p>
-<p class="p1"><span class="Apple-converted-space">    </span>k=Math.max(0,Math.min(n-1,k)); if(k===i &amp;&amp; slides[k].classList.contains('active')) {}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>slides[i].classList.remove('active'); i=k; slides[i].classList.add('active');</p>
-<p class="p1"><span class="Apple-converted-space">    </span>bar.style.width=((i)/(n-1)*100)+'%'; ct.textContent=pad(i)+' / '+pad(n-1);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>dots.forEach(function(d,j){d.classList.toggle('on',j===i)});</p>
-<p class="p1"><span class="Apple-converted-space">    </span>prev.disabled=(i===0); next.disabled=(i===n-1);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>counted(slides[i]);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>next.addEventListener('click',function(){go(i+1)});</p>
-<p class="p1"><span class="Apple-converted-space">  </span>prev.addEventListener('click',function(){go(i-1)});</p>
-<p class="p1"><span class="Apple-converted-space">  </span>document.addEventListener('keydown',function(e){</p>
-<p class="p1"><span class="Apple-converted-space">    </span>if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'){e.preventDefault();go(i+1)}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();go(i-1)}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>else if(e.key==='Home'){go(0)} else if(e.key==='End'){go(n-1)}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>});</p>
-<p class="p1"><span class="Apple-converted-space">  </span>// touch swipe</p>
-<p class="p1"><span class="Apple-converted-space">  </span>var x0=null;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>document.addEventListener('touchstart',function(e){x0=e.touches[0].clientX},{passive:true});</p>
-<p class="p1"><span class="Apple-converted-space">  </span>document.addEventListener('touchend',function(e){ if(x0===null)return; var dx=e.changedTouches[0].clientX-x0; if(Math.abs(dx)&gt;50)go(i+(dx&lt;0?1:-1)); x0=null;});</p>
-<p class="p1"><span class="Apple-converted-space">  </span>// mouse parallax on floats (active slide only)</p>
-<p class="p1"><span class="Apple-converted-space">  </span>if(!reduce){</p>
-<p class="p1"><span class="Apple-converted-space">    </span>document.addEventListener('pointermove',function(e){</p>
-<p class="p1"><span class="Apple-converted-space">      </span>var cx=(e.clientX/innerWidth-.5), cy=(e.clientY/innerHeight-.5);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>slides[i].querySelectorAll('[data-float]').forEach(function(f){</p>
-<p class="p1"><span class="Apple-converted-space">        </span>var sp=parseFloat(f.getAttribute('data-float'))||0;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>f.style.transform='translate('+(cx*40*sp)+'px,'+(cy*40*sp)+'px)';</p>
-<p class="p1"><span class="Apple-converted-space">      </span>});</p>
-<p class="p1"><span class="Apple-converted-space">    </span>});</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>go(0);</p>
-<p class="p1">})();</p>
-<p class="p1">&lt;/script&gt;</p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
-</body>
-</html>
+<!doctype html><html lang="pt-BR"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Impugnação à Convenção — Viva Club da Ilha</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#062a4e;--navy2:#0a3461;--ocean:#1273c0;--azure:#27b7d6;--azure-soft:#7fd8e8;--sand:#efe7d8;--paper:#f6f1e8;--ink:#072743;--text:#eaf2fa;--muted:#9fb6ce;--gold:#e7b65a;--red:#ff6b6b;--green:#27c79a;--yellow:#f2c94c;--line:rgba(255,255,255,.12);--line-d:rgba(7,39,67,.14);--display:"Outfit",system-ui,sans-serif;--body:"Inter",system-ui,sans-serif;--mono:"Space Mono",ui-monospace,monospace;}
+*{box-sizing:border-box;margin:0;padding:0}html,body{height:100%}
+body{font-family:var(--body);background:#04203c;color:var(--text);overflow:hidden;-webkit-font-smoothing:antialiased}
+.deck{position:fixed;inset:0}
+.slide{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:clamp(28px,5.5vw,96px);opacity:0;visibility:hidden;transform:scale(1.02);transition:opacity .55s ease,transform .55s ease,visibility .55s;overflow:hidden}
+.slide.active{opacity:1;visibility:visible;transform:none}
+.slide .inner{max-width:1060px;width:100%;margin:0 auto;position:relative;z-index:3}
+.slide{background:radial-gradient(1100px 700px at 80% -10%,rgba(39,183,214,.16),transparent 60%),radial-gradient(900px 600px at -5% 110%,rgba(18,115,192,.22),transparent 55%),var(--navy)}
+.slide.light{background:radial-gradient(900px 600px at 100% 0%,rgba(39,183,214,.18),transparent 55%),var(--paper);color:var(--ink)}
+.slide.ocean{background:linear-gradient(160deg,var(--ocean),var(--navy))}
+.eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--azure);display:inline-flex;gap:10px;align-items:center}
+.eyebrow::before{content:"";width:22px;height:1px;background:var(--azure);display:inline-block}
+.light .eyebrow{color:var(--ocean)}.light .eyebrow::before{background:var(--ocean)}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(38px,6.4vw,86px);line-height:1;letter-spacing:-.02em}
+h2{font-family:var(--display);font-weight:700;font-size:clamp(26px,4.3vw,52px);line-height:1.05;letter-spacing:-.02em}
+h3{font-family:var(--display);font-weight:700;font-size:clamp(18px,2.1vw,24px)}
+p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin-top:16px;line-height:1.6}
+.light p.lead{color:#3f5a76}.az{color:var(--azure)}.light .az{color:var(--ocean)}
+.r{opacity:0;transform:translateY(20px);transition:opacity .55s cubic-bezier(.2,.7,.2,1),transform .55s cubic-bezier(.2,.7,.2,1)}
+.active .r{opacity:1;transform:none}.active .r1{transition-delay:.1s}.active .r2{transition-delay:.2s}.active .r3{transition-delay:.3s}.active .r4{transition-delay:.4s}.active .r5{transition-delay:.5s}.active .r6{transition-delay:.6s}
+.bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--ocean),var(--azure));z-index:60;transition:width .35s ease}
+.hud{position:fixed;z-index:60;bottom:16px;left:0;right:0;display:flex;align-items:center;justify-content:center;gap:14px;pointer-events:none}
+.hud .lbl{font-family:var(--mono);font-size:12px;color:var(--muted);background:rgba(7,42,78,.6);border:1px solid var(--line);padding:5px 12px;border-radius:999px;backdrop-filter:blur(6px);max-width:60vw;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.nav{position:fixed;z-index:60;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:rgba(7,42,78,.5);color:#fff;cursor:pointer;font-size:20px;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(6px);transition:.2s}
+.nav:hover{background:var(--ocean);border-color:var(--ocean)}.nav.prev{left:16px}.nav.next{right:16px}.nav:disabled{opacity:.25;cursor:default}
+.brandmark{position:fixed;top:16px;left:20px;z-index:60;font-family:var(--display);font-weight:700;font-size:13.5px;color:#fff;opacity:.9}.brandmark .d{color:var(--azure)}
+.hint{position:fixed;top:18px;right:20px;z-index:60;font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.08em}
+.waves{position:absolute;left:0;right:0;bottom:-2px;width:100%;height:130px;z-index:1;opacity:.5}
+.float{position:absolute;border-radius:50%;filter:blur(36px);z-index:0}
+.cover-tag{display:inline-block;font-family:var(--mono);font-size:12px;color:var(--text);border:1px solid var(--line);border-radius:999px;padding:7px 15px;margin-bottom:24px;background:rgba(255,255,255,.04)}
+.clause{background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:0 30px 60px -34px rgba(0,0,0,.8)}
+.light .clause{background:#fff;border-color:var(--line-d)}
+.clause .art{font-family:var(--mono);font-size:12px;color:var(--azure);margin-bottom:12px}
+.clause p{font-size:16.5px;line-height:1.75}
+.strike{position:relative;color:var(--red)}.active .strike::after{content:"";position:absolute;left:0;top:52%;height:2px;width:0;background:var(--red);animation:st .8s 1s forwards cubic-bezier(.6,0,.2,1)}@keyframes st{to{width:100%}}
+.ins{color:#0e9e78;font-weight:600;background:rgba(39,199,154,.16);border-radius:4px;padding:0 5px;opacity:0;display:inline-block}.active .ins{animation:io .5s 1.9s forwards}@keyframes io{to{opacity:1}}
+.legend{margin-top:16px;display:flex;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--muted)}.legend i{width:12px;height:12px;border-radius:3px;display:inline-block;margin-right:6px;vertical-align:-1px}
+.cols{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,4vw,56px);align-items:center}
+.steps{display:grid;gap:13px;margin-top:24px}.step{display:flex;gap:15px;align-items:flex-start}
+.step .k{flex:0 0 auto;width:29px;height:29px;border-radius:9px;background:var(--ocean);color:#fff;font-family:var(--mono);font-size:13px;display:flex;align-items:center;justify-content:center;margin-top:2px}
+.step p{font-size:15.5px;color:var(--muted)}.light .step p{color:#3f5a76}.step b{color:var(--text)}.light .step b{color:var(--ink)}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:15px;margin-top:26px}
+.tile{border:1px solid var(--line);border-radius:14px;padding:20px;background:rgba(255,255,255,.03)}.light .tile{border-color:var(--line-d);background:#fff}
+.tile .ic{font-size:22px}.tile h3{margin:10px 0 6px}.tile p{font-size:14.5px;color:var(--muted)}.light .tile p{color:#3f5a76}
+.tags{margin-top:15px;display:flex;gap:8px;flex-wrap:wrap}.tag{font-family:var(--mono);font-size:11px;color:var(--azure);border:1px solid rgba(39,183,214,.4);border-radius:6px;padding:4px 9px}.light .tag{color:var(--ocean);border-color:rgba(18,115,192,.4)}
+.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,3vw,40px);margin-top:32px}
+.num .n{font-family:var(--display);font-weight:800;font-size:clamp(46px,8.5vw,116px);line-height:.85;letter-spacing:-.04em}
+.num.c1 .n{color:var(--azure)}.num.c2 .n{color:#7fd8e8}.num.c3 .n{color:var(--gold)}.num .l{margin-top:10px;color:var(--muted);font-size:14px;max-width:24ch}
+.subnums{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:42px}.subnum{border-top:1px solid var(--line);padding-top:13px}.subnum .n{font-family:var(--display);font-weight:700;font-size:clamp(24px,3.2vw,38px)}.subnum .l{color:var(--muted);font-size:13px;margin-top:5px}
+.exh{display:grid;grid-template-columns:repeat(2,1fr);gap:13px;margin-top:26px}.ex{border:1px solid var(--line);border-left:3px solid var(--azure);border-radius:12px;padding:17px 19px;background:rgba(255,255,255,.03)}.ex .code{font-family:var(--mono);font-size:13px;color:var(--azure)}.ex p{margin-top:8px;font-size:14.5px}.ex small{display:block;margin-top:8px;color:var(--muted);font-size:12.5px}
+.docs{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-top:26px}
+.legbar{margin-top:24px;display:flex;gap:22px;flex-wrap:wrap;font-size:14px;color:var(--muted)}
+.tx-r{color:var(--red);text-decoration:line-through}.tx-g{color:#0e9e78;font-weight:600}.tx-y{background:rgba(242,201,76,.3);padding:0 5px;border-radius:3px}
+.date-big{font-family:var(--display);font-weight:800;font-size:clamp(56px,12vw,160px);line-height:.85;letter-spacing:-.04em;background:linear-gradient(180deg,#fff,var(--azure));-webkit-background-clip:text;background-clip:text;color:transparent}
+.center{text-align:center}.center .inner{display:flex;flex-direction:column;align-items:center}
+/* QR */
+.qrwrap{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:30px}
+.qrcard{background:#fff;border-radius:18px;padding:22px;text-align:center;color:var(--ink);box-shadow:0 26px 50px -30px rgba(0,0,0,.7)}
+.qrcard img{width:100%;max-width:230px;height:auto;image-rendering:pixelated}
+.qrcard .qt{font-family:var(--display);font-weight:700;font-size:17px;margin-top:6px}
+.qrcard .qd{font-size:12.5px;color:#5a7governing;color:#5a738c;margin-top:6px}
+.qrcard .qu{font-family:var(--mono);font-size:10.5px;color:#94a8bd;word-break:break-all;margin-top:8px}
+/* divider */
+.divider{background:linear-gradient(160deg,#0a3461,var(--navy))}
+.bigcount{font-family:var(--display);font-weight:800;font-size:clamp(60px,14vw,180px);line-height:.85;color:var(--azure);letter-spacing:-.04em}
+/* review */
+.slide.review{justify-content:flex-start;padding-top:clamp(60px,9vh,110px)}
+.slide.review .inner{max-height:84vh;overflow:auto;padding-right:6px}
+.slide.review .inner::-webkit-scrollbar{width:8px}.slide.review .inner::-webkit-scrollbar-thumb{background:var(--line);border-radius:8px}
+.rev-head{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.badge{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:5px 11px;border-radius:999px;border:1px solid}
+.b-sup{color:var(--red);border-color:rgba(255,107,107,.5);background:rgba(255,107,107,.1)}
+.b-alt{color:var(--azure);border-color:rgba(39,183,214,.5);background:rgba(39,183,214,.1)}
+.b-inc{color:var(--gold);border-color:rgba(231,182,90,.5);background:rgba(231,182,90,.12)}
+.panels{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px}
+.panel{border:1px solid var(--line);border-radius:13px;padding:16px 18px;background:rgba(255,255,255,.03)}
+.panel .plabel{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.panel p{font-size:14.5px;line-height:1.6;color:#d6e2f0}
+.pmin{border-left:3px solid var(--red)}.pmin p{color:#c2d2e3}
+.ppro{border-left:3px solid var(--green)}
+.why{margin-top:18px;border-top:1px solid var(--line);padding-top:16px}
+.why .wl{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--azure);display:block;margin-bottom:7px}
+.why p{font-size:15px;line-height:1.6;color:var(--text);display:inline}
+.legalbadge{font-family:var(--mono);font-size:11px;color:var(--gold);border:1px solid rgba(231,182,90,.5);background:rgba(231,182,90,.12);padding:3px 8px;border-radius:6px;white-space:nowrap}
+@media (max-width:820px){.cols{grid-template-columns:1fr}.grid2{grid-template-columns:1fr}.nums{grid-template-columns:1fr;gap:20px}.subnums{grid-template-columns:repeat(2,1fr)}.exh{grid-template-columns:1fr}.docs{grid-template-columns:1fr}.qrwrap{grid-template-columns:1fr}.panels{grid-template-columns:1fr}.nav{display:none}.hint{display:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:opacity .2s linear!important}.slide{transform:none}.r{opacity:1;transform:none}.strike::after{width:100%}.ins{opacity:1}}
+</style></head><body>
+<div class="bar" id="bar"></div>
+<div class="brandmark">Viva Club da Ilha <span class="d">/</span> Convenção</div>
+<div class="hint">← → para navegar</div>
+<div class="deck" id="deck">
+
+  <section class="slide active ocean center" data-label="Início">
+    <div class="float" style="width:360px;height:360px;background:rgba(127,216,232,.25);top:-60px;right:8%" data-float="0.5"></div>
+    <div class="float" style="width:300px;height:300px;background:rgba(18,115,192,.4);bottom:-40px;left:-40px" data-float="-0.4"></div>
+    <div class="inner">
+      <span class="cover-tag r r1">Assembleia Geral de Instalação • 22 de junho de 2026</span>
+      <div class="eyebrow r r1" style="justify-content:center">Proposta dos condôminos</div>
+      <h1 class="r r2" style="margin-top:16px">Impugnação à<br>Convenção do Condomínio</h1>
+      <p class="lead r r3" style="margin-left:auto;margin-right:auto;color:#cfe6f4">Vamos revisar, uma a uma, as 89 propostas de mudança na minuta, antes do voto.</p>
+    </div>
+    <svg class="waves" viewBox="0 0 1440 140" preserveAspectRatio="none"><path d="M0,60 C240,120 480,0 720,50 C960,100 1200,20 1440,70 L1440,140 L0,140 Z" fill="rgba(255,255,255,.06)"/><path d="M0,90 C240,40 520,130 760,80 C1020,30 1220,110 1440,70 L1440,140 L0,140 Z" fill="rgba(255,255,255,.05)"/></svg>
+  </section>
+
+  <section class="slide light" data-label="Acompanhe pelo celular">
+    <div class="inner">
+      <div class="eyebrow r r1">Acompanhe pelo celular</div>
+      <h2 class="r r2" style="margin-top:12px">Abra os documentos e siga junto.</h2>
+      <p class="lead r r2">Aponte a câmera do celular para um dos códigos. São os mesmos arquivos que vamos discutir aqui.</p>
+      <div class="qrwrap">
+        <div class="qrcard r r3"><img alt="QR da Impugnação" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAWgAAAFoCAIAAAD1h/aCAAAH6klEQVR4nO3dwY1jNxZAUbfRi4nFqThepzKxzE4TARfX4ANJ1TnrwpdaVX1BQA+Pvz6fzx8AxZ+n3wDwHuEAMuEAMuEAMuEAMuEAMuEAMuEAMuEAMuEAMuEAMuEAMuEAMuEAMuEAMuEAMuEAMuEAMuEAMuEAMuEAMuEAMuEAMuEAMuEAMuEAMuEAMuEAMuEAMuEAMuEAst/TL/Cfv/6efokt/vfff9LPr/5dq+fs+vmVXe9/l2/9PL/177ly4gAy4QAy4QAy4QAy4QAy4QAy4QCy8TmOlenvmVdu+x5+1/uZnlPYNddw6vnTftrfsxMHkAkHkAkHkAkHkAkHkAkHkAkHkB2b41jZ9b30ru/Vp/dE3Pa6r8x31OesTM9f3Pb3vIsTB5AJB5AJB5AJB5AJB5AJB5AJB5BdN8fxilNzCivT3/NPz3e8fo/JT+PEAWTCAWTCAWTCAWTCAWTCAWTCAWTmOP6l6X0f017Z91GfU03P13wrJw4gEw4gEw4gEw4gEw4gEw4gEw4gu26O45Xvz3fNHZyaBzm1L+O2z2HaK3/PlRMHkAkHkAkHkAkHkAkHkAkHkAkHkB2b47jt+/Zq11zDt95Lcuoell3vp3r977ly4gAy4QAy4QAy4QAy4QAy4QAy4QCy8TmOb91HcGqeYtf8wi63/Xun3fZ+TnHiADLhADLhADLhADLhADLhADLhALJfn89n9AVe3x+xsus+kV3P32XX+5y+h+W215122/yIEweQCQeQCQeQCQeQCQeQCQeQCQeQHZvjWNn1ffWu+zhOPb++7spt8yOv3xdT3Xa/zC5OHEAmHEAmHEAmHEAmHEAmHEAmHEA2Psexctu8QH3ObV6Zl9k1jzB9b8sre0Pq+9nFiQPIhAPIhAPIhAPIhAPIhAPIhAPIjs1xVLftI/hp+zhum3dY+dY9LCun3o8TB5AJB5AJB5AJB5AJB5AJB5AJB5D9PvXC0/s4pvcavLLvo37Pf2peY+XU/Sm7XveV+18qJw4gEw4gEw4gEw4gEw4gEw4gEw4gG5/jOPX9/67nT89B3Pb53HafyCv7TX7aHhAnDiATDiATDiATDiATDiATDiATDiC77l6Vb/0+/NR9KPX50/eq1Pezy6l/V3XbPTIrThxAJhxAJhxAJhxAJhxAJhxAJhxAdt0cx8or8xcr03Mo1fScyC63/X5fuU9nmhMHkAkHkAkHkAkHkAkHkAkHkAkHkF03x3HbvMD0Hodv3btx2/04pz7n6ra5oRUnDiATDiATDiATDiATDiATDiATDiD7Pf0Cu75Xv20Pwm17HFbPmZ6LuW2vxPS9JPVznp6jOfX5O3EAmXAAmXAAmXAAmXAAmXAAmXAA2fg+jun9CLfNd+zyre//9ftcpucp7OMAvpZwAJlwAJlwAJlwAJlwAJlwANn4Po7peY3q1Ps5tU/htr0P9fm33YcyPTf0ypyLEweQCQeQCQeQCQeQCQeQCQeQCQeQHdvHscup+0rqc1am9y/cttdjeq/Kyql5kNs+/12cOIBMOIBMOIBMOIBMOIBMOIBMOIBsfB/HLqf2cbw+X1Bfd3p+4dTPV9PPqZ/zqX0uK04cQCYcQCYcQCYcQCYcQCYcQCYcQDa+j2PltnmEXabnDl7fE3Hqc6hum6+przs93+HEAWTCAWTCAWTCAWTCAWTCAWTCAWTH9nG8spfh1D0g0687vSeiOvX+T3nl/pQVJw4gEw4gEw4gEw4gEw4gEw4gEw4gu+5elen5jlNuu1/jlXtJVqZ/v7fNxdw29+HEAWTCAWTCAWTCAWTCAWTCAWTCAWTj96qc2q8x/bqn7tFYue2+ktv2hpya9zm1R2aaEweQCQeQCQeQCQeQCQeQCQeQCQeQ/bg5jpXb5gVumztYeWWe5dTrvv55rjhxAJlwAJlwAJlwAJlwAJlwAJlwANl196qsnPp+fvr5t+0l2fWcU/smpu83qa9b2ccBfC3hADLhADLhADLhADLhADLhALJn5jhWpvdfvLJf47Y9Haf2iax86+d/al7GiQPIhAPIhAPIhAPIhAPIhAPIhAPIxu9Ved30HopTPz/t1N6Q+vyV2173tn00ThxAJhxAJhxAJhxAJhxAJhxAJhxANr6P49QcQbVrH8epeYrb7k+Zfv6p38uuz/m2uZvKiQPIhAPIhAPIhAPIhAPIhAPIhAPIjt2rMr0vYGXX9/a32fV5Ts871J/fNR+xy/SejlP/LyonDiATDiATDiATDiATDiATDiATDiA7Nsexsmtu4pU5kV17Jarp55+aBzn1utX0Pg73qgDXEQ4gEw4gEw4gEw4gEw4gEw4gu26O46d5/Z6RlVPzCKf2p9TP85U9LytOHEAmHEAmHEAmHEAmHEAmHEAmHEBmjuNfum0O4pX9GvX5u+yaB9l1z4s5DuDHEQ4gEw4gEw4gEw4gEw4gEw4gu26O49R9KCu37bmYnke47T6a6fdz6v6alVf2jzhxAJlwAJlwAJlwAJlwAJlwAJlwANmxOY5X9hGc2nMxbXrfxC675iCm525+2p4OJw4gEw4gEw4gEw4gEw4gEw4gEw4g+/X5fE6/B+AxThxAJhxAJhxAJhxAJhxAJhxAJhxAJhxAJhxAJhxAJhxAJhxAJhxAJhxAJhxAJhxAJhxAJhxAJhxAJhxAJhxAJhxAJhxAJhxAJhxAJhxAJhxAJhxAJhxAJhxAJhxA9n+mHuGB1sjlkQAAAABJRU5ErkJggg=="><div class="qt">Impugnação completa</div><div class="qd">Corpo + Anexos I, II e III</div><div class="qu">https://drive.google.com/file/d/19TLgAzxuVP63cCj1lBWJY8yjQE0Ot7mt/view?usp=sharing</div></div>
+        <div class="qrcard r r4"><img alt="QR da Minuta consolidada" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAWgAAAFoCAIAAAD1h/aCAAAIAElEQVR4nO3dQa4kOxFAURoxYC1shfWyFdbC7DFgSurrIofCbs4ZtkqZ1flKV5YyZP/6+fn5E0Dx5+0vALxHOIBMOIBMOIBMOIBMOIBMOIBMOIBMOIBMOIBMOIBMOIBMOIBMOIBMOIBMOIBMOIBMOIBMOIBMOIBMOIBMOIBMOIBMOIBMOIBMOIBMOIBMOIBMOIBMOIBMOIDsL9M3+Ovf/j59iyP+9c9//Nd/r9//1HW2rl/vW319z1PXn/b67/kUKw4gEw4gEw4gEw4gEw4gEw4gEw4gG5/j+LL13n56nqJ+vn6fOgdx6vOnrlO9Mvfx+u+5suIAMuEAMuEAMuEAMuEAMuEAMuEAsrU5ji9bcxZbtvbvOPX5anreZPq+1e/6e7biADLhADLhADLhADLhADLhADLhALLr5jhu88rcwSv7VnyZfm6cZcUBZMIBZMIBZMIBZMIBZMIBZMIBZOY4/sDWeSLV1v4RX/d9ZV8P/jdWHEAmHEAmHEAmHEAmHEAmHEAmHEB23RzHbe/bt+Y16vWnv88r+5JUW/Mmr7PiADLhADLhADLhADLhADLhADLhALK1OY6tfSuqU3MKr39+2tb3P7V/xyu/51OsOIBMOIBMOIBMOIBMOIBMOIBMOIBsfI7j9f0Ibjsf5NT1q1fmO77c9jxfZ8UBZMIBZMIBZMIBZMIBZMIBZMIBZL9+fn5Gb2C/g/945VyS6ft+2fqdnHo+9fu8Mr/zxYoDyIQDyIQDyIQDyIQDyIQDyIQDyMbnOL5Mv6++bT5i2m3P4cvrcyhbcxan5kpOseIAMuEAMuEAMuEAMuEAMuEAMuEAsvFzVb5snfdx2/vwU+/zp+dHftfzRE79v16ZZznFigPIhAPIhAPIhAPIhAPIhAPIhAPIxuc4tuYLtvZr2HqfX69/6u9yao7g1OdvO8fntuucYsUBZMIBZMIBZMIBZMIBZMIBZMIBZOPnqkzPKVSn5ju25kdOeWV/ja25jK1zZyr7cQDPEA4gEw4gEw4gEw4gEw4gEw4gWztXpZreL2P6ffjWORrT585Mz1lszb+8Mj+yNY9jxQFkwgFkwgFkwgFkwgFkwgFkwgFk4/txTDv1Pn9rXuC2c2G2/r/VbXMf/2/7rVhxAJlwAJlwAJlwAJlwAJlwAJlwANnafhy3vd+ePi/j9TmLrf1K6r4q1am/4+86d/PFigPIhAPIhAPIhAPIhAPIhAPIhAPIxuc4Xjmfol7ny6lzTL68cu7Gl61zW6afw9a+KlusOIBMOIBMOIBMOIBMOIBMOIBMOIBsbT+OL9NzFqfmMrbuOz0Xs7W/xrTp+ZGteY2t52nFAWTCAWTCAWTCAWTCAWTCAWTCAWTXnasy/d57a3+QLdPPefrz0059/1NzPVvfp7LiADLhADLhADLhADLhADLhADLhALLxOY7pfSLq57fOW/mydV7MtOl9K0793bfctl9JZcUBZMIBZMIBZMIBZMIBZMIBZMIBZNftx3Hq8/U60/txTL+fn55P2Tpfpl5na5+XanouaZoVB5AJB5AJB5AJB5AJB5AJB5AJB5D9+vn5Gb3BK/tEfNnaN+HUc3t935Ct826mn9tt+8JUVhxAJhxAJhxAJhxAJhxAJhxAJhxAtrYfx9b+F9P7elTT579Ur+xn8cp9bztf5hQrDiATDiATDiATDiATDiATDiATDiAb34+jmn4/v7W/wylb54lMn7fy5bb9UG6bZ7EfB/AM4QAy4QAy4QAy4QAy4QAy4QCy6+Y4pp2aC7htvqPaOl/mtv0spp/D7zrnYsUBZMIBZMIBZMIBZMIBZMIBZMIBZOPnqmy9x/4yvZ/CK3MBp57bqetXt+2LscV+HMAzhAPIhAPIhAPIhAPIhAPIhAPIxvfjmJ6PuO29/dY+C1ufr26bB/my9T2nz8E5xYoDyIQDyIQDyIQDyIQDyIQDyIQDyMb34/jyyvvqU+/nt86/+DJ93615kK39WU7Nfdz2O/lixQFkwgFkwgFkwgFkwgFkwgFkwgFka/tx3DZ/8co5JlvnlXzZ2tfjyyv7tnx5Zb7JigPIhAPIhAPIhAPIhAPIhAPIhAPIxvfj+F33mzg13/HK86lzBFv7WdTrT88ZvXLeTWXFAWTCAWTCAWTCAWTCAWTCAWTCAWTjcxyv74NQPz8971BtnW9SvfI7mZ77uO38lC9WHEAmHEAmHEAmHEAmHEAmHEAmHEA2PsfxZet99SvzAlv7QUyb3kfjtnNnTrnt72jFAWTCAWTCAWTCAWTCAWTCAWTCAWRrcxxfbtsn4svr52Wcmguo1zn1/51+bq/M+2zNd1hxAJlwAJlwAJlwAJlwAJlwAJlwANl1cxyvODWvMe3UXMap609f59T1p5/Dbb+TyooDyIQDyIQDyIQDyIQDyIQDyIQDyMxx/IFX5jVOmT7Pparf57a5kunnsLVviBUHkAkHkAkHkAkHkAkHkAkHkAkHkF03x/H6HMTW/EK97/Q5JtNzELedz3Lb3Mc0Kw4gEw4gEw4gEw4gEw4gEw4gEw4gW5vjeOV99StzGdNzFqeew9Y+Jqeez9fnp5+z/TiA5wkHkAkHkAkHkAkHkAkHkAkHkP36+fnZ/g7AY6w4gEw4gEw4gEw4gEw4gEw4gEw4gEw4gEw4gEw4gEw4gEw4gEw4gEw4gEw4gEw4gEw4gEw4gEw4gEw4gEw4gEw4gEw4gEw4gEw4gEw4gEw4gEw4gEw4gEw4gEw4gOzfHEDEFv/6eJgAAAAASUVORK5CYII="><div class="qt">Minuta consolidada</div><div class="qd">Texto final, sem marcações</div><div class="qu">https://drive.google.com/file/d/1qBb_Ve6bGV4zuRLZ_JDfAv8d2vqBLkRp/view?usp=sharing</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-label="O que é">
+    <div class="inner">
+      <div class="eyebrow r r1">Começando do começo</div>
+      <h2 class="r r2" style="margin-top:12px">O que é essa impugnação?</h2>
+      <div class="steps" style="max-width:60ch">
+        <div class="step r r3"><span class="k">1</span><p>A <b>convenção</b> é o regulamento maior do condomínio: define como a gente decide e divide custos.</p></div>
+        <div class="step r r4"><span class="k">2</span><p>A <b>incorporadora apresentou uma minuta</b> dessa convenção, que será votada na assembleia.</p></div>
+        <div class="step r r5"><span class="k">3</span><p>Um grupo de condôminos <b>leu linha por linha</b> e preparou propostas de mudança. Isso é a impugnação.</p></div>
+      </div>
+      <p class="lead r r6">Não é briga, é ajuste: votar uma convenção mais equilibrada para todos.</p>
+    </div>
+  </section>
+
+  <section class="slide ocean" data-label="Por que mexer">
+    <div class="inner cols">
+      <div>
+        <div class="eyebrow r r1" style="color:#bfe9f4">Por que mexer</div>
+        <h2 class="r r2" style="margin-top:12px">A minuta concentrava muito poder na incorporadora.</h2>
+        <p class="lead r r3" style="color:#dceefa">Ela podia escolher dirigentes, dispensar assembleias e vetar mudanças. A impugnação devolve essas decisões a quem mora aqui.</p>
+      </div>
+      <div class="clause r r3" style="background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2)">
+        <div class="art" style="color:#bfe9f4">Art. 26 — Escolha do Síndico</div>
+        <p>O Síndico será eleito <span class="strike">pela Incorporadora, sem necessidade de Assembleia Geral</span> <span class="ins">em Assembleia Geral dos condôminos</span>.</p>
+        <div class="legend" style="color:#cfe6f4"><span><i style="background:rgba(255,107,107,.5);border:1px solid var(--red)"></i>sai</span><span><i style="background:rgba(39,199,154,.4);border:1px solid var(--green)"></i>entra</span><span><i style="background:rgba(242,201,76,.5);border:1px solid var(--yellow)"></i>em discussão</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide light" data-label="Como funciona o voto">
+    <div class="inner">
+      <div class="eyebrow r r1">Como funciona na assembleia</div>
+      <h2 class="r r2" style="margin-top:12px">A votação, sem mistério.</h2>
+      <div class="steps" style="max-width:64ch">
+        <div class="step r r3"><span class="k">→</span><p>A convenção é o <b>item 4 da pauta</b>: apresentada, discutida e votada.</p></div>
+        <div class="step r r4"><span class="k">→</span><p>As propostas são deliberadas <b>item a item</b>, seguindo as marcações do Anexo I.</p></div>
+        <div class="step r r5"><span class="k">→</span><p>Depois de aprovada, mudar a convenção exige <b>quórum de 2/3</b>. Por isso vale acertar agora.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-label="As 5 frentes">
+    <div class="inner">
+      <div class="eyebrow r r1">As mudanças, por tema</div>
+      <h2 class="r r2" style="margin-top:12px">Cinco frentes, uma direção.</h2>
+      <div class="grid2" style="grid-template-columns:repeat(3,1fr)">
+        <div class="tile r r3"><div class="ic">⚖️</div><h3>Privilégios da incorporadora</h3><p>Sai o poder de escolher dirigentes, dispensar assembleias e vetar mudanças.</p></div>
+        <div class="tile r r4"><div class="ic">🗳️</div><h3>Mandatos e continuidade</h3><p>1 para 2 anos, reeleição única, sucessão por assembleia em 30 dias.</p></div>
+        <div class="tile r r5"><div class="ic">📘</div><h3>Detalhe ao regimento</h3><p>O que muda sempre sai da convenção e vai ao regimento.</p></div>
+        <div class="tile r r4"><div class="ic">💰</div><h3>Prazos e tetos</h3><p>Teto de gasto cai para 3 a 5 salários; prazos em dias úteis.</p></div>
+        <div class="tile r r5"><div class="ic">🛡️</div><h3>Proteções</h3><p>LGPD, voto auditável, idade 18, procuração justa, responsabilidade real.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide ocean" data-label="Os números">
+    <div class="inner">
+      <div class="eyebrow r r1" style="color:#bfe9f4">Os números</div>
+      <h2 class="r r2" style="margin-top:12px"><span data-count="89">0</span> propostas, dispositivo a dispositivo.</h2>
+      <div class="nums">
+        <div class="num c1 r r3"><div class="n" data-count="32">0</div><div class="l" style="color:#cfe6f4">supressões</div></div>
+        <div class="num c2 r r4"><div class="n" data-count="29">0</div><div class="l" style="color:#cfe6f4">alterações</div></div>
+        <div class="num c3 r r5"><div class="n" data-count="28">0</div><div class="l" style="color:#cfe6f4">inclusões</div></div>
+      </div>
+      <div class="subnums">
+        <div class="subnum r r3"><div class="n" data-count="32">0</div><div class="l" style="color:#cfe6f4">artigos revisados</div></div>
+        <div class="subnum r r4"><div class="n" data-count="4">0</div><div class="l" style="color:#cfe6f4">bases legais</div></div>
+        <div class="subnum r r5"><div class="n">3</div><div class="l" style="color:#cfe6f4">anexos na peça</div></div>
+        <div class="subnum r r6"><div class="n">240</div><div class="l" style="color:#cfe6f4">casas</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide divider center" data-label="Revisão dispositivo a dispositivo">
+    <div class="inner">
+      <div class="eyebrow r r1" style="justify-content:center">Agora, a parte principal</div>
+      <div class="bigcount r r2">89</div>
+      <h2 class="r r2">impugnações, uma a uma.</h2>
+      <p class="lead r r3" style="margin:14px auto 0">Cada tela traz o dispositivo, o que está na minuta, a proposta e o motivo. Vamos deliberar item a item.</p>
+    </div>
+  </section>
+  
+  <section class="slide review" data-label="Art. 15, Parágrafo único">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 1 de 89</span>
+        <span class="badge b-alt">Alteração</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 15, Parágrafo único</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>Parágrafo único. O condômino ou possuidor que, por seu reiterado comportamento antissocial, gerar incompatibilidade de convivência com os demais condôminos ou possuidores, poderá ser constrangido a pagar multa correspondente ao décuplo do valor atribuído à contribuição para as despesas condominiais.</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>Parágrafo único. O condômino ou possuidor que, por seu reiterado comportamento antissocial, gerar incompatibilidade de convivência com os demais condôminos ou possuidores, poderá ser constrangido a pagar multa a ser definida em regimento interno para as despesas condominiais.</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Detalhe operacional remetido ao regimento interno, que se altera por maioria simples, mantendo a Convenção enxuta e adaptável.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 23, inciso V">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 2 de 89</span>
+        <span class="badge b-sup">Supressão</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 23, inciso V</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>V – Não promover ou deixar que promovam atividades ruidosas em suas respectivas unidades autônomas, de forma a perturbar o sossego, a salubridade e a segurança dos demais condôminos.</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>(dispositivo suprimido)</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Regra de conduta e convivência, própria do regimento interno.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 23, inciso VI">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 3 de 89</span>
+        <span class="badge b-sup">Supressão</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 23, inciso VI</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>VI – Não remover pó de tapetes, cortinas e similares, senão por meio que disperse a poeira sem causar incômodo a outros condôminos.</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>(dispositivo suprimido)</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Regra de conduta e convivência, própria do regimento interno.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 23, inciso VII">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 4 de 89</span>
+        <span class="badge b-sup">Supressão</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 23, inciso VII</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>VII – Não estender roupas, tapetes ou quaisquer outros objetos nas janelas ou outro lugar visível do exterior, ou expô-los em locais com risco de caírem.</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>(dispositivo suprimido)</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Regra de conduta e convivência, própria do regimento interno.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 23, inciso VIII">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 5 de 89</span>
+        <span class="badge b-sup">Supressão</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 23, inciso VIII</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>VIII – Não lançar, em hipótese alguma, objetos, mormente líquidos, sobre áreas comuns.</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>(dispositivo suprimido)</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Regra de conduta e convivência, própria do regimento interno.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 23, inciso IX">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 6 de 89</span>
+        <span class="badge b-sup">Supressão</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 23, inciso IX</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>IX – Não colocar lixo, detritos de qualquer natureza etc., em lugares diversos dos coletores para tais destinados, e nestes locais colocá-los devidamente embalados.</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>(dispositivo suprimido)</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Regra de conduta e convivência, própria do regimento interno.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 23, inciso X">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 7 de 89</span>
+        <span class="badge b-sup">Supressão</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 23, inciso X</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>X – Não colocar, nem deixar que coloquem, nas partes comuns do Condomínio, materiais de construção ou instalação, de qualquer natureza que forem.</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>(dispositivo suprimido)</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Regra de conduta e convivência, própria do regimento interno.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 23, inciso XIV">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 8 de 89</span>
+        <span class="badge b-inc">Inclusão</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 23, inciso XIV</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>(sem dispositivo correspondente na minuta original)</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>XIV – Reparar os danos que causar, dolosa ou culposamente, por mau uso ou defeito em coisas de suas unidades autônomas, nas partes comuns ou em outras unidades autônomas, bem como fazer cessar imediatamente as causas e ressarcir prejuízos, conforme especificidades trazidas no regimento interno condominial.</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Detalhe operacional remetido ao regimento interno, que se altera por maioria simples, mantendo a Convenção enxuta e adaptável.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 23, inciso XV">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 9 de 89</span>
+        <span class="badge b-inc">Inclusão</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 23, inciso XV</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>(sem dispositivo correspondente na minuta original)</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>XV – Indenizar os danos que causar às partes e coisas comuns, pelo valor que lhe for apresentado pelo Síndico ou seu preposto, correspondente aos custos da reparação devidamente comprovados e validados pelo conselho fiscal, conforme procedimento previsto no regimento interno condominial.</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Detalhe operacional remetido ao regimento interno, que se altera por maioria simples, mantendo a Convenção enxuta e adaptável.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 23, inciso XVI">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 10 de 89</span>
+        <span class="badge b-sup">Supressão</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 23, inciso XVI</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>XVI – Sem prejuízo da indenização acima citada, uma cobrança complementar extraordinária denominada taxa administrativa inclusive poderá ser adicionada a esses custos uma cobrança complementar extraordinária, taxa essa que será deliberada pelo Condomínio em Assembleia Geral ou mesmo pelo próprio Síndico, em virtude do tempo dispendido pela administração para o levantamento de orçamento, contratação de serviço, administração do conflito e monitoramento do processo de não-conformidade, cabendo ao condômino reconhecer como quantia líquida e certa.</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>(dispositivo suprimido)</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Regra de conduta e convivência, própria do regimento interno.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 23, inciso XVII">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 11 de 89</span>
+        <span class="badge b-inc">Inclusão</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 23, inciso XVII</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>(sem dispositivo correspondente na minuta original)</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>XVII – Informar à administração do Condomínio para o devido controle de acesso e outras necessidades internas, o nome de todo e qualquer morador ou ocupante de sua Unidade, mesmo em caráter temporário, conforme especificidades determinadas pelo regimento interno.</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Detalhe operacional remetido ao regimento interno, que se altera por maioria simples, mantendo a Convenção enxuta e adaptável.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 23, inciso XVIII">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 12 de 89</span>
+        <span class="badge b-sup">Supressão</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 23, inciso XVIII</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>XVIII – Fornecer a administração do Condomínio todos os meios de comunicação possíveis (telefones e endereços fixos e eletrônicos), para o recebimento de informativos e avisos, inclusive das alterações subsequentes.</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>(dispositivo suprimido)</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Regra de conduta e convivência, própria do regimento interno.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 23, inciso XIX">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 13 de 89</span>
+        <span class="badge b-inc">Inclusão</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 23, inciso XIX</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>(sem dispositivo correspondente na minuta original)</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>XIX – Colaborar com a preservação do patrimônio físico, econômico e moral do Condomínio, conforme especificidades determinadas pelo regimento interno.</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Detalhe operacional remetido ao regimento interno, que se altera por maioria simples, mantendo a Convenção enxuta e adaptável.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 23, inciso XX">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 14 de 89</span>
+        <span class="badge b-inc">Inclusão</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 23, inciso XX</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>(sem dispositivo correspondente na minuta original)</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>XX – Locações por temporada realizadas pelos condôminos, de forma direta ou por meio de aplicativos ou outros meios eletrônicos, deverão ser submetidas às normatizações estabelecidas pela administração do Condomínio, para que seus hóspedes ou inquilinos tenham o direito de admissão ao condomínio, cabendo aos mesmos o respeito e o cumprimento às normatizações condominiais. A admissibilidade da locação por temporada e as respectivas condições são definidas pelo regimento interno.</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Detalhe operacional remetido ao regimento interno, que se altera por maioria simples, mantendo a Convenção enxuta e adaptável.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 23, § 3º">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 15 de 89</span>
+        <span class="badge b-inc">Inclusão</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 23, § 3º</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>(sem dispositivo correspondente na minuta original)</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>§ 3º São de responsabilidade exclusiva dos condôminos as despesas, a que derem causa, decorrentes de atos praticados por ele e por seus familiares, empregados, inquilinos, prepostos, animais domésticos sob sua tutela, bem como por qualquer outra pessoa em trânsito no interior do Condomínio que tenha sido convidada por qualquer das pessoas mencionadas anteriormente.</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Responsabiliza o condômino pelos atos e penalidades de seus dependentes, convidados, prepostos e animais sob sua tutela.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 23, § 4º">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 16 de 89</span>
+        <span class="badge b-inc">Inclusão</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 23, § 4º</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>(sem dispositivo correspondente na minuta original)</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>§ 4º As despesas para reparação ou reposições, no que disser respeito a danos causados às partes comuns, quando não for possível determinar o causador ou responsável devidamente apurado em procedimento especificado em regimento interno, serão repartidas por todos os condôminos equitativamente.</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Detalhe operacional remetido ao regimento interno, que se altera por maioria simples, mantendo a Convenção enxuta e adaptável.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 26, inciso III">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 17 de 89</span>
+        <span class="badge b-alt">Alteração</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 26, inciso III</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>III – O mandato do Síndico será de 01 (um) ano para exercer as suas funções e atribuições, podendo ser reeleito, uma única vez, por igual período.</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>III – O mandato do Síndico será de 02 (dois) anos para exercer as suas funções e atribuições, podendo ser reeleito, uma única vez por igual período, fazendo-se necessário um intervalo de duas eleições para que ele possa se candidatar novamente ao cargo.</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Estabilidade de gestão com rodízio; previne a perpetuação no cargo.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 26, inciso IV">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 18 de 89</span>
+        <span class="badge b-sup">Supressão</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 26, inciso IV</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>IV – O Síndico será eleito em Assembleia Geral, podendo ser condômino ou pessoa estranha ao condomínio, conforme o art. 1.347 do Código Civil. exceto quando a Incorporadora estiver à frente nos primeiros 12 (doze) meses, sendo os 12 (dozes) meses seguintes com direito de escolha de permanecer ou não como Síndica, a qual terá o direito de exercer a escolha do membro que desempenhará este cargo, cabendo unicamente ela destitui-os e substitui-os a qualquer tempo, sem necessidade de Assembleia Geral, bastando documentar tais atos em ata própria.</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>(dispositivo suprimido)</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>A escolha do síndico é competência da assembleia, que não se transfere a terceiro; a incorporadora tem interesse comercial conflitante com os condôminos. <span class="legalbadge">base legal: CC, art. 1.347</span></p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 26, inciso V">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 19 de 89</span>
+        <span class="badge b-alt">Alteração</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 26, inciso V</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>V – O Síndico para o exercício de suas atribuições, receberá a isenção da taxa condominial ordinária de 01 (uma) unidade e poderá ter direito a uma ajuda de custo para pagamento de reembolsos e/ou despesas que forem inerentes ao condomínio, desde que venha a apresentar e a comprovar junto ao Conselho Fiscal, e condicionada à aprovação dessas despesas por seus conselheiros.</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>V – O Síndico para o exercício de suas atribuições, receberá remuneração a ser definida em Assembleia Geral Ordinária.</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Transparência e controle do custo pela assembleia, no lugar de benefício fixo predefinido.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 26, inciso VI">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 20 de 89</span>
+        <span class="badge b-sup">Supressão</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 26, inciso VI</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>VI – Atendendo a finalidade dos serviços de administração e em consonância com os conceitos e características próprias do empreendimento, o Síndico (condômino ou profissional não-condômino), a empresa de administração de condomínios e o Subsíndico em seus 2 (dois) primeiros mandatos ou até que a Incorporadora detenha a propriedade de até 50% (cinquenta por cento) das unidades ou que forem a ela devolvidos por desfazimento de contrato de venda e compra (amigável ou judicial), deverão ser indicados e escolhidos pela Incorporadora, sem necessidade de aprovação em Assembleia Geral.</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>(dispositivo suprimido)</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>A escolha do síndico é competência da assembleia, que não se transfere a terceiro; a incorporadora tem interesse comercial conflitante com os condôminos. <span class="legalbadge">base legal: CC, art. 1.347</span></p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 26, inciso VII">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 21 de 89</span>
+        <span class="badge b-sup">Supressão</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 26, inciso VII</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>VII – A posteriori dessas 2 (duas) condições, caberá a Assembleia Geral definir a escolha do Síndico por condôminos e/ou decidir por ter um Síndico profissional e um Subsíndico condômino voluntário e eleger os membros também voluntários ao Conselho Fiscal e ao Conselho Consultivo.</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>(dispositivo suprimido)</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Dispositivo atrelado ao regime de escolha do síndico pela incorporadora, suprimido em conjunto com os incisos IV a VIII; a escolha cabe à assembleia.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 26, inciso VIII">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 22 de 89</span>
+        <span class="badge b-sup">Supressão</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 26, inciso VIII</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>VIII – No caso da decisão por um Síndico profissional, caberá ao Condomínio a devida contratação e remuneração.</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>(dispositivo suprimido)</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Transparência e controle do custo pela assembleia, no lugar de benefício fixo predefinido.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 26, § 1º">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 23 de 89</span>
+        <span class="badge b-sup">Supressão</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 26, § 1º</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>§ 1º Quando a Incorporadora, por sua mera liberalidade, decidir por renunciar a sua condição de escolha do Síndico, do Subsíndico e dos membros aos órgãos sociais, caberá ao Corpo Diretivo (Síndico, Subsíndico, ao Conselho Fiscal e ao Conselho Consultivo), definir sobre o valor da remuneração da prestação de serviços a ser exercida por um Síndico profissional (não-condômino), ou mesmo se assim entender mais adequado, levar tal decisão a uma Assembleia Geral.</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>(dispositivo suprimido)</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Transparência e controle do custo pela assembleia, no lugar de benefício fixo predefinido.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 26, § 2º">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 24 de 89</span>
+        <span class="badge b-sup">Supressão</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 26, § 2º</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>§ 2º Para a gestão do Condomínio nos 2 (dois) primeiros mandatos ou até que a Incorporadora detenha a propriedade de até 50% (cinquenta por cento) das unidades ou que foram a ela devolvidos por desfazimento de contrato de venda (amigável ou judicial), poderão não serem eleitos os Conselhos Fiscal e Consultivo, caso a Incorporadora entender desnecessário. Neste caso, todas as funções e atribuições destes Conselhos ficarão sob a responsabilidade do Síndico, que poderá requerer o apoio e o suporte do Subsíndico.</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>(dispositivo suprimido)</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Retira privilégio da incorporadora e devolve a decisão à assembleia e ao Corpo Diretivo.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 26, § 3º">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 25 de 89</span>
+        <span class="badge b-alt">Alteração</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 26, § 3º</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>§ 3º A posteriori dos 02 (dois) primeiros mandatos ou até que a Incorporadora detenha a propriedade de até 50 % (cinquenta por cento) das unidades ou que forem a ela devolvidos por desfazimento de contrato de venda (amigável ou judicial), caso haja a ausência de candidatos a ocupar o Conselho Fiscal e o Conselho Consultivo, poderá o Síndico além de suas responsabilidades diretas relativas ao seu cargo, exercer também as funções e atribuições destes Conselhos, e havendo Subsíndico, contar com o seu devido apoio e suporte, até que uma próxima Assembleia Geral venha a ser convocada para a composição destes órgãos, conforme tratado neste instrumento de Convenção.</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>§ 3º Caso haja a ausência de candidatos a ocupar o Conselho Fiscal e o Conselho Consultivo, poderá o sub-síndico além de suas responsabilidades diretas relativas ao seu cargo, exercer também as funções e atribuições desses Conselhos. Devendo ser convocada uma Assembleia Geral Extraordinária no prazo máximo de 30 dias corridos para a composição destes órgãos, conforme tratado neste instrumento de Convenção.</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Retira privilégio da incorporadora e devolve a decisão à assembleia e ao Corpo Diretivo.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 26, § 4º">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 26 de 89</span>
+        <span class="badge b-sup">Supressão</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 26, § 4º</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>§ 4º Enquanto a Incorporadora estiver no direito de proceder com a eleição direta ou a escolha do Síndico, do Subsíndico e dos demais órgãos sociais, dentro das condições elencadas nesta Convenção, não haverá a obrigatoriedade de realização de Assembleias Gerais para este fim, podendo a Prestação de Contas, o Plano Orçamentário anual, a definição da taxa condominial e demais assuntos eletivos e deliberativos serem tratados em reunião do Corpo Diretivo, formada apenas pelos cargos existentes, com ata própria para configurar tais decisões.</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>(dispositivo suprimido)</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>A lei obriga assembleia anual para aprovar orçamento, contribuições e prestação de contas, decisões que não podem ser subtraídas dos condôminos. <span class="legalbadge">base legal: CC, art. 1.350</span></p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 27, inciso II">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 27 de 89</span>
+        <span class="badge b-alt">Alteração</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 27, inciso II</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>II – Defender o patrimônio do Condomínio, mantendo áreas comuns em boas condições de uso, de conservação e de boa aparência, e para tal, tem o direito de executar quaisquer consertos ou reparos de vulto, ou de caráter urgente e emergencial nas instalações, eventual ou acidentalmente danificadas, independentemente de consulta aos condôminos, assim como determinar a execução de obras de manutenção e serviços necessários ao normal funcionamento do condomínio.</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>II – Defender o patrimônio do Condomínio, mantendo as áreas comuns em boas condições de uso, conservação, segurança e boa aparência. Para esse fim, poderá determinar e executar quaisquer consertos, reparos, obras de manutenção e serviços necessários ao regular funcionamento do Condomínio destinados a reparar instalações eventual ou acidentalmente danificadas, independentemente de prévia consulta aos condôminos, desde que o respectivo custo não ultrapasse porcentagem do orçamento anual e regras definidas em regimento interno.</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Detalhe operacional remetido ao regimento interno, que se altera por maioria simples, mantendo a Convenção enxuta e adaptável.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 27, inciso VI">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 28 de 89</span>
+        <span class="badge b-inc">Inclusão</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 27, inciso VI</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>(sem dispositivo correspondente na minuta original)</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>VI – Com o auxílio da eventual empresa contratada para administração do condomínio, cadastrar os proprietários e ocupantes das unidades autônomas, fixos e eventuais, com a finalidade de auxiliar o serviço de portaria e outras necessidades, na resolução dos problemas internos, respeitada e garantida a Lei nº 13.709/2018 (LGPD).</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Conformidade com a proteção de dados pessoais no tratamento do cadastro de moradores. <span class="legalbadge">base legal: Lei nº 13.709/2018 (LGPD)</span></p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 27, inciso VII">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 29 de 89</span>
+        <span class="badge b-inc">Inclusão</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 27, inciso VII</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>(sem dispositivo correspondente na minuta original)</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>VII – Definir juntamente com o Corpo Diretivo as penalidades a serem aplicadas aos infratores e respectivamente o valor das multas conforme regras definidas no regimento interno.</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Detalhe operacional remetido ao regimento interno, que se altera por maioria simples, mantendo a Convenção enxuta e adaptável.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 27, inciso XXII">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 30 de 89</span>
+        <span class="badge b-alt">Alteração</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 27, inciso XXII</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>XXII – Pagar pontualmente as obrigações e as dívidas do Condomínio, podendo, excepcionalmente, mediante autorização do Conselho Fiscal, não ultrapassando o teto de 20 (Vinte) salários-mínimos, valer-se de recursos do Fundo de Reserva,</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>XXII – Pagar pontualmente as obrigações e as dívidas do Condomínio, podendo, excepcionalmente, mediante autorização do Conselho Fiscal, valer-se de recursos do Fundo de Reserva, desde que observados os limites impostos no regimento interno.</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Proporcionalidade e limite de gasto sem aprovação coletiva.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 27, inciso XXIV">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 31 de 89</span>
+        <span class="badge b-inc">Inclusão</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 27, inciso XXIV</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>(sem dispositivo correspondente na minuta original)</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>XXIV – Buscar a aprovação do Conselho Fiscal nas despesas extraordinárias de caráter não urgentes (não previstas no orçamento), num montante de 03 (três) a 05 (cinco) salários-mínimos vigentes, para cada evento necessário.</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Proporcionalidade e limite de gasto sem aprovação coletiva.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 27, § 2º">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 32 de 89</span>
+        <span class="badge b-alt">Alteração</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 27, § 2º</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>§ 2º O parecer formal do Conselho Fiscal, na forma impressa ou eletrônica, deverá ser dado num prazo máximo de 48 (quarenta e oito) horas, contados da data da solicitação de apreciação encaminhada pelo Síndico com as devidas justificativas formais.</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>§ 2º O parecer formal do Conselho Fiscal, na forma impressa ou eletrônica, deverá ser dado num prazo máximo de 03 (três) dias úteis, contados da data da solicitação de apreciação encaminhada pelo Síndico com as devidas justificativas formais.</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Previsibilidade e clareza na contagem dos prazos (dias úteis).</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 27, inciso XXV">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 33 de 89</span>
+        <span class="badge b-alt">Alteração</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 27, inciso XXV</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>XXV – Elaborar, alterar e aprovar através do Corpo Diretivo, Regulamentos e Regimentos Internos e outras normatizações que se fizerem relevantes e necessárias para o bom e pleno funcionamento do Condomínio, valendo de pronto as suas decisões, até que elas venham a ser retificadas ou modificadas por Assembleia Geral.</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>XXV – Elaborar, alterar e aprovar através do Corpo Diretivo, Regulamentos e Regimentos Internos e outras normatizações que se fizerem relevantes e necessárias para o bom e pleno funcionamento do Condomínio, valendo de pronto as suas decisões, até que elas venham a ser retificadas ou modificadas por Assembleia Geral devendo ser submetidos à ratificação em Assembleia Geral no prazo máximo de 30 (trinta) dias consecutivos, sob pena de perda de eficácia.</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Continuidade da administração com legitimidade eleitoral, mediante assembleia em prazo definido.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 27, § 6º">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 34 de 89</span>
+        <span class="badge b-sup">Supressão</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 27, § 6º</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>§ 6º O Síndico não receberá remuneração mensal, tendo direito à isenção da taxa condominial ordinária de uma de suas unidades, podendo por aprovação do Conselho Fiscal receber ajuda de custo ou reembolsos de despesas, bem como não poderá delegar suas funções a terceiros estranhos à Administração do Condomínio, ressalvada a hipótese da contratação de Síndico profissional (não condômino).</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>(dispositivo suprimido)</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Transparência e controle do custo pela assembleia, no lugar de benefício fixo predefinido.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 28, caput">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 35 de 89</span>
+        <span class="badge b-sup">Supressão</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 28, caput</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>Art. 28. Em caso de ausência por morte, afastamento temporário (até 90 (noventa) dias), afastamento definitivo (por impossibilidade de cumprimento do mandato por acidentes ou incidentes de natureza física, motora, neurológica, desaparecimento, etc.), ou por renúncia, omissão, impedimento ou destituição do Síndico, caberá a este responder pela prestação de contas de sua gestão, devendo ser substituído pelo Subsíndico até o final do mandato, que, nos mesmos casos acima (ausência por morte, afastamentos, renúncia, omissão, impedimento, destituição ou recusa em assumir tal função), deverá ser substituído pelo Presidente do Conselho Fiscal, ou nos mesmos casos acima e inclusive de sua recusa em assumir esta função, deverá ser substituído por quaisquer dos demais conselheiros, e havendo os mesmos casos acima e inclusive a recusa destes, deverá ser substituído pelo Presidente do Conselho Consultivo que dispuser a fazê-lo, ou nos mesmos casos acima (ausência por morte, afastamentos, renúncia, omissão, impedimento, destituição ou recusa em assumir tal função), por quaisquer outro membro deste Conselho que vier a ser pelos demais membros o escolhido.</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>(dispositivo suprimido)</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Reescreve a sucessão de cargos vagos, com assunção pelo Subsíndico ou pelo Conselho e convocação de assembleia, no lugar da cadeia anterior vinculada à incorporadora.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 28, Parágrafo único">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 36 de 89</span>
+        <span class="badge b-sup">Supressão</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 28, Parágrafo único</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>Parágrafo único. Na renúncia, destituição, ausência, impedimento ou recusa de membros do Corpo Diretivo para substituir o Síndico, poderá ser realizada uma reunião aberta aos condôminos, sem a necessidade de convocação de Assembleia Geral, para que seja escolhido entre eles, um condômino para representar o condomínio em caráter temporário, o qual será denominado por essa Convenção como “administrador transitório”, que terá a responsabilidade de responder pelas funções de Síndico e demais funções e atribuições neste interim, cabendo a ele a obrigação de convocar uma Assembleia Geral, no prazo máximo de 15 (quinze) dias contados da data desta reunião, cabendo a ele instalar e presidir a Assembleia Geral, a qual deverá eleger um novo síndico e/ou demais cargos, visando o cumprimento do complemento de mandato dos renunciantes, impedidos, omissos ou destituídos.</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>(dispositivo suprimido)</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Reescreve a sucessão de cargos vagos, com assunção pelo Subsíndico ou pelo Conselho e convocação de assembleia, no lugar da cadeia anterior vinculada à incorporadora.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 28, caput">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 37 de 89</span>
+        <span class="badge b-inc">Inclusão</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 28, caput</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>(sem dispositivo correspondente na minuta original)</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>Art. 28. Em caso de morte, afastamento temporário de até 90 (noventa) dias, afastamento definitivo, renúncia, omissão, impedimento ou destituição do Síndico, caberá a este responder pela prestação de contas dos atos praticados durante sua gestão, sendo substituído pelo Subsíndico.</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Reescreve a sucessão de cargos vagos, com assunção pelo Subsíndico ou pelo Conselho e convocação de assembleia, no lugar da cadeia anterior vinculada à incorporadora.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 28, § 1º">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 38 de 89</span>
+        <span class="badge b-inc">Inclusão</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 28, § 1º</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>(sem dispositivo correspondente na minuta original)</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>§ 1º Na hipótese de afastamento definitivo, renúncia, impedimento, destituição, morte ou recusa do Subsíndico em assumir ou permanecer no exercício do cargo de Síndico, o Presidente do Conselho Fiscal assumirá interinamente a administração do Condomínio, devendo convocar Assembleia Geral, no prazo máximo de 30 (trinta) dias consecutivos, para eleição de novo Síndico e Subsíndico, que exercerão mandato complementar correspondente ao período remanescente do mandato em curso.</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Continuidade da administração com legitimidade eleitoral, mediante assembleia em prazo definido.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 28, § 2º">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 39 de 89</span>
+        <span class="badge b-inc">Inclusão</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 28, § 2º</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>(sem dispositivo correspondente na minuta original)</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>§ 2º Na impossibilidade ou recusa do Presidente do Conselho Fiscal, assumirá interinamente um dos demais membros do Conselho Fiscal, escolhido entre seus integrantes. Persistindo a impossibilidade ou recusa, assumirá o Presidente do Conselho Consultivo e, na impossibilidade ou recusa deste, outro membro desse Conselho, escolhido por seus pares, aplicando-se, em qualquer hipótese, a obrigação de convocação da Assembleia Geral para a eleição prevista no parágrafo anterior.</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Reescreve a sucessão de cargos vagos, com assunção pelo Subsíndico ou pelo Conselho e convocação de assembleia, no lugar da cadeia anterior vinculada à incorporadora.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 29, caput">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 40 de 89</span>
+        <span class="badge b-sup">Supressão</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 29, caput</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>Art. 29. O Subsíndico exercerá as suas funções que o Síndico assim determinar, sem qualquer remuneração, além das atribuições normais a que a lei lhe confere, para um mandato de 02 (dois) anos, podendo ser reeleito.</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>(dispositivo suprimido)</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Estabilidade de gestão com rodízio; previne a perpetuação no cargo.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 29, caput">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 41 de 89</span>
+        <span class="badge b-inc">Inclusão</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 29, caput</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>(sem dispositivo correspondente na minuta original)</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>Art. 29. O Subsíndico exercerá as suas funções que o Síndico assim determinar, além das atribuições normais a que a lei lhe confere, para um mandato de 02 (dois) anos, podendo ser reeleito para o mesmo cargo, uma única vez por igual período, fazendo-se necessário um intervalo de duas eleições para que ele possa se candidatar novamente ao cargo, e sua contraprestação será definida em Assembleia Geral Ordinária.</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Estabilidade de gestão com rodízio; previne a perpetuação no cargo.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 29, Parágrafo único">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 42 de 89</span>
+        <span class="badge b-sup">Supressão</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 29, Parágrafo único</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>Parágrafo único. O Subsíndico deverá ser eleito em Assembleia Geral. exceto quando a Incorporadora estiver à frente dos dois primeiros mandatos, a qual terá o direito de exercer a escolha do membro que desempenhará este cargo, cabendo unicamente ela destituí-los e substituí-los a qualquer tempo, sem necessidade de Assembleia Geral, bastando documentar tais atos em ata própria. A candidatura para subsíndico deverá obedecer às determinações desta Convenção, e havendo Regulamento/Regimento de Eleição, as suas normatizações.</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>(dispositivo suprimido)</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Retira privilégio da incorporadora e devolve a decisão à assembleia e ao Corpo Diretivo.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 30, inciso I">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 43 de 89</span>
+        <span class="badge b-inc">Inclusão</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 30, inciso I</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>(sem dispositivo correspondente na minuta original)</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>I – Decidir pelo valor da remuneração do Síndico Profissional, quando este existir, desde que observado e respeitado o regimento interno.</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Transparência e controle do custo pela assembleia, no lugar de benefício fixo predefinido.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 30, inciso IV">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 44 de 89</span>
+        <span class="badge b-inc">Inclusão</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 30, inciso IV</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>(sem dispositivo correspondente na minuta original)</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>IV – Definir as penalidades e as respectivas multas por infrações cometidas pelos condôminos ou por quem estes forem os responsáveis, desde que observado e respeitado o regimento interno.</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Detalhe operacional remetido ao regimento interno, que se altera por maioria simples, mantendo a Convenção enxuta e adaptável.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 30, § 1º">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 45 de 89</span>
+        <span class="badge b-sup">Supressão</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 30, § 1º</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>§ 1º Os cargos de que tratam este artigo serão exercidos voluntariamente, sem qualquer remuneração dos seus membros, sem prejuízo da contratação de terceiros não condôminos, para realizar o suporte administrativo, técnico e operacional, de profissionais para assessoramento na análise dos projetos residenciais e fiscalização de obras e de demais obras e atividades, bem como de serviços gerais de administração, de segurança, técnico e de auditoria externa para suporte ao Corpo Diretivo e Conselhos Fiscal e Consultivo.</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>(dispositivo suprimido)</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Transparência e controle do custo pela assembleia, no lugar de benefício fixo predefinido.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 30, § 2º">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 46 de 89</span>
+        <span class="badge b-sup">Supressão</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 30, § 2º</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>§ 2º Enquanto não houver quórum mínimo de condôminos residentes no Condomínio interessados em compor o cargo de Síndico, Subsíndico e para compor o Conselho Fiscal e o Conselho Consultivo, admite-se a composição por condôminos não residentes.</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>(dispositivo suprimido)</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Remove a exceção que mantinha cargos sem eleição por falta de quórum, em linha com a competência da assembleia.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 30, § 3º">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 47 de 89</span>
+        <span class="badge b-sup">Supressão</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 30, § 3º</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>§ 3º O disposto no parágrafo 1º. deste artigo (vedação à remuneração dos cargos), não se aplica na hipótese de vir a ser contratado um Síndico Profissional (não condômino).</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>(dispositivo suprimido)</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Transparência e controle do custo pela assembleia, no lugar de benefício fixo predefinido.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 32, caput">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 48 de 89</span>
+        <span class="badge b-sup">Supressão</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 32, caput</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>Art. 32. A Assembleia Geral (Ordinária ou Extraordinária) poderá eleger o Síndico, o Subsíndico e os membros do Conselho Fiscal e do Conselho Consultivo, em parte ou no todo, ou mesmo por indicação/substituição ou destituição da Incorporadora nos primeiros 2 (dois) mandatos ou até que a Incorporadora detenha a propriedade de até 50% (cinquenta por cento) das unidades ou que forem a ela devolvidos por desfazimento de contrato de venda e compra (amigável ou judicial), ou destituí-los sempre que vier a praticar irregularidades, não prestar contas ou não cumprir regularmente as suas funções convenientemente para com o Condomínio, observado o direito à ampla defesa, cujo quorum de instalação deste item e sua respectiva deliberação, deverão respeitar o que estiver determinado nesta Convenção, podendo se dar por votação aberta ou fechada (secreta), cabendo ao Edital de Convocação determinar a forma de votação deste item.</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>(dispositivo suprimido)</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Detalha o conteúdo obrigatório do edital de convocação, inclusive o formato e o tipo de votação (aberta ou secreta).</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 33, § 1º">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 49 de 89</span>
+        <span class="badge b-inc">Inclusão</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 33, § 1º</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>(sem dispositivo correspondente na minuta original)</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>§ 1º As Assembleias Gerais poderão ser presenciais, eletrônicas (digitais ou virtuais) ou híbridas (presencial e eletrônica), e todas deverão seguir os ritos de convocação, instalação, presidência e secretaria dos trabalhos, conforme definido por esta Convenção, podendo suas atas serem elaboradas e disponibilizadas na forma impressa ou eletrônica. Devendo ser garantido, nas Assembleias realizadas nas modalidades eletrônica (digital ou virtual) ou híbrida, o registro dos votos em tempo real, por meio da plataforma utilizada ou de formulário eletrônico adequado, assegurando-se a integridade, a rastreabilidade, a auditoria das votações e as manifestações de vontade dos condôminos.</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Garante integridade, rastreabilidade e auditoria do voto em assembleias eletrônicas ou híbridas. (Há legislação de apoio, a confirmar com assessoria jurídica.)</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 33, § 4º">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 50 de 89</span>
+        <span class="badge b-inc">Inclusão</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 33, § 4º</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>(sem dispositivo correspondente na minuta original)</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>§ 4º Neste Edital deverá constar o tipo de Assembleia Geral (Ordinária ou Extraordinária), o formato de realização a ser escolhido Presencial ou Híbrida, e o tipo de votação, podendo ser aberta ou fechada (secreta) e nestes casos deverá constar o local de sua realização ou mesmo a opção pela forma Eletrônica. Em qualquer dos formatos escolhidos, deverá constar a Ordem do Dia, a data e os horários de primeira e segunda convocações; sendo que em primeira convocação, a Assembleia Geral deverá ser instalada somente com a presença mínima de 50% mais um (cinquenta por cento mais um) dos condôminos adimplentes, e em segunda convocação, 30 minutos após a primeira convocação, com qualquer número.</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Detalha o conteúdo obrigatório do edital de convocação, inclusive o formato e o tipo de votação (aberta ou secreta).</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 33, alínea b">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 51 de 89</span>
+        <span class="badge b-sup">Supressão</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 33, alínea b</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>b) Para a aprovação das alterações ao Instrumento de Convenção, além da aprovação da Assembleia Geral, após o atingimento dos quóruns qualificados, deverá ser obtida pelo Corpo Diretivo a sanção da Incorporadora, sendo consideradas aprovadas apenas as alterações que obtiverem a sua direta aprovação, enquanto esta detiver a propriedade de no mínimo 50 % (cinquenta por cento) dos lotes.</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>(dispositivo suprimido)</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>A alteração da Convenção se dá por quórum de 2/3; a lei não prevê sanção de terceiro, e a incorporadora não é órgão condominial. Equivaleria a veto perpétuo dos condôminos. <span class="legalbadge">base legal: CC, art. 1.333</span></p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 33, alínea c">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 52 de 89</span>
+        <span class="badge b-alt">Alteração</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 33, alínea c</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>c) Ser maior de 21 (vinte e um) anos;</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>c) Ser maior de 18 (dezoito) anos;</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Alinhamento à maioridade civil (capacidade plena aos 18 anos).</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 33, item 12.5">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 53 de 89</span>
+        <span class="badge b-inc">Inclusão</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 33, item 12.5</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>(sem dispositivo correspondente na minuta original)</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>12.5 É assegurado o direito de representação por procuração nas assembleias gerais. Contudo, fica expressamente proibida a concentração de votos, de modo que nenhum representante, seja ele condômino ou terceiro, poderá portar mais de 01 (uma) procuração por ato assemblear.</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Evita a captura da assembleia pelo acúmulo de procurações em um único representante.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 37, inciso I">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 54 de 89</span>
+        <span class="badge b-alt">Alteração</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 37, inciso I</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>I – A cada um ano ou em caso de vacância de cargos por renúncia, destituição, impedimento, omissão ou afastamento definitivo, realizar a eleição do Síndico, do Subsíndico, dos membros do Conselho Fiscal e do Conselho Consultivo, total ou parcialmente, para um mandato de 01 (um) ano</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>I – A cada um ano ou em caso de vacância de cargos por renúncia, destituição, impedimento, omissão ou afastamento definitivo, realizar a eleição do Síndico, do Subsíndico, dos membros do Conselho Fiscal e do Conselho Consultivo, total ou parcialmente, para um mandato de para um mandato de 02 (dois) anos, podendo ser reeleito para o mesmo cargo, uma única vez por igual período, fazendo-se necessário um intervalo de duas eleições para que ele possa se candidatar novamente ao cargo.</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Estabilidade de gestão com rodízio; previne a perpetuação no cargo.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 39, caput">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 55 de 89</span>
+        <span class="badge b-alt">Alteração</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 39, caput</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>Art. 39. O Conselho Fiscal é um órgão fiscalizador e de assessoramento à administração, com finalidade de suporte ao Síndico e aos demais integrantes do Corpo Diretivo do Condomínio. Será composto por até 03 (três) membros efetivos e por até 02 (dois) membros suplentes, que deverão ser condôminos adimplentes, para um mandato de 01 (um) ano, podendo ser reeleitos. As candidaturas deverão obedecer às determinações desta Convenção, e havendo Regulamento/Regimento de Eleição, as suas normatizações. As vagas serão ocupadas pelos eleitos em Assembleia Geral. exceto quando a Incorporadora estiver à frente dos dois primeiros mandatos, a qual terá o direito de exercer a escolha destes membros, cabendo unicamente ela destituí-los e substituí-los a qualquer tempo, sem necessidade de Assembleia Geral, bastando documentar tais atos em ata própria.</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>Art. 39. O Conselho Fiscal é um órgão fiscalizador e de assessoramento à administração, com finalidade de suporte ao Síndico e aos demais integrantes do Corpo Diretivo do Condomínio. Será composto por até 03 (três) membros efetivos e por até 02 (dois) membros suplentes, que deverão ser condôminos adimplentes, para um mandato de 02 (dois) anos, podendo ser reeleitos. As candidaturas deverão obedecer às determinações desta Convenção, e havendo Regulamento/Regimento de Eleição, as suas normatizações. As vagas serão ocupadas pelos eleitos em Assembleia Geral.</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Estabilidade de gestão com rodízio; previne a perpetuação no cargo.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 39, § 1º">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 56 de 89</span>
+        <span class="badge b-alt">Alteração</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 39, § 1º</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>§ 1º Os membros efetivos e suplentes não poderão receber qualquer remuneração</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>§ 1º Os membros efetivos e suplentes poderão receber contraprestação a ser definida em Assembleia Geral Ordinária e poderão ser reeleitos para um mandato de 02 (dois) anos, podendo ser reeleito para o mesmo cargo, uma única vez por igual período, fazendo-se necessário um intervalo de duas eleições para que ele possa se candidatar novamente ao cargo.</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Estabilidade de gestão com rodízio; previne a perpetuação no cargo.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 39, § 5º">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 57 de 89</span>
+        <span class="badge b-alt">Alteração</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 39, § 5º</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>§ 5º Havendo apenas 1 (um) único conselheiro com mandato vigente, as reuniões do Conselho Fiscal não poderão ser convocadas e realizadas, sendo que deverão ser substituídas pelas reuniões do Corpo Diretivo e no caso de sua não existência, pelo Síndico, seu substituto legal ou seu preposto.</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>§ 5º Havendo apenas 1 (um) único conselheiro com mandato vigente, o Síndico deverá convocar em até 30 (trinta) dias consecutivos Assembleia Geral Extraordinária para eleição dos membros faltantes para exercer mandato pelo período complementar.</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Continuidade da administração com legitimidade eleitoral, mediante assembleia em prazo definido.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 40, § 1º">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 58 de 89</span>
+        <span class="badge b-inc">Inclusão</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 40, § 1º</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>(sem dispositivo correspondente na minuta original)</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>§ 1º É de responsabilidade dos conselheiros manifestarem seu parecer, de forma individual e formalmente, em local próprio a ser determinado pela administração, podendo tal ato ser feito no formato impresso ou eletrônico, dentro do prazo máximo de 08 (oito) dias úteis, contados do fechamento dos demonstrativos mensais; sendo que após esse prazo e não havendo manifestação formal por parte dos mesmos, as contas relativas a determinado mês ou período, serão consideradas aprovadas pelo conselheiro omisso;</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Previsibilidade e clareza na contagem dos prazos (dias úteis).</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 40, inciso XI">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 59 de 89</span>
+        <span class="badge b-alt">Alteração</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 40, inciso XI</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>XI – Deliberar sobre despesas extraordinárias de caráter não urgentes (não previstas no orçamento), num montante de 10 (dez) à 20 (vinte) salários-mínimos vigentes.</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>XI – Deliberar sobre despesas extraordinárias de caráter não urgentes (não previstas no orçamento), num montante de 3 (três) a 5 (cinco) salários-mínimos vigentes por evento.</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Proporcionalidade e limite de gasto sem aprovação coletiva.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 43, caput">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 60 de 89</span>
+        <span class="badge b-alt">Alteração</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 43, caput</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>Art. 43. O Conselho Consultivo é um órgão de assessoramento técnico do condomínio, na forma desta Convenção e será composto por até 08 (oito) membros efetivos, e havendo candidatos até 04 (quatro) membros suplentes, para um mandato de 01 (um) ano 02 (dois) anos, podendo ser reeleitos, uma única vez, por igual período</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>Art. 43. O Conselho Consultivo é um órgão de assessoramento técnico do condomínio, na forma desta Convenção e será composto por até 08 (oito) membros efetivos, e havendo candidatos até 04 (quatro) membros suplentes, podendo ser eleitos para um mandato de 02 (dois) anos, podendo ser reeleito para o mesmo cargo, uma única vez por igual período, fazendo-se necessário um intervalo de duas eleições para que ele possa se candidatar novamente ao cargo.</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Estabilidade de gestão com rodízio; previne a perpetuação no cargo.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 43, § 1º">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 61 de 89</span>
+        <span class="badge b-alt">Alteração</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 43, § 1º</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>§ 1º Os membros efetivos e suplentes não poderão receber qualquer remuneração e poderão ser reeleitos.</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>§ 1º Os membros efetivos e suplentes terão sua contraprestação definida no regimento interno, podendo ser eleitos para um mandato de 02 (dois) anos, podendo ser reeleito para o mesmo cargo, uma única vez por igual período, fazendo-se necessário um intervalo de duas eleições para que ele possa se candidatar novamente ao cargo.</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Estabilidade de gestão com rodízio; previne a perpetuação no cargo.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 43, § 5º">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 62 de 89</span>
+        <span class="badge b-alt">Alteração</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 43, § 5º</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>§ 5º Havendo apenas 1 (um) único conselheiro com mandato vigente, as reuniões do Conselho Consultivo não poderão ser convocadas e realizadas, sendo que deverão ser substituídas pelas reuniões do Corpo Diretivo e no caso de sua não existência, pelo Síndico, seu substituto legal ou seu preposto.</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>§ 5ºHavendo apenas 1 (um) único conselheiro com mandato vigente, o Síndico deverá convocar em até 30 (trinta) dias consecutivos Assembleia Geral Extraordinária para eleição dos membros faltantes para exercer mandato pelo período complementar.</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Continuidade da administração com legitimidade eleitoral, mediante assembleia em prazo definido.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 44, § 1º">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 63 de 89</span>
+        <span class="badge b-inc">Inclusão</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 44, § 1º</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>(sem dispositivo correspondente na minuta original)</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>§ 1º É de responsabilidade dos conselheiros manifestarem seu parecer, de forma individual e formalmente, em local próprio a ser determinado pela administração, podendo tal ato ser feito no formato impresso ou eletrônico, dentro do prazo máximo de 08 (oito) dias úteis, contados da apresentação das plantas e demais documentos técnicos; sendo que após esse prazo e não havendo manifestação formal por parte deles, caberá ao síndico delegar esta função a alguém de sua confiança.</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Previsibilidade e clareza na contagem dos prazos (dias úteis).</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 49, caput">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 64 de 89</span>
+        <span class="badge b-alt">Alteração</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 49, caput</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>Art. 49. As Comissões de Trabalho poderão ser formadas por condôminos, pessoas físicas, maiores de 21 (vinte e um) anos, capazes, ou pelos representantes legais de pessoa jurídica que preencham esses requisitos, ou mesmo, por moradores das unidades autônomas, e desde que apresentem à Administração do Condomínio uma autorização formal do condômino proprietário da unidade, a quem este irá representar, o qual deverá obrigatoriamente estar adimplente com as suas obrigações perante o Condomínio, para que possa representá-lo em quaisquer Comissões de Trabalho.</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>Art. 49. As Comissões de Trabalho poderão ser formadas por condôminos, pessoas físicas, maiores de 18 (dezoito) anos, capazes, ou pelos representantes legais de pessoa jurídica que preencham esses requisitos, ou mesmo, por moradores das unidades autônomas, e desde que apresentem à Administração do Condomínio uma autorização formal do condômino proprietário da unidade, a quem este irá representar, o qual deverá obrigatoriamente estar adimplente com as suas obrigações perante o Condomínio, para que possa representá-lo em quaisquer Comissões de Trabalho.</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Alinhamento à maioridade civil (capacidade plena aos 18 anos).</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 50, inciso III">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 65 de 89</span>
+        <span class="badge b-alt">Alteração</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 50, inciso III</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>III – As funções desempenhadas pelos membros das Comissões de Trabalho não serão remuneradas.</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>III – As funções desempenhadas pelos membros das Comissões de Trabalho terão suas contraprestações definidas em regimento interno.</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Transparência e controle do custo pela assembleia, no lugar de benefício fixo predefinido.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 51, § 3º">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 66 de 89</span>
+        <span class="badge b-alt">Alteração</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 51, § 3º</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>§ 3º Um Regulamento de Eleição poderá ser elaborado e aprovado pela Incorporadora para ser válido a partir de um mandato condominial em que o empreendedor não exercer mais o seu direito na indicação de membros a Síndico, Subsíndico e aos citados Conselhos, de forma total ou parcial, cabendo nos mandatos sucessórios, a decisão do Corpo Diretivo pela elaboração, manutenção ou adequação deste Regulamento de Eleição, cujo conteúdo norteará os próximos processos eleitorais.</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>§ 3º Um Regulamento de Eleição poderá ser elaborado e aprovado em Assembleia Geral, cabendo nos mandatos sucessórios, a decisão do Corpo Diretivo pela elaboração, manutenção ou adequação deste Regulamento de Eleição, cujo conteúdo norteará os próximos processos eleitorais.</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>O Regulamento de Eleição rege o processo eleitoral dos condôminos e deve ser elaborado e aprovado em assembleia. Nenhum poder sobre as eleições do condomínio deve permanecer com a incorporadora, cujo interesse é conflitante.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 54, inciso I">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 67 de 89</span>
+        <span class="badge b-alt">Alteração</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 54, inciso I</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>I – Ter mais de 21 (vinte e um) anos, na data da posse;</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>I – Ter mais de 18 (dezoito) anos, na data da posse;</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Alinhamento à maioridade civil (capacidade plena aos 18 anos).</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 54, inciso III">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 68 de 89</span>
+        <span class="badge b-sup">Supressão</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 54, inciso III</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>III – Não possuir em seus registros qualquer penalidade às normas administrativas da Incorporadora e/ou do condomínio nos últimos 02 (dois) anos;</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>(dispositivo suprimido)</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Retira privilégio da incorporadora e devolve a decisão à assembleia e ao Corpo Diretivo.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 54, inciso VI">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 69 de 89</span>
+        <span class="badge b-inc">Inclusão</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 54, inciso VI</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>(sem dispositivo correspondente na minuta original)</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>VI – Não possuir vínculo com a construtora/incorporadora em qualquer modalidade.</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Retira privilégio da incorporadora e devolve a decisão à assembleia e ao Corpo Diretivo.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 55, caput">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 70 de 89</span>
+        <span class="badge b-alt">Alteração</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 55, caput</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>Art. 55. Nos mandatos em que a Incorporadora não vier a indicar ou a eleger o Síndico, o Subsíndico e os órgãos sociais, e não havendo inscrição de candidaturas a nenhum dos cargos do Corpo Diretivo, deverá ser agendada nova data para que eleições possam ser realizadas em até 60 (sessenta) dias.</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>Art. 55.Não havendo inscrição de candidaturas a nenhum dos cargos do Corpo Diretivo, deverá ser agendada nova data para que eleições possam ser realizadas em até 60 (sessenta) dias consecutivos.</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Retira privilégio da incorporadora e devolve a decisão à assembleia e ao Corpo Diretivo.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 59, § 4º">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 71 de 89</span>
+        <span class="badge b-inc">Inclusão</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 59, § 4º</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>(sem dispositivo correspondente na minuta original)</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>§ 4º Caberá à incorporadora o pagamento integral das taxas condominiais referentes às suas unidades não comercializadas, de forma isonômica em relação aos demais proprietários.</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Isonomia: as unidades da incorporadora devem custear o condomínio como qualquer proprietário.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 63, inciso III">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 72 de 89</span>
+        <span class="badge b-alt">Alteração</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 63, inciso III</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>III – Renúncia de taxa condominial de Síndico</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>III – contraprestações e remunerações do corpo diretivo a ser definido em assembleia.</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Transparência e controle do custo pela assembleia, no lugar de benefício fixo predefinido.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 66, § 2º">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 73 de 89</span>
+        <span class="badge b-alt">Alteração</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 66, § 2º</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>§ 2º Não sendo urgentes, as obras, reparos, aquisição de produtos ou equipamentos, ou a contratação de serviços, que importarem em despesas excessivas, além do valor limite de 20 (vinte) salários mínimos estabelecido neste instrumento, somente poderão ser efetuadas após autorização da Assembleia Geral, especialmente convocada pelo Síndico ou por seu substituto, ou em caso de omissão ou impedimento deste, conforme estabelecido nesta Convenção para os efeitos de convocação, instalação e presidência das Assembleias Gerais.</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>§ 2º Não sendo urgentes, as obras, reparos, aquisição de produtos ou equipamentos, ou a contratação de serviços, que importarem em despesas excessivas, além do valor limite de 3 (três) a 5 (cinco) salários mínimos estabelecido neste instrumento, somente poderão ser efetuadas após autorização da Assembleia Geral, especialmente convocada pelo Síndico ou por seu substituto, ou em caso de omissão ou impedimento deste, conforme estabelecido nesta Convenção para os efeitos de convocação, instalação e presidência das Assembleias Gerais.</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Proporcionalidade e limite de gasto sem aprovação coletiva.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 74, § 2º">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 74 de 89</span>
+        <span class="badge b-alt">Alteração</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 74, § 2º</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>§ 2º As árvores existentes nas áreas comuns do Condomínio deverão ser mantidas intactas, sendo que qualquer decisão contrária deverá ser tomada em Assembleia Geral, na forma desta Convenção.</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>§ 2º As árvores existentes nas áreas comuns do Condomínio deverão ser preservadas, sendo que qualquer decisão contrária deverá ser tomada em Assembleia Geral, na forma desta Convenção.</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Clareza redacional e reforço da proteção ambiental das áreas comuns.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 80, caput">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 75 de 89</span>
+        <span class="badge b-alt">Alteração</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 80, caput</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>Art. 80. Os portões ou cancelas do Condomínio permanecerão fechados e todas as pessoas que pretendem adentrar terão obrigatoriamente que se identificar na portaria e informar o destino.</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>Art. 80. Os portões ou cancelas do Condomínio permanecerão fechados e todas as pessoas que pretendem adentrar terão obrigatoriamente que se identificar. conforme normas definidas no regimento interno.</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Detalhe operacional remetido ao regimento interno, que se altera por maioria simples, mantendo a Convenção enxuta e adaptável.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 85, § 1º">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 76 de 89</span>
+        <span class="badge b-inc">Inclusão</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 85, § 1º</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>(sem dispositivo correspondente na minuta original)</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>§ 1º Caso haja a necessidade de cobrança de uma cota-parte de contribuição para a filiação e/ou participação do Condomínio nestas instituições, Órgãos ou Conselhos, ou mesmo vier a ser estabelecida uma outra forma de contribuição para este fim, o rateio desta despesa contribuição deverá ser de responsabilidade do Condomínio, através do rateio entre os condôminos, cabendo ao Corpo Diretivo definir a melhor forma de rateio e o valor aprovado em assembleia;</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Controle, pelos condôminos, do valor de contribuição a entidades externas.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 88, caput">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 77 de 89</span>
+        <span class="badge b-alt">Alteração</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 88, caput</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>Art. 88. A falta de cumprimento ou a inobservância de qualquer disposição desta Convenção e dos demais Regulamentos e Regimentos Internos submeterá o infrator a penas de advertência ou pecuniárias, que, no caso destas últimas, reverterão ao Condomínio, e que variam conforme a gravidade da infração, consoante a seguinte</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>Art. 88. A falta de cumprimento ou a inobservância de qualquer disposição desta Convenção e dos demais Regulamentos e Regimentos Internos submeterá o infrator a penas de advertência ou pecuniárias, que, no caso destas últimas, reverterão ao Condomínio, e que variam conforme a gravidade da infração, consoante a graduação e normas definidas em regimento interno e assegurado o direito de defesa.</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Graduação das penalidades remetida ao regimento interno, assegurado o direito de defesa; permite calibrar sem alterar a Convenção.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 88, alínea a">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 78 de 89</span>
+        <span class="badge b-sup">Supressão</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 88, alínea a</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>a) infração leve – correspondente a violação de pouca significância, cujos efeitos práticos podem ser relevados, e que implicará em advertência por escrito e registro nos prontuários do Condomínio;</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>(dispositivo suprimido)</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Graduação das penalidades remetida ao regimento interno, assegurado o direito de defesa; permite calibrar sem alterar a Convenção.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 88, alínea b">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 79 de 89</span>
+        <span class="badge b-sup">Supressão</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 88, alínea b</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>b) infração moderada – correspondente a violação de menor gravidade, cujos efeitos práticos são de fácil superação, e que implicará no pagamento de multa no valor de 1 (uma) taxa condominial ordinária mensal;</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>(dispositivo suprimido)</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Graduação das penalidades remetida ao regimento interno, assegurado o direito de defesa; permite calibrar sem alterar a Convenção.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 88, alínea c">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 80 de 89</span>
+        <span class="badge b-sup">Supressão</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 88, alínea c</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>c) infração grave – correspondente a violação grave, cujos efeitos práticos não são passíveis de ser relevados ou superados, e que implicará no pagamento de multa no valor de 3 (três) taxas condominiais ordinárias mensais; e</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>(dispositivo suprimido)</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Graduação das penalidades remetida ao regimento interno, assegurado o direito de defesa; permite calibrar sem alterar a Convenção.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 88, alínea d">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 81 de 89</span>
+        <span class="badge b-sup">Supressão</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 88, alínea d</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>d) infração gravíssima – correspondente a violação gravíssima, cujos efeitos práticos comprometem o patrimônio do Condomínio ou afetam os costumes ou interesses gerais dos condôminos, e que implicará no pagamento de multa no valor de 5 (cinco) taxas condominiais ordinárias mensais.</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>(dispositivo suprimido)</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Graduação das penalidades remetida ao regimento interno, assegurado o direito de defesa; permite calibrar sem alterar a Convenção.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 89, § 2º">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 82 de 89</span>
+        <span class="badge b-alt">Alteração</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 89, § 2º</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>§ 2º A notificação da penalização informará a infração cometida e as circunstâncias de fato em que se deu. Informará, outrossim, que eventual multa correspondente será cobrada juntamente primeira taxa condominial mensal que se seguir, salvo na hipótese de o sistema bancário, e/ou administrativo, já haver emitido os boletos de cobrança das taxas seguintes, hipótese em que a multa será cobrada no mês subsequente.</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>§ 2º A notificação da penalização informará a infração cometida e as circunstâncias de fato em que se deu. Informará, outrossim, que eventual multa correspondente será cobrada na mesma data da primeira taxa condominial mensal que se seguir, em cobranças separadas, salvo na hipótese de o sistema bancário, e/ou administrativo, já haver emitido os boletos de cobrança das taxas seguintes, hipótese em que a multa será cobrada no mês subsequente.</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Disciplina a notificação da penalidade, com a descrição da infração e o prazo de defesa, assegurando o contraditório.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 89, § 3º">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 83 de 89</span>
+        <span class="badge b-inc">Inclusão</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 89, § 3º</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>(sem dispositivo correspondente na minuta original)</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>§ 3º O infrator que não se conformar com a aplicação de qualquer penalidade poderá recorrer da sua imposição no prazo de 10 (dez) dias úteis a contar do recebimento da respectiva notificação. O recurso deve ser formulado por escrito e encaminhado à administração, que terá idêntico prazo de 10 (dez) dias úteis para se manifestar pelo cancelamento ou pela manutenção da penalidade.</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Previsibilidade e clareza na contagem dos prazos (dias úteis).</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 89, § 4º">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 84 de 89</span>
+        <span class="badge b-inc">Inclusão</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 89, § 4º</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>(sem dispositivo correspondente na minuta original)</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>§ 4º Mantida a penalidade após a apreciação do recurso pelo Corpo Diretivo, o condômino poderá apelar para a Assembleia Geral. Em caso de multa pecuniária, porém, a apelação não terá efeito suspensivo, e o prazo para interposição do apelo é de 10 (dez) dias úteis a contar do pagamento.</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Previsibilidade e clareza na contagem dos prazos (dias úteis).</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 91, caput">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 85 de 89</span>
+        <span class="badge b-inc">Inclusão</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 91, caput</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>(sem dispositivo correspondente na minuta original)</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>Art. 91. O condômino será o responsável pelo pagamento da penalidade ocasionada por seus parentes, hóspedes, visitantes, prestadores de serviços, animais domésticos sob sua tutela ou qualquer pessoa sob sua ordem ou companhia nos recintos do Condomínio.</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Responsabiliza o condômino pelos atos e penalidades de seus dependentes, convidados, prepostos e animais sob sua tutela.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 94, caput">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 86 de 89</span>
+        <span class="badge b-inc">Inclusão</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 94, caput</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>(sem dispositivo correspondente na minuta original)</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>Art. 94. Salvo disposições expressas em contrário, os prazos especificados nesta Convenção contam-se em dias corridos e, caso expirem ou coincidam com feriados ou finais de semana, serão automaticamente prorrogados para o primeiro dia útil subsequente.</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Ressalva inicial para compatibilizar a contagem de prazos com os dispositivos que passam a adotar dias úteis.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 97, caput">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 87 de 89</span>
+        <span class="badge b-sup">Supressão</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 97, caput</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>Art. 97. Para compor o Corpo Diretivo do condomínio é necessário, ainda, que no ato da posse, o condômino esteja em situação regular junto à Incorporadora e ao condomínio, não possuindo qualquer infração ou débito em aberto até o ato da sua posse.</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>(dispositivo suprimido)</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Retira privilégio da incorporadora e devolve a decisão à assembleia e ao Corpo Diretivo.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 100 (artigo inteiro)">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 88 de 89</span>
+        <span class="badge b-sup">Supressão</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 100 (artigo inteiro)</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>Art. 100. O Condomínio não se responsabiliza em nenhuma hipótese pela reparação em caso de roubo, furto ou dano de qualquer espécie no interior do Condomínio ou de imóveis residenciais, ainda que em construção, e de pertences dos condôminos, residentes e/ou visitantes.</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>(artigo suprimido)</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>A isenção total de responsabilidade do condomínio é subjetiva: um funcionário do próprio condomínio pode causar o dano, hipótese em que o condomínio deve se responsabilizar. A matéria deve ser disciplinada no regimento interno.</p></div>
+    </div>
+  </section>
+  <section class="slide review" data-label="Art. 101, caput">
+    <div class="inner">
+      <div class="rev-head r r1">
+        <span class="eyebrow">Impugnação 89 de 89</span>
+        <span class="badge b-alt">Alteração</span>
+      </div>
+      <h2 class="r r1" style="margin-top:10px">Art. 101, caput</h2>
+      <div class="panels r r2">
+        <div class="panel pmin"><div class="plabel">Na minuta</div><p>Art. 101. Caberá ao Condomínio, de seu Corpo Diretivo, permitir a Incorporadora de manter, a título gratuito, a colocação de luminosos, placas, logomarca, totens, faixas e demais equipamentos ou meios físicos e eletrônicos, em qualquer espaço nas áreas do Condomínio e/ou em unidades imobiliárias não vendidas, para a promoção e venda destas ou para a manutenção de sua marca e/ou símbolo institucional, em locais a ser por ela escolhido, observando-se o padrão arquitetônico do empreendimento, os quais deverão serem mantidos e conservados às expensas da Incorporadora.</p></div>
+        <div class="panel ppro"><div class="plabel">Proposta</div><p>Art. 101. Caberá ao Condomínio, mediante decisão de seu Corpo Diretivo, permitir a Incorporadora de manter, a título oneroso, a colocação de luminosos, placas, logomarca, totens, faixas e demais equipamentos ou meios físicos e eletrônicos, em qualquer espaço nas áreas do Condomínio e/ou em unidades imobiliárias não vendidas, para a promoção e venda destas ou para a manutenção de sua marca e/ou símbolo institucional, em locais a ser por ela escolhido, observando-se o padrão arquitetônico do empreendimento, os quais deverão serem mantidos e conservados às expensas da Incorporadora.</p></div>
+      </div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Retira privilégio da incorporadora e devolve a decisão à assembleia e ao Corpo Diretivo.</p></div>
+    </div>
+  </section>
+
+  <section class="slide ocean center" data-label="Fechamento">
+    <div class="inner">
+      <div class="eyebrow r r1" style="justify-content:center;color:#bfe9f4">22 de junho de 2026</div>
+      <div class="date-big r r2">Sua casa,<br>seu voto.</div>
+      <p class="lead r r3" style="margin:16px auto 0;color:#dff0f8">Obrigado por revisar cada ponto. Toda proposta entra na pauta para deliberação.</p>
+    </div>
+  </section>
+
+</div>
+<button class="nav prev" id="prev" aria-label="Anterior">‹</button>
+<button class="nav next" id="next" aria-label="Próximo">›</button>
+<div class="hud"><span class="lbl" id="lbl">01</span></div>
+<script>
+(function(){
+  var slides=[].slice.call(document.querySelectorAll('.slide')),i=0,n=slides.length,reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var bar=document.getElementById('bar'),lbl=document.getElementById('lbl'),prev=document.getElementById('prev'),next=document.getElementById('next');
+  function pad(x){return (x<9?'0':'')+(x+1);}
+  function counted(s){s.querySelectorAll('[data-count]').forEach(function(el){if(el.dataset.done)return;el.dataset.done=1;var t=+el.getAttribute('data-count');if(reduce){el.textContent=t;return;}var st=null,d=900;function step(ts){if(!st)st=ts;var p=Math.min((ts-st)/d,1);el.textContent=Math.round(t*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(step);}requestAnimationFrame(step);});}
+  function go(k){k=Math.max(0,Math.min(n-1,k));slides[i].classList.remove('active');i=k;var s=slides[i];s.classList.add('active');s.querySelector('.inner').scrollTop=0;bar.style.width=(i/(n-1)*100)+'%';lbl.textContent=pad(i)+' / '+pad(n-1)+'  ·  '+(s.getAttribute('data-label')||'');prev.disabled=(i===0);next.disabled=(i===n-1);counted(s);}
+  next.addEventListener('click',function(){go(i+1)});prev.addEventListener('click',function(){go(i-1)});
+  document.addEventListener('keydown',function(e){var a=document.activeElement; if(e.key==='ArrowRight'||e.key==='PageDown'){e.preventDefault();go(i+1)}else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();go(i-1)}else if(e.key===' '){if(slides[i].querySelector('.inner').scrollHeight>slides[i].querySelector('.inner').clientHeight+4)return;e.preventDefault();go(i+1)}else if(e.key==='Home'){go(0)}else if(e.key==='End'){go(n-1)}});
+  var x0=null,y0=null;document.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;y0=e.touches[0].clientY},{passive:true});
+  document.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0,dy=e.changedTouches[0].clientY-y0;if(Math.abs(dx)>60&&Math.abs(dx)>Math.abs(dy))go(i+(dx<0?1:-1));x0=null;});
+  if(!reduce){document.addEventListener('pointermove',function(e){var cx=(e.clientX/innerWidth-.5),cy=(e.clientY/innerHeight-.5);slides[i].querySelectorAll('[data-float]').forEach(function(f){var sp=parseFloat(f.getAttribute('data-float'))||0;f.style.transform='translate('+(cx*40*sp)+'px,'+(cy*40*sp)+'px)';});});}
+  go(0);
+})();
+</script></body></html>
