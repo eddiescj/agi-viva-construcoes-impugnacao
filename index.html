@@ -27,7 +27,8 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
 .active .r{opacity:1;transform:none}.active .r1{transition-delay:.1s}.active .r2{transition-delay:.2s}.active .r3{transition-delay:.3s}.active .r4{transition-delay:.4s}.active .r5{transition-delay:.5s}.active .r6{transition-delay:.6s}
 .bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--ocean),var(--azure));z-index:60;transition:width .35s ease}
 .hud{position:fixed;z-index:60;bottom:max(14px,env(safe-area-inset-bottom));left:0;right:0;display:flex;align-items:center;justify-content:center;gap:14px;pointer-events:none}
-.hud .lbl{font-family:var(--mono);font-size:12px;color:var(--muted);background:rgba(7,42,78,.6);border:1px solid var(--line);padding:5px 12px;border-radius:999px;backdrop-filter:blur(6px);max-width:60vw;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.hud .pill{font-family:var(--mono);font-size:12px;color:var(--muted);background:rgba(7,42,78,.6);border:1px solid var(--line);padding:5px 12px;border-radius:999px;backdrop-filter:blur(6px);max-width:62vw;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;pointer-events:auto}
+.hud .lbl{margin-left:5px}
 .nav{position:fixed;z-index:60;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:rgba(7,42,78,.5);color:#fff;cursor:pointer;font-size:20px;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(6px);transition:.2s}
 .nav:hover{background:var(--ocean);border-color:var(--ocean)}.nav.prev{left:16px}.nav.next{right:16px}.nav:disabled{opacity:.25;cursor:default}
 .brandmark{position:fixed;top:16px;left:20px;z-index:60;font-family:var(--display);font-weight:700;font-size:13.5px;color:#fff;opacity:.9}.brandmark .d{color:var(--azure)}
@@ -47,6 +48,7 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
 .step .k{flex:0 0 auto;width:29px;height:29px;border-radius:9px;background:var(--ocean);color:#fff;font-family:var(--mono);font-size:13px;display:flex;align-items:center;justify-content:center;margin-top:2px}
 .step p{font-size:15.5px;color:var(--muted)}.light .step p{color:#3f5a76}.step b{color:var(--text)}.light .step b{color:var(--ink)}
 .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:15px;margin-top:26px}
+.cols3{grid-template-columns:repeat(3,1fr)}
 .tile{border:1px solid var(--line);border-radius:14px;padding:20px;background:rgba(255,255,255,.03)}.light .tile{border-color:var(--line-d);background:#fff}
 .tile .ic{font-size:22px}.tile h3{margin:10px 0 6px}.tile p{font-size:14.5px;color:var(--muted)}.light .tile p{color:#3f5a76}
 .tags{margin-top:15px;display:flex;gap:8px;flex-wrap:wrap}.tag{font-family:var(--mono);font-size:11px;color:var(--azure);border:1px solid rgba(39,183,214,.4);border-radius:6px;padding:4px 9px}.light .tag{color:var(--ocean);border-color:rgba(18,115,192,.4)}
@@ -100,13 +102,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
 .why p{font-size:15.5px;line-height:1.62;color:var(--text);display:inline}
 .regtag{display:inline-block;font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;color:#0a3461;background:var(--azure-soft);border-radius:999px;padding:5px 11px}
 .legalbadge{font-family:var(--mono);font-size:11px;color:var(--gold);border:1px solid rgba(231,182,90,.5);background:rgba(231,182,90,.12);padding:3px 8px;border-radius:6px;white-space:nowrap}
-@media (max-width:820px){.cols{grid-template-columns:1fr}.grid2{grid-template-columns:1fr}.nums{grid-template-columns:1fr;gap:20px}.subnums{grid-template-columns:repeat(2,1fr)}.exh{grid-template-columns:1fr}.docs{grid-template-columns:1fr}.qrwrap{grid-template-columns:1fr}.panels{grid-template-columns:1fr}.hint{display:none}
-.nav{display:flex;top:auto;bottom:18px;transform:none;width:54px;height:54px;font-size:27px;background:var(--ocean);border-color:rgba(255,255,255,.4);color:#fff;box-shadow:0 10px 24px -8px rgba(0,0,0,.6)}
-.nav.prev{left:16px}.nav.next{right:16px}
-.hud{bottom:90px}.hud .lbl{max-width:72vw}
+@media (max-width:820px){.cols{grid-template-columns:1fr}.grid2{grid-template-columns:1fr}.cols3{grid-template-columns:1fr}.nums{grid-template-columns:1fr;gap:20px}.subnums{grid-template-columns:repeat(2,1fr)}.exh{grid-template-columns:1fr}.docs{grid-template-columns:1fr}.qrwrap{grid-template-columns:1fr}.panels{grid-template-columns:1fr}.hint{display:none}
+.nav{display:flex;top:auto;bottom:16px;transform:none;width:50px;height:50px;font-size:24px;background:var(--ocean);border-color:rgba(255,255,255,.45);color:#fff;box-shadow:0 8px 20px -8px rgba(0,0,0,.55)}
+.nav.prev{left:14px}.nav.next{right:14px}
+.hud{bottom:auto;top:13px}.hud .lbl{display:none}.brandmark{display:none}
 body.firsthint .nav.next{animation:navpulse 1.5s ease-in-out infinite}}
 @keyframes navpulse{0%,100%{box-shadow:0 0 0 0 rgba(39,183,214,.55)}50%{box-shadow:0 0 0 14px rgba(39,183,214,0)}}
-@media (max-width:560px){.slide{padding:46px 16px 122px}.slide.review{padding-top:54px}h1{font-size:31px}h2{font-size:24px}p.lead{font-size:16.5px}.date-big{font-size:52px}.bigcount{font-size:82px}.num .n{font-size:52px}.subnums{grid-template-columns:repeat(2,1fr)}.qrcard img{max-width:62vw}.brandmark{font-size:12px}.tile{padding:16px}.panel{padding:15px 16px}.panel p{font-size:16px}.panel .plabel{font-size:11.5px}.why{padding:16px}.why p{font-size:16px}.badge{font-size:11.5px}}
+@media (max-width:560px){.slide{padding:40px 15px 78px}.slide.review{padding-top:46px}h1{font-size:31px}h2{font-size:23px}p.lead{font-size:15px}.date-big{font-size:52px}.bigcount{font-size:80px}.num .n{font-size:50px}.subnums{grid-template-columns:repeat(2,1fr)}.qrcard img{max-width:62vw}.tile{padding:15px}.panel{padding:12px 13px}.slide.review h2{font-size:21px}.panels{margin-top:14px}.why{margin-top:12px;padding:14px}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:opacity .2s linear!important}.slide{transform:none}.r{opacity:1;transform:none}.strike::after{width:100%}.ins{opacity:1}}
 </style></head><body>
 <div class="bar" id="bar"></div>
@@ -215,7 +217,7 @@ body.firsthint .nav.next{animation:navpulse 1.5s ease-in-out infinite}}
     <div class="inner">
       <div class="eyebrow r r1">As mudanças, por tema</div>
       <h2 class="r r2" style="margin-top:12px">Cinco frentes, uma direção.</h2>
-      <div class="grid2" style="grid-template-columns:repeat(3,1fr)">
+      <div class="grid2 cols3">
         <div class="tile r r3"><div class="ic">⚖️</div><h3>Privilégios da incorporadora</h3><p>Sai o poder de escolher dirigentes, dispensar assembleias e vetar mudanças.</p></div>
         <div class="tile r r4"><div class="ic">🗳️</div><h3>Mandatos e continuidade</h3><p>1 para 2 anos, reeleição única, sucessão por assembleia em 30 dias.</p></div>
         <div class="tile r r5"><div class="ic">📘</div><h3>Detalhe ao regimento</h3><p>O que muda sempre sai da convenção e vai ao regimento.</p></div>
@@ -257,14 +259,14 @@ body.firsthint .nav.next{animation:navpulse 1.5s ease-in-out infinite}}
       <div class="rev-head r r1">
         <span class="eyebrow">Proposta 1 de 89</span>
         <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
-        <span class="regtag">↪ vai pro regimento interno</span>
+        <span class="regtag">↪ vai ser votado no regimento interno</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 15, Parágrafo único</h2>
       <div class="panels r r2">
         <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Parágrafo único. O condômino ou possuidor que, por seu reiterado comportamento antissocial, gerar incompatibilidade de convivência com os demais condôminos ou possuidores, poderá ser constrangido a pagar multa correspondente ao décuplo do valor atribuído à contribuição para as despesas condominiais.</p></div>
         <div class="panel ppro"><div class="plabel">O que propomos</div><p>Parágrafo único. O condômino ou possuidor que, por seu reiterado comportamento antissocial, gerar incompatibilidade de convivência com os demais condôminos ou possuidores, poderá ser constrangido a pagar multa a ser definida em regimento interno para as despesas condominiais.</p></div>
       </div>
-      <div class="why r r3"><span class="wl">Por quê</span> <p>É um detalhe do dia a dia. A proposta é tratar essa regra no regimento interno. O regimento é mais fácil de mudar: basta a maioria votar, não precisa de 2/3 dos votos. Assim a regra pode ser ajustada quando precisar, sem mexer na convenção inteira.</p></div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>É um detalhe do dia a dia. A proposta é que essa regra seja decidida e votada pelos moradores no regimento interno, e não fique presa na convenção. O regimento é mais fácil de ajustar (basta a maioria votar, não precisa de 2/3). Assim a regra pode ser revista quando o condomínio quiser.</p></div>
     </div>
   </section>
   <section class="slide review" data-label="Art. 23, inciso V">
@@ -272,14 +274,14 @@ body.firsthint .nav.next{animation:navpulse 1.5s ease-in-out infinite}}
       <div class="rev-head r r1">
         <span class="eyebrow">Proposta 2 de 89</span>
         <span class="badge b-sup"><span class="bsym">−</span> Tira da convenção</span>
-        <span class="regtag">↪ vai pro regimento interno</span>
+        <span class="regtag">↪ vai ser votado no regimento interno</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 23, inciso V</h2>
       <div class="panels r r2">
         <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>V – Não promover ou deixar que promovam atividades ruidosas em suas respectivas unidades autônomas, de forma a perturbar o sossego, a salubridade e a segurança dos demais condôminos.</p></div>
         <div class="panel ppro"><div class="plabel">O que propomos</div><p>Propomos tirar esse trecho da convenção.</p></div>
       </div>
-      <div class="why r r3"><span class="wl">Por quê</span> <p>Isso é regra de convivência do dia a dia. O lugar dela é o regimento interno, e não a convenção. Esse ponto vai ser tratado lá no regimento.</p></div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>É uma regra de convivência do dia a dia. O lugar dela é o regimento interno, que vai ser discutido e votado pelos moradores, e não fica preso na convenção.</p></div>
     </div>
   </section>
   <section class="slide review" data-label="Art. 23, inciso VI">
@@ -287,14 +289,14 @@ body.firsthint .nav.next{animation:navpulse 1.5s ease-in-out infinite}}
       <div class="rev-head r r1">
         <span class="eyebrow">Proposta 3 de 89</span>
         <span class="badge b-sup"><span class="bsym">−</span> Tira da convenção</span>
-        <span class="regtag">↪ vai pro regimento interno</span>
+        <span class="regtag">↪ vai ser votado no regimento interno</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 23, inciso VI</h2>
       <div class="panels r r2">
         <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>VI – Não remover pó de tapetes, cortinas e similares, senão por meio que disperse a poeira sem causar incômodo a outros condôminos.</p></div>
         <div class="panel ppro"><div class="plabel">O que propomos</div><p>Propomos tirar esse trecho da convenção.</p></div>
       </div>
-      <div class="why r r3"><span class="wl">Por quê</span> <p>Isso é regra de convivência do dia a dia. O lugar dela é o regimento interno, e não a convenção. Esse ponto vai ser tratado lá no regimento.</p></div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>É uma regra de convivência do dia a dia. O lugar dela é o regimento interno, que vai ser discutido e votado pelos moradores, e não fica preso na convenção.</p></div>
     </div>
   </section>
   <section class="slide review" data-label="Art. 23, inciso VII">
@@ -302,14 +304,14 @@ body.firsthint .nav.next{animation:navpulse 1.5s ease-in-out infinite}}
       <div class="rev-head r r1">
         <span class="eyebrow">Proposta 4 de 89</span>
         <span class="badge b-sup"><span class="bsym">−</span> Tira da convenção</span>
-        <span class="regtag">↪ vai pro regimento interno</span>
+        <span class="regtag">↪ vai ser votado no regimento interno</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 23, inciso VII</h2>
       <div class="panels r r2">
         <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>VII – Não estender roupas, tapetes ou quaisquer outros objetos nas janelas ou outro lugar visível do exterior, ou expô-los em locais com risco de caírem.</p></div>
         <div class="panel ppro"><div class="plabel">O que propomos</div><p>Propomos tirar esse trecho da convenção.</p></div>
       </div>
-      <div class="why r r3"><span class="wl">Por quê</span> <p>Isso é regra de convivência do dia a dia. O lugar dela é o regimento interno, e não a convenção. Esse ponto vai ser tratado lá no regimento.</p></div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>É uma regra de convivência do dia a dia. O lugar dela é o regimento interno, que vai ser discutido e votado pelos moradores, e não fica preso na convenção.</p></div>
     </div>
   </section>
   <section class="slide review" data-label="Art. 23, inciso VIII">
@@ -317,14 +319,14 @@ body.firsthint .nav.next{animation:navpulse 1.5s ease-in-out infinite}}
       <div class="rev-head r r1">
         <span class="eyebrow">Proposta 5 de 89</span>
         <span class="badge b-sup"><span class="bsym">−</span> Tira da convenção</span>
-        <span class="regtag">↪ vai pro regimento interno</span>
+        <span class="regtag">↪ vai ser votado no regimento interno</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 23, inciso VIII</h2>
       <div class="panels r r2">
         <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>VIII – Não lançar, em hipótese alguma, objetos, mormente líquidos, sobre áreas comuns.</p></div>
         <div class="panel ppro"><div class="plabel">O que propomos</div><p>Propomos tirar esse trecho da convenção.</p></div>
       </div>
-      <div class="why r r3"><span class="wl">Por quê</span> <p>Isso é regra de convivência do dia a dia. O lugar dela é o regimento interno, e não a convenção. Esse ponto vai ser tratado lá no regimento.</p></div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>É uma regra de convivência do dia a dia. O lugar dela é o regimento interno, que vai ser discutido e votado pelos moradores, e não fica preso na convenção.</p></div>
     </div>
   </section>
   <section class="slide review" data-label="Art. 23, inciso IX">
@@ -332,14 +334,14 @@ body.firsthint .nav.next{animation:navpulse 1.5s ease-in-out infinite}}
       <div class="rev-head r r1">
         <span class="eyebrow">Proposta 6 de 89</span>
         <span class="badge b-sup"><span class="bsym">−</span> Tira da convenção</span>
-        <span class="regtag">↪ vai pro regimento interno</span>
+        <span class="regtag">↪ vai ser votado no regimento interno</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 23, inciso IX</h2>
       <div class="panels r r2">
         <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>IX – Não colocar lixo, detritos de qualquer natureza etc., em lugares diversos dos coletores para tais destinados, e nestes locais colocá-los devidamente embalados.</p></div>
         <div class="panel ppro"><div class="plabel">O que propomos</div><p>Propomos tirar esse trecho da convenção.</p></div>
       </div>
-      <div class="why r r3"><span class="wl">Por quê</span> <p>Isso é regra de convivência do dia a dia. O lugar dela é o regimento interno, e não a convenção. Esse ponto vai ser tratado lá no regimento.</p></div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>É uma regra de convivência do dia a dia. O lugar dela é o regimento interno, que vai ser discutido e votado pelos moradores, e não fica preso na convenção.</p></div>
     </div>
   </section>
   <section class="slide review" data-label="Art. 23, inciso X">
@@ -347,14 +349,14 @@ body.firsthint .nav.next{animation:navpulse 1.5s ease-in-out infinite}}
       <div class="rev-head r r1">
         <span class="eyebrow">Proposta 7 de 89</span>
         <span class="badge b-sup"><span class="bsym">−</span> Tira da convenção</span>
-        <span class="regtag">↪ vai pro regimento interno</span>
+        <span class="regtag">↪ vai ser votado no regimento interno</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 23, inciso X</h2>
       <div class="panels r r2">
         <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>X – Não colocar, nem deixar que coloquem, nas partes comuns do Condomínio, materiais de construção ou instalação, de qualquer natureza que forem.</p></div>
         <div class="panel ppro"><div class="plabel">O que propomos</div><p>Propomos tirar esse trecho da convenção.</p></div>
       </div>
-      <div class="why r r3"><span class="wl">Por quê</span> <p>Isso é regra de convivência do dia a dia. O lugar dela é o regimento interno, e não a convenção. Esse ponto vai ser tratado lá no regimento.</p></div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>É uma regra de convivência do dia a dia. O lugar dela é o regimento interno, que vai ser discutido e votado pelos moradores, e não fica preso na convenção.</p></div>
     </div>
   </section>
   <section class="slide review" data-label="Art. 23, inciso XIV">
@@ -362,14 +364,14 @@ body.firsthint .nav.next{animation:navpulse 1.5s ease-in-out infinite}}
       <div class="rev-head r r1">
         <span class="eyebrow">Proposta 8 de 89</span>
         <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
-        <span class="regtag">↪ vai pro regimento interno</span>
+        <span class="regtag">↪ vai ser votado no regimento interno</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 23, inciso XIV</h2>
       <div class="panels r r2">
         <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>XIV – Reparar os danos que causar, dolosa ou culposamente, por mau uso ou defeito em coisas de suas unidades autônomas, nas partes comuns ou em outras unidades autônomas, bem como fazer cessar imediatamente as causas e ressarcir prejuízos,</p></div>
         <div class="panel ppro"><div class="plabel">O que propomos</div><p>XIV – Reparar os danos que causar, dolosa ou culposamente, por mau uso ou defeito em coisas de suas unidades autônomas, nas partes comuns ou em outras unidades autônomas, bem como fazer cessar imediatamente as causas e ressarcir prejuízos, conforme especificidades trazidas no regimento interno condominial.</p></div>
       </div>
-      <div class="why r r3"><span class="wl">Por quê</span> <p>É um detalhe do dia a dia. A proposta é tratar essa regra no regimento interno. O regimento é mais fácil de mudar: basta a maioria votar, não precisa de 2/3 dos votos. Assim a regra pode ser ajustada quando precisar, sem mexer na convenção inteira.</p></div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>É um detalhe do dia a dia. A proposta é que essa regra seja decidida e votada pelos moradores no regimento interno, e não fique presa na convenção. O regimento é mais fácil de ajustar (basta a maioria votar, não precisa de 2/3). Assim a regra pode ser revista quando o condomínio quiser.</p></div>
     </div>
   </section>
   <section class="slide review" data-label="Art. 23, inciso XV">
@@ -377,14 +379,14 @@ body.firsthint .nav.next{animation:navpulse 1.5s ease-in-out infinite}}
       <div class="rev-head r r1">
         <span class="eyebrow">Proposta 9 de 89</span>
         <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
-        <span class="regtag">↪ vai pro regimento interno</span>
+        <span class="regtag">↪ vai ser votado no regimento interno</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 23, inciso XV</h2>
       <div class="panels r r2">
         <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>XV – Indenizar os danos que causar às partes e coisas comuns, pelo valor que lhe for apresentado pelo Síndico ou seu preposto, correspondente aos custos da reparação devidamente comprovados</p></div>
         <div class="panel ppro"><div class="plabel">O que propomos</div><p>XV – Indenizar os danos que causar às partes e coisas comuns, pelo valor que lhe for apresentado pelo Síndico ou seu preposto, correspondente aos custos da reparação devidamente comprovados e validados pelo conselho fiscal, conforme procedimento previsto no regimento interno condominial.</p></div>
       </div>
-      <div class="why r r3"><span class="wl">Por quê</span> <p>É um detalhe do dia a dia. A proposta é tratar essa regra no regimento interno. O regimento é mais fácil de mudar: basta a maioria votar, não precisa de 2/3 dos votos. Assim a regra pode ser ajustada quando precisar, sem mexer na convenção inteira.</p></div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>É um detalhe do dia a dia. A proposta é que essa regra seja decidida e votada pelos moradores no regimento interno, e não fique presa na convenção. O regimento é mais fácil de ajustar (basta a maioria votar, não precisa de 2/3). Assim a regra pode ser revista quando o condomínio quiser.</p></div>
     </div>
   </section>
   <section class="slide review" data-label="Art. 23, inciso XVI">
@@ -407,14 +409,14 @@ body.firsthint .nav.next{animation:navpulse 1.5s ease-in-out infinite}}
       <div class="rev-head r r1">
         <span class="eyebrow">Proposta 11 de 89</span>
         <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
-        <span class="regtag">↪ vai pro regimento interno</span>
+        <span class="regtag">↪ vai ser votado no regimento interno</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 23, inciso XVII</h2>
       <div class="panels r r2">
         <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>XVII – Informar à administração do Condomínio para o devido controle de acesso e outras necessidades internas, o nome de todo e qualquer morador ou ocupante de sua Unidade, mesmo em caráter temporário,</p></div>
         <div class="panel ppro"><div class="plabel">O que propomos</div><p>XVII – Informar à administração do Condomínio para o devido controle de acesso e outras necessidades internas, o nome de todo e qualquer morador ou ocupante de sua Unidade, mesmo em caráter temporário, conforme especificidades determinadas pelo regimento interno.</p></div>
       </div>
-      <div class="why r r3"><span class="wl">Por quê</span> <p>É um detalhe do dia a dia. A proposta é tratar essa regra no regimento interno. O regimento é mais fácil de mudar: basta a maioria votar, não precisa de 2/3 dos votos. Assim a regra pode ser ajustada quando precisar, sem mexer na convenção inteira.</p></div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>É um detalhe do dia a dia. A proposta é que essa regra seja decidida e votada pelos moradores no regimento interno, e não fique presa na convenção. O regimento é mais fácil de ajustar (basta a maioria votar, não precisa de 2/3). Assim a regra pode ser revista quando o condomínio quiser.</p></div>
     </div>
   </section>
   <section class="slide review" data-label="Art. 23, inciso XVIII">
@@ -422,14 +424,14 @@ body.firsthint .nav.next{animation:navpulse 1.5s ease-in-out infinite}}
       <div class="rev-head r r1">
         <span class="eyebrow">Proposta 12 de 89</span>
         <span class="badge b-sup"><span class="bsym">−</span> Tira da convenção</span>
-        <span class="regtag">↪ vai pro regimento interno</span>
+        <span class="regtag">↪ vai ser votado no regimento interno</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 23, inciso XVIII</h2>
       <div class="panels r r2">
         <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>XVIII – Fornecer a administração do Condomínio todos os meios de comunicação possíveis (telefones e endereços fixos e eletrônicos), para o recebimento de informativos e avisos, inclusive das alterações subsequentes.</p></div>
         <div class="panel ppro"><div class="plabel">O que propomos</div><p>Propomos tirar esse trecho da convenção.</p></div>
       </div>
-      <div class="why r r3"><span class="wl">Por quê</span> <p>Isso é regra de convivência do dia a dia. O lugar dela é o regimento interno, e não a convenção. Esse ponto vai ser tratado lá no regimento.</p></div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>É uma regra de convivência do dia a dia. O lugar dela é o regimento interno, que vai ser discutido e votado pelos moradores, e não fica preso na convenção.</p></div>
     </div>
   </section>
   <section class="slide review" data-label="Art. 23, inciso XIX">
@@ -437,14 +439,14 @@ body.firsthint .nav.next{animation:navpulse 1.5s ease-in-out infinite}}
       <div class="rev-head r r1">
         <span class="eyebrow">Proposta 13 de 89</span>
         <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
-        <span class="regtag">↪ vai pro regimento interno</span>
+        <span class="regtag">↪ vai ser votado no regimento interno</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 23, inciso XIX</h2>
       <div class="panels r r2">
         <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>XIX – Colaborar com a preservação do patrimônio físico, econômico e moral do Condomínio,</p></div>
         <div class="panel ppro"><div class="plabel">O que propomos</div><p>XIX – Colaborar com a preservação do patrimônio físico, econômico e moral do Condomínio, conforme especificidades determinadas pelo regimento interno.</p></div>
       </div>
-      <div class="why r r3"><span class="wl">Por quê</span> <p>É um detalhe do dia a dia. A proposta é tratar essa regra no regimento interno. O regimento é mais fácil de mudar: basta a maioria votar, não precisa de 2/3 dos votos. Assim a regra pode ser ajustada quando precisar, sem mexer na convenção inteira.</p></div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>É um detalhe do dia a dia. A proposta é que essa regra seja decidida e votada pelos moradores no regimento interno, e não fique presa na convenção. O regimento é mais fácil de ajustar (basta a maioria votar, não precisa de 2/3). Assim a regra pode ser revista quando o condomínio quiser.</p></div>
     </div>
   </section>
   <section class="slide review" data-label="Art. 23, inciso XX">
@@ -452,14 +454,14 @@ body.firsthint .nav.next{animation:navpulse 1.5s ease-in-out infinite}}
       <div class="rev-head r r1">
         <span class="eyebrow">Proposta 14 de 89</span>
         <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
-        <span class="regtag">↪ vai pro regimento interno</span>
+        <span class="regtag">↪ vai ser votado no regimento interno</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 23, inciso XX</h2>
       <div class="panels r r2">
         <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>XX – Locações por temporada realizadas pelos condôminos, de forma direta ou por meio de aplicativos ou outros meios eletrônicos, deverão ser submetidas às normatizações estabelecidas pela administração do Condomínio, para que seus hóspedes ou inquilinos tenham o direito de admissão ao condomínio, cabendo aos mesmos o respeito e o cumprimento às normatizações condominiais.</p></div>
         <div class="panel ppro"><div class="plabel">O que propomos</div><p>XX – Locações por temporada realizadas pelos condôminos, de forma direta ou por meio de aplicativos ou outros meios eletrônicos, deverão ser submetidas às normatizações estabelecidas pela administração do Condomínio, para que seus hóspedes ou inquilinos tenham o direito de admissão ao condomínio, cabendo aos mesmos o respeito e o cumprimento às normatizações condominiais. A admissibilidade da locação por temporada e as respectivas condições são definidas pelo regimento interno.</p></div>
       </div>
-      <div class="why r r3"><span class="wl">Por quê</span> <p>É um detalhe do dia a dia. A proposta é tratar essa regra no regimento interno. O regimento é mais fácil de mudar: basta a maioria votar, não precisa de 2/3 dos votos. Assim a regra pode ser ajustada quando precisar, sem mexer na convenção inteira.</p></div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>É um detalhe do dia a dia. A proposta é que essa regra seja decidida e votada pelos moradores no regimento interno, e não fique presa na convenção. O regimento é mais fácil de ajustar (basta a maioria votar, não precisa de 2/3). Assim a regra pode ser revista quando o condomínio quiser.</p></div>
     </div>
   </section>
   <section class="slide review" data-label="Art. 23, § 3º">
@@ -482,14 +484,14 @@ body.firsthint .nav.next{animation:navpulse 1.5s ease-in-out infinite}}
       <div class="rev-head r r1">
         <span class="eyebrow">Proposta 16 de 89</span>
         <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
-        <span class="regtag">↪ vai pro regimento interno</span>
+        <span class="regtag">↪ vai ser votado no regimento interno</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 23, § 4º</h2>
       <div class="panels r r2">
         <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>§ 4º As despesas para reparação ou reposições, no que disser respeito a danos causados às partes comuns, quando não for possível determinar o causador ou responsável, serão repartidas por todos os condôminos equitativamente.</p></div>
         <div class="panel ppro"><div class="plabel">O que propomos</div><p>§ 4º As despesas para reparação ou reposições, no que disser respeito a danos causados às partes comuns, quando não for possível determinar o causador ou responsável devidamente apurado em procedimento especificado em regimento interno, serão repartidas por todos os condôminos equitativamente.</p></div>
       </div>
-      <div class="why r r3"><span class="wl">Por quê</span> <p>É um detalhe do dia a dia. A proposta é tratar essa regra no regimento interno. O regimento é mais fácil de mudar: basta a maioria votar, não precisa de 2/3 dos votos. Assim a regra pode ser ajustada quando precisar, sem mexer na convenção inteira.</p></div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>É um detalhe do dia a dia. A proposta é que essa regra seja decidida e votada pelos moradores no regimento interno, e não fique presa na convenção. O regimento é mais fácil de ajustar (basta a maioria votar, não precisa de 2/3). Assim a regra pode ser revista quando o condomínio quiser.</p></div>
     </div>
   </section>
   <section class="slide review" data-label="Art. 26, inciso III">
@@ -647,14 +649,14 @@ body.firsthint .nav.next{animation:navpulse 1.5s ease-in-out infinite}}
       <div class="rev-head r r1">
         <span class="eyebrow">Proposta 27 de 89</span>
         <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
-        <span class="regtag">↪ vai pro regimento interno</span>
+        <span class="regtag">↪ vai ser votado no regimento interno</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 27, inciso II</h2>
       <div class="panels r r2">
         <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>II – Defender o patrimônio do Condomínio, mantendo áreas comuns em boas condições de uso, de conservação e de boa aparência, e para tal, tem o direito de executar quaisquer consertos ou reparos de vulto, ou de caráter urgente e emergencial nas instalações, eventual ou acidentalmente danificadas, independentemente de consulta aos condôminos, assim como determinar a execução de obras de manutenção e serviços necessários ao normal funcionamento do condomínio.</p></div>
         <div class="panel ppro"><div class="plabel">O que propomos</div><p>II – Defender o patrimônio do Condomínio, mantendo as áreas comuns em boas condições de uso, conservação, segurança e boa aparência. Para esse fim, poderá determinar e executar quaisquer consertos, reparos, obras de manutenção e serviços necessários ao regular funcionamento do Condomínio destinados a reparar instalações eventual ou acidentalmente danificadas, independentemente de prévia consulta aos condôminos, desde que o respectivo custo não ultrapasse porcentagem do orçamento anual e regras definidas em regimento interno.</p></div>
       </div>
-      <div class="why r r3"><span class="wl">Por quê</span> <p>É um detalhe do dia a dia. A proposta é tratar essa regra no regimento interno. O regimento é mais fácil de mudar: basta a maioria votar, não precisa de 2/3 dos votos. Assim a regra pode ser ajustada quando precisar, sem mexer na convenção inteira.</p></div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>É um detalhe do dia a dia. A proposta é que essa regra seja decidida e votada pelos moradores no regimento interno, e não fique presa na convenção. O regimento é mais fácil de ajustar (basta a maioria votar, não precisa de 2/3). Assim a regra pode ser revista quando o condomínio quiser.</p></div>
     </div>
   </section>
   <section class="slide review" data-label="Art. 27, inciso VI">
@@ -677,14 +679,14 @@ body.firsthint .nav.next{animation:navpulse 1.5s ease-in-out infinite}}
       <div class="rev-head r r1">
         <span class="eyebrow">Proposta 29 de 89</span>
         <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
-        <span class="regtag">↪ vai pro regimento interno</span>
+        <span class="regtag">↪ vai ser votado no regimento interno</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 27, inciso VII</h2>
       <div class="panels r r2">
         <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>VII – Definir juntamente com o Corpo Diretivo as penalidades a serem aplicadas aos infratores e respectivamente o valor das multas</p></div>
         <div class="panel ppro"><div class="plabel">O que propomos</div><p>VII – Definir juntamente com o Corpo Diretivo as penalidades a serem aplicadas aos infratores e respectivamente o valor das multas conforme regras definidas no regimento interno.</p></div>
       </div>
-      <div class="why r r3"><span class="wl">Por quê</span> <p>É um detalhe do dia a dia. A proposta é tratar essa regra no regimento interno. O regimento é mais fácil de mudar: basta a maioria votar, não precisa de 2/3 dos votos. Assim a regra pode ser ajustada quando precisar, sem mexer na convenção inteira.</p></div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>É um detalhe do dia a dia. A proposta é que essa regra seja decidida e votada pelos moradores no regimento interno, e não fique presa na convenção. O regimento é mais fácil de ajustar (basta a maioria votar, não precisa de 2/3). Assim a regra pode ser revista quando o condomínio quiser.</p></div>
     </div>
   </section>
   <section class="slide review" data-label="Art. 27, inciso XXII">
@@ -902,14 +904,14 @@ body.firsthint .nav.next{animation:navpulse 1.5s ease-in-out infinite}}
       <div class="rev-head r r1">
         <span class="eyebrow">Proposta 44 de 89</span>
         <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
-        <span class="regtag">↪ vai pro regimento interno</span>
+        <span class="regtag">↪ vai ser votado no regimento interno</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 30, inciso IV</h2>
       <div class="panels r r2">
         <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>IV – Definir as penalidades e as respectivas multas por infrações cometidas pelos condôminos ou por quem estes forem os responsáveis,</p></div>
         <div class="panel ppro"><div class="plabel">O que propomos</div><p>IV – Definir as penalidades e as respectivas multas por infrações cometidas pelos condôminos ou por quem estes forem os responsáveis, desde que observado e respeitado o regimento interno.</p></div>
       </div>
-      <div class="why r r3"><span class="wl">Por quê</span> <p>É um detalhe do dia a dia. A proposta é tratar essa regra no regimento interno. O regimento é mais fácil de mudar: basta a maioria votar, não precisa de 2/3 dos votos. Assim a regra pode ser ajustada quando precisar, sem mexer na convenção inteira.</p></div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>É um detalhe do dia a dia. A proposta é que essa regra seja decidida e votada pelos moradores no regimento interno, e não fique presa na convenção. O regimento é mais fácil de ajustar (basta a maioria votar, não precisa de 2/3). Assim a regra pode ser revista quando o condomínio quiser.</p></div>
     </div>
   </section>
   <section class="slide review" data-label="Art. 30, § 1º">
@@ -1044,7 +1046,7 @@ body.firsthint .nav.next{animation:navpulse 1.5s ease-in-out infinite}}
         <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Não existe na minuta. É um texto novo que estamos propondo acrescentar.</p></div>
         <div class="panel ppro"><div class="plabel">O que propomos</div><p>12.5 É assegurado o direito de representação por procuração nas assembleias gerais. Contudo, fica expressamente proibida a concentração de votos, de modo que nenhum representante, seja ele condômino ou terceiro, poderá portar mais de 01 (uma) procuração por ato assemblear.</p></div>
       </div>
-      <div class="why r r3"><span class="wl">Por quê</span> <p>Uma pessoa não pode juntar várias procurações e votar quase sozinha pelo condomínio inteiro. A gente limita quantas procurações cada um pode levar, pra ninguém controlar a votação sozinho e pra cada casa ter um peso parecido na hora de decidir.</p></div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>Uma pessoa não deve juntar várias procurações e votar quase sozinha pelo condomínio inteiro. A proposta é limitar quantas procurações cada um pode levar, pra ninguém controlar a votação sozinho e pra cada casa ter um peso parecido na hora de decidir.</p></div>
     </div>
   </section>
   <section class="slide review" data-label="Art. 37, inciso I">
@@ -1314,7 +1316,7 @@ body.firsthint .nav.next{animation:navpulse 1.5s ease-in-out infinite}}
         <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Não existe na minuta. É um texto novo que estamos propondo acrescentar.</p></div>
         <div class="panel ppro"><div class="plabel">O que propomos</div><p>§ 4º Caberá à incorporadora o pagamento integral das taxas condominiais referentes às suas unidades não comercializadas, de forma isonômica em relação aos demais proprietários.</p></div>
       </div>
-      <div class="why r r3"><span class="wl">Por quê</span> <p>No contrato de compra e venda, a incorporadora dizia que pagaria só metade da taxa de condomínio das casas dela que ainda não foram vendidas. Aqui a gente garante, na convenção, que ela pague a taxa inteira dessas casas, igual a qualquer morador. Assim ninguém paga a conta no lugar dela.</p></div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>No contrato de compra e venda, a incorporadora dizia que pagaria só metade da taxa de condomínio das casas dela que ainda não foram vendidas. A proposta é garantir, na convenção, que ela pague a taxa inteira dessas casas, igual a qualquer morador. Assim ninguém paga a conta no lugar dela.</p></div>
     </div>
   </section>
   <section class="slide review" data-label="Art. 63, inciso III">
@@ -1367,14 +1369,14 @@ body.firsthint .nav.next{animation:navpulse 1.5s ease-in-out infinite}}
       <div class="rev-head r r1">
         <span class="eyebrow">Proposta 75 de 89</span>
         <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
-        <span class="regtag">↪ vai pro regimento interno</span>
+        <span class="regtag">↪ vai ser votado no regimento interno</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 80, caput</h2>
       <div class="panels r r2">
         <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Art. 80. Os portões ou cancelas do Condomínio permanecerão fechados e todas as pessoas que pretendem adentrar terão obrigatoriamente que se identificar na portaria e informar o destino.</p></div>
         <div class="panel ppro"><div class="plabel">O que propomos</div><p>Art. 80. Os portões ou cancelas do Condomínio permanecerão fechados e todas as pessoas que pretendem adentrar terão obrigatoriamente que se identificar. conforme normas definidas no regimento interno.</p></div>
       </div>
-      <div class="why r r3"><span class="wl">Por quê</span> <p>É um detalhe do dia a dia. A proposta é tratar essa regra no regimento interno. O regimento é mais fácil de mudar: basta a maioria votar, não precisa de 2/3 dos votos. Assim a regra pode ser ajustada quando precisar, sem mexer na convenção inteira.</p></div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>É um detalhe do dia a dia. A proposta é que essa regra seja decidida e votada pelos moradores no regimento interno, e não fique presa na convenção. O regimento é mais fácil de ajustar (basta a maioria votar, não precisa de 2/3). Assim a regra pode ser revista quando o condomínio quiser.</p></div>
     </div>
   </section>
   <section class="slide review" data-label="Art. 85, § 1º">
@@ -1397,14 +1399,14 @@ body.firsthint .nav.next{animation:navpulse 1.5s ease-in-out infinite}}
       <div class="rev-head r r1">
         <span class="eyebrow">Proposta 77 de 89</span>
         <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
-        <span class="regtag">↪ vai pro regimento interno</span>
+        <span class="regtag">↪ vai ser votado no regimento interno</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 88, caput</h2>
       <div class="panels r r2">
         <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Art. 88. A falta de cumprimento ou a inobservância de qualquer disposição desta Convenção e dos demais Regulamentos e Regimentos Internos submeterá o infrator a penas de advertência ou pecuniárias, que, no caso destas últimas, reverterão ao Condomínio, e que variam conforme a gravidade da infração, consoante a seguinte</p></div>
         <div class="panel ppro"><div class="plabel">O que propomos</div><p>Art. 88. A falta de cumprimento ou a inobservância de qualquer disposição desta Convenção e dos demais Regulamentos e Regimentos Internos submeterá o infrator a penas de advertência ou pecuniárias, que, no caso destas últimas, reverterão ao Condomínio, e que variam conforme a gravidade da infração, consoante a graduação e normas definidas em regimento interno e assegurado o direito de defesa.</p></div>
       </div>
-      <div class="why r r3"><span class="wl">Por quê</span> <p>As punições (advertência, multa e afins) e quanto vale cada uma vão ser definidas no regimento interno, sempre com direito de defesa. Assim dá pra ajustar isso depois sem precisar mudar a convenção.</p></div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>As punições (advertência, multa e afins) e o valor de cada uma vão ser definidos no regimento interno, votado pelos moradores, sempre com direito de defesa. Assim dá pra ajustar depois sem precisar mudar a convenção.</p></div>
     </div>
   </section>
   <section class="slide review" data-label="Art. 88, alínea a">
@@ -1412,14 +1414,14 @@ body.firsthint .nav.next{animation:navpulse 1.5s ease-in-out infinite}}
       <div class="rev-head r r1">
         <span class="eyebrow">Proposta 78 de 89</span>
         <span class="badge b-sup"><span class="bsym">−</span> Tira da convenção</span>
-        <span class="regtag">↪ vai pro regimento interno</span>
+        <span class="regtag">↪ vai ser votado no regimento interno</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 88, alínea a</h2>
       <div class="panels r r2">
         <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>a) infração leve – correspondente a violação de pouca significância, cujos efeitos práticos podem ser relevados, e que implicará em advertência por escrito e registro nos prontuários do Condomínio;</p></div>
         <div class="panel ppro"><div class="plabel">O que propomos</div><p>Propomos tirar esse trecho da convenção.</p></div>
       </div>
-      <div class="why r r3"><span class="wl">Por quê</span> <p>As punições (advertência, multa e afins) e quanto vale cada uma vão ser definidas no regimento interno, sempre com direito de defesa. Assim dá pra ajustar isso depois sem precisar mudar a convenção.</p></div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>As punições (advertência, multa e afins) e o valor de cada uma vão ser definidos no regimento interno, votado pelos moradores, sempre com direito de defesa. Assim dá pra ajustar depois sem precisar mudar a convenção.</p></div>
     </div>
   </section>
   <section class="slide review" data-label="Art. 88, alínea b">
@@ -1427,14 +1429,14 @@ body.firsthint .nav.next{animation:navpulse 1.5s ease-in-out infinite}}
       <div class="rev-head r r1">
         <span class="eyebrow">Proposta 79 de 89</span>
         <span class="badge b-sup"><span class="bsym">−</span> Tira da convenção</span>
-        <span class="regtag">↪ vai pro regimento interno</span>
+        <span class="regtag">↪ vai ser votado no regimento interno</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 88, alínea b</h2>
       <div class="panels r r2">
         <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>b) infração moderada – correspondente a violação de menor gravidade, cujos efeitos práticos são de fácil superação, e que implicará no pagamento de multa no valor de 1 (uma) taxa condominial ordinária mensal;</p></div>
         <div class="panel ppro"><div class="plabel">O que propomos</div><p>Propomos tirar esse trecho da convenção.</p></div>
       </div>
-      <div class="why r r3"><span class="wl">Por quê</span> <p>As punições (advertência, multa e afins) e quanto vale cada uma vão ser definidas no regimento interno, sempre com direito de defesa. Assim dá pra ajustar isso depois sem precisar mudar a convenção.</p></div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>As punições (advertência, multa e afins) e o valor de cada uma vão ser definidos no regimento interno, votado pelos moradores, sempre com direito de defesa. Assim dá pra ajustar depois sem precisar mudar a convenção.</p></div>
     </div>
   </section>
   <section class="slide review" data-label="Art. 88, alínea c">
@@ -1442,14 +1444,14 @@ body.firsthint .nav.next{animation:navpulse 1.5s ease-in-out infinite}}
       <div class="rev-head r r1">
         <span class="eyebrow">Proposta 80 de 89</span>
         <span class="badge b-sup"><span class="bsym">−</span> Tira da convenção</span>
-        <span class="regtag">↪ vai pro regimento interno</span>
+        <span class="regtag">↪ vai ser votado no regimento interno</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 88, alínea c</h2>
       <div class="panels r r2">
         <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>c) infração grave – correspondente a violação grave, cujos efeitos práticos não são passíveis de ser relevados ou superados, e que implicará no pagamento de multa no valor de 3 (três) taxas condominiais ordinárias mensais; e</p></div>
         <div class="panel ppro"><div class="plabel">O que propomos</div><p>Propomos tirar esse trecho da convenção.</p></div>
       </div>
-      <div class="why r r3"><span class="wl">Por quê</span> <p>As punições (advertência, multa e afins) e quanto vale cada uma vão ser definidas no regimento interno, sempre com direito de defesa. Assim dá pra ajustar isso depois sem precisar mudar a convenção.</p></div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>As punições (advertência, multa e afins) e o valor de cada uma vão ser definidos no regimento interno, votado pelos moradores, sempre com direito de defesa. Assim dá pra ajustar depois sem precisar mudar a convenção.</p></div>
     </div>
   </section>
   <section class="slide review" data-label="Art. 88, alínea d">
@@ -1457,14 +1459,14 @@ body.firsthint .nav.next{animation:navpulse 1.5s ease-in-out infinite}}
       <div class="rev-head r r1">
         <span class="eyebrow">Proposta 81 de 89</span>
         <span class="badge b-sup"><span class="bsym">−</span> Tira da convenção</span>
-        <span class="regtag">↪ vai pro regimento interno</span>
+        <span class="regtag">↪ vai ser votado no regimento interno</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 88, alínea d</h2>
       <div class="panels r r2">
         <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>d) infração gravíssima – correspondente a violação gravíssima, cujos efeitos práticos comprometem o patrimônio do Condomínio ou afetam os costumes ou interesses gerais dos condôminos, e que implicará no pagamento de multa no valor de 5 (cinco) taxas condominiais ordinárias mensais.</p></div>
         <div class="panel ppro"><div class="plabel">O que propomos</div><p>Propomos tirar esse trecho da convenção.</p></div>
       </div>
-      <div class="why r r3"><span class="wl">Por quê</span> <p>As punições (advertência, multa e afins) e quanto vale cada uma vão ser definidas no regimento interno, sempre com direito de defesa. Assim dá pra ajustar isso depois sem precisar mudar a convenção.</p></div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>As punições (advertência, multa e afins) e o valor de cada uma vão ser definidos no regimento interno, votado pelos moradores, sempre com direito de defesa. Assim dá pra ajustar depois sem precisar mudar a convenção.</p></div>
     </div>
   </section>
   <section class="slide review" data-label="Art. 89, § 2º">
@@ -1562,14 +1564,14 @@ body.firsthint .nav.next{animation:navpulse 1.5s ease-in-out infinite}}
       <div class="rev-head r r1">
         <span class="eyebrow">Proposta 88 de 89</span>
         <span class="badge b-sup"><span class="bsym">−</span> Tira da convenção</span>
-        <span class="regtag">↪ vai pro regimento interno</span>
+        <span class="regtag">↪ vai ser votado no regimento interno</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 100 (artigo inteiro)</h2>
       <div class="panels r r2">
         <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Art. 100. O Condomínio não se responsabiliza em nenhuma hipótese pela reparação em caso de roubo, furto ou dano de qualquer espécie no interior do Condomínio ou de imóveis residenciais, ainda que em construção, e de pertences dos condôminos, residentes e/ou visitantes.</p></div>
         <div class="panel ppro"><div class="plabel">O que propomos</div><p>Propomos tirar esse artigo inteiro da convenção.</p></div>
       </div>
-      <div class="why r r3"><span class="wl">Por quê</span> <p>O condomínio não pode se livrar de toda responsabilidade. Por exemplo: se um funcionário do próprio condomínio causar um dano, o condomínio tem que responder. Esse assunto vai ser tratado no regimento interno.</p></div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>O condomínio não pode se livrar de toda responsabilidade. Por exemplo: se um funcionário do próprio condomínio causar um dano, o condomínio tem que responder. Esse assunto vai ser discutido e votado pelos moradores no regimento interno.</p></div>
     </div>
   </section>
   <section class="slide review" data-label="Art. 101, caput">
@@ -1599,14 +1601,14 @@ body.firsthint .nav.next{animation:navpulse 1.5s ease-in-out infinite}}
 </div>
 <button class="nav prev" id="prev" aria-label="Anterior">‹</button>
 <button class="nav next" id="next" aria-label="Próximo">›</button>
-<div class="hud"><span class="lbl" id="lbl">01</span></div>
+<div class="hud"><span class="pill"><span id="ct">01</span><span class="lbl" id="lbl"></span></span></div>
 <script>
 (function(){
   var slides=[].slice.call(document.querySelectorAll('.slide')),i=0,n=slides.length,reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
-  var bar=document.getElementById('bar'),lbl=document.getElementById('lbl'),prev=document.getElementById('prev'),next=document.getElementById('next');
+  var bar=document.getElementById('bar'),ct=document.getElementById('ct'),lbl=document.getElementById('lbl'),prev=document.getElementById('prev'),next=document.getElementById('next');
   function pad(x){return (x<9?'0':'')+(x+1);}
   function counted(s){s.querySelectorAll('[data-count]').forEach(function(el){if(el.dataset.done)return;el.dataset.done=1;var t=+el.getAttribute('data-count');if(reduce){el.textContent=t;return;}var st=null,d=900;function step(ts){if(!st)st=ts;var p=Math.min((ts-st)/d,1);el.textContent=Math.round(t*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(step);}requestAnimationFrame(step);});}
-  function go(k){k=Math.max(0,Math.min(n-1,k));slides[i].classList.remove('active');i=k;var s=slides[i];s.classList.add('active');s.querySelector('.inner').scrollTop=0;bar.style.width=(i/(n-1)*100)+'%';lbl.textContent=pad(i)+' / '+pad(n-1)+'  ·  '+(s.getAttribute('data-label')||'');prev.disabled=(i===0);next.disabled=(i===n-1);counted(s);document.body.classList.toggle('firsthint',i===0);}
+  function go(k){k=Math.max(0,Math.min(n-1,k));slides[i].classList.remove('active');i=k;var s=slides[i];s.classList.add('active');s.querySelector('.inner').scrollTop=0;bar.style.width=(i/(n-1)*100)+'%';ct.textContent=pad(i)+' / '+pad(n-1);lbl.textContent=' · '+(s.getAttribute('data-label')||'');prev.disabled=(i===0);next.disabled=(i===n-1);counted(s);document.body.classList.toggle('firsthint',i===0);}
   next.addEventListener('click',function(){go(i+1)});prev.addEventListener('click',function(){go(i-1)});
   document.addEventListener('keydown',function(e){var a=document.activeElement; if(e.key==='ArrowRight'||e.key==='PageDown'){e.preventDefault();go(i+1)}else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();go(i-1)}else if(e.key===' '){if(slides[i].querySelector('.inner').scrollHeight>slides[i].querySelector('.inner').clientHeight+4)return;e.preventDefault();go(i+1)}else if(e.key==='Home'){go(0)}else if(e.key==='End'){go(n-1)}});
   var x0=null,y0=null;document.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;y0=e.touches[0].clientY},{passive:true});
