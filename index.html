@@ -100,8 +100,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
 .why p{font-size:15.5px;line-height:1.62;color:var(--text);display:inline}
 .regtag{display:inline-block;font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;color:#0a3461;background:var(--azure-soft);border-radius:999px;padding:5px 11px}
 .legalbadge{font-family:var(--mono);font-size:11px;color:var(--gold);border:1px solid rgba(231,182,90,.5);background:rgba(231,182,90,.12);padding:3px 8px;border-radius:6px;white-space:nowrap}
-@media (max-width:820px){.cols{grid-template-columns:1fr}.grid2{grid-template-columns:1fr}.nums{grid-template-columns:1fr;gap:20px}.subnums{grid-template-columns:repeat(2,1fr)}.exh{grid-template-columns:1fr}.docs{grid-template-columns:1fr}.qrwrap{grid-template-columns:1fr}.panels{grid-template-columns:1fr}.nav{display:none}.hint{display:none}}
-@media (max-width:560px){.slide{padding:54px 18px 74px}.slide.review{padding-top:60px}h1{font-size:31px}h2{font-size:24px}p.lead{font-size:15.5px}.date-big{font-size:52px}.bigcount{font-size:82px}.num .n{font-size:52px}.subnums{grid-template-columns:repeat(2,1fr)}.qrcard img{max-width:60vw}.brandmark{font-size:12px}.hud .lbl{max-width:88vw}.tile{padding:16px}.panel{padding:14px 15px}}
+@media (max-width:820px){.cols{grid-template-columns:1fr}.grid2{grid-template-columns:1fr}.nums{grid-template-columns:1fr;gap:20px}.subnums{grid-template-columns:repeat(2,1fr)}.exh{grid-template-columns:1fr}.docs{grid-template-columns:1fr}.qrwrap{grid-template-columns:1fr}.panels{grid-template-columns:1fr}.hint{display:none}
+.nav{display:flex;top:auto;bottom:18px;transform:none;width:54px;height:54px;font-size:27px;background:var(--ocean);border-color:rgba(255,255,255,.4);color:#fff;box-shadow:0 10px 24px -8px rgba(0,0,0,.6)}
+.nav.prev{left:16px}.nav.next{right:16px}
+.hud{bottom:90px}.hud .lbl{max-width:72vw}
+body.firsthint .nav.next{animation:navpulse 1.5s ease-in-out infinite}}
+@keyframes navpulse{0%,100%{box-shadow:0 0 0 0 rgba(39,183,214,.55)}50%{box-shadow:0 0 0 14px rgba(39,183,214,0)}}
+@media (max-width:560px){.slide{padding:46px 16px 122px}.slide.review{padding-top:54px}h1{font-size:31px}h2{font-size:24px}p.lead{font-size:16.5px}.date-big{font-size:52px}.bigcount{font-size:82px}.num .n{font-size:52px}.subnums{grid-template-columns:repeat(2,1fr)}.qrcard img{max-width:62vw}.brandmark{font-size:12px}.tile{padding:16px}.panel{padding:15px 16px}.panel p{font-size:16px}.panel .plabel{font-size:11.5px}.why{padding:16px}.why p{font-size:16px}.badge{font-size:11.5px}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:opacity .2s linear!important}.slide{transform:none}.r{opacity:1;transform:none}.strike::after{width:100%}.ins{opacity:1}}
 </style></head><body>
 <div class="bar" id="bar"></div>
@@ -225,9 +230,9 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
       <div class="eyebrow r r1" style="color:#bfe9f4">Os números</div>
       <h2 class="r r2" style="margin-top:12px"><span data-count="89">0</span> propostas, dispositivo a dispositivo.</h2>
       <div class="nums">
-        <div class="num c1 r r3"><div class="n" data-count="32">0</div><div class="l" style="color:#cfe6f4">trechos que saem</div></div>
-        <div class="num c2 r r4"><div class="n" data-count="29">0</div><div class="l" style="color:#cfe6f4">textos que mudam</div></div>
-        <div class="num c3 r r5"><div class="n" data-count="28">0</div><div class="l" style="color:#cfe6f4">textos novos</div></div>
+        <div class="num c1 r r3"><div class="n" data-count="25">0</div><div class="l" style="color:#cfe6f4">trechos que saem</div></div>
+        <div class="num c2 r r4"><div class="n" data-count="57">0</div><div class="l" style="color:#cfe6f4">textos que mudam</div></div>
+        <div class="num c3 r r5"><div class="n" data-count="7">0</div><div class="l" style="color:#cfe6f4">textos novos</div></div>
       </div>
       <div class="subnums">
         <div class="subnum r r3"><div class="n" data-count="32">0</div><div class="l" style="color:#cfe6f4">artigos revisados</div></div>
@@ -356,12 +361,12 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
     <div class="inner">
       <div class="rev-head r r1">
         <span class="eyebrow">Proposta 8 de 89</span>
-        <span class="badge b-inc"><span class="bsym">+</span> Acrescenta</span>
+        <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
         <span class="regtag">↪ vai pro regimento interno</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 23, inciso XIV</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Não existe na minuta. É um texto novo que estamos propondo acrescentar.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>XIV – Reparar os danos que causar, dolosa ou culposamente, por mau uso ou defeito em coisas de suas unidades autônomas, nas partes comuns ou em outras unidades autônomas, bem como fazer cessar imediatamente as causas e ressarcir prejuízos,</p></div>
         <div class="panel ppro"><div class="plabel">O que propomos</div><p>XIV – Reparar os danos que causar, dolosa ou culposamente, por mau uso ou defeito em coisas de suas unidades autônomas, nas partes comuns ou em outras unidades autônomas, bem como fazer cessar imediatamente as causas e ressarcir prejuízos, conforme especificidades trazidas no regimento interno condominial.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>É um detalhe do dia a dia. A proposta é tratar essa regra no regimento interno. O regimento é mais fácil de mudar: basta a maioria votar, não precisa de 2/3 dos votos. Assim a regra pode ser ajustada quando precisar, sem mexer na convenção inteira.</p></div>
@@ -371,12 +376,12 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
     <div class="inner">
       <div class="rev-head r r1">
         <span class="eyebrow">Proposta 9 de 89</span>
-        <span class="badge b-inc"><span class="bsym">+</span> Acrescenta</span>
+        <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
         <span class="regtag">↪ vai pro regimento interno</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 23, inciso XV</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Não existe na minuta. É um texto novo que estamos propondo acrescentar.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>XV – Indenizar os danos que causar às partes e coisas comuns, pelo valor que lhe for apresentado pelo Síndico ou seu preposto, correspondente aos custos da reparação devidamente comprovados</p></div>
         <div class="panel ppro"><div class="plabel">O que propomos</div><p>XV – Indenizar os danos que causar às partes e coisas comuns, pelo valor que lhe for apresentado pelo Síndico ou seu preposto, correspondente aos custos da reparação devidamente comprovados e validados pelo conselho fiscal, conforme procedimento previsto no regimento interno condominial.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>É um detalhe do dia a dia. A proposta é tratar essa regra no regimento interno. O regimento é mais fácil de mudar: basta a maioria votar, não precisa de 2/3 dos votos. Assim a regra pode ser ajustada quando precisar, sem mexer na convenção inteira.</p></div>
@@ -386,27 +391,27 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
     <div class="inner">
       <div class="rev-head r r1">
         <span class="eyebrow">Proposta 10 de 89</span>
-        <span class="badge b-sup"><span class="bsym">−</span> Tira da convenção</span>
-        <span class="regtag">↪ vai pro regimento interno</span>
+        <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
+        
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 23, inciso XVI</h2>
       <div class="panels r r2">
         <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>XVI – Sem prejuízo da indenização acima citada, uma cobrança complementar extraordinária denominada taxa administrativa inclusive poderá ser adicionada a esses custos uma cobrança complementar extraordinária, taxa essa que será deliberada pelo Condomínio em Assembleia Geral ou mesmo pelo próprio Síndico, em virtude do tempo dispendido pela administração para o levantamento de orçamento, contratação de serviço, administração do conflito e monitoramento do processo de não-conformidade, cabendo ao condômino reconhecer como quantia líquida e certa.</p></div>
-        <div class="panel ppro"><div class="plabel">O que propomos</div><p>Propomos tirar esse trecho da convenção.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>XVI – Sem prejuízo da indenização acima citada, uma cobrança complementar extraordinária denominada taxa administrativa poderá ser adicionada a esses custos, taxa essa que será deliberada pelo Condomínio em Assembleia Geral, em virtude do tempo dispendido pela administração para o levantamento de orçamento, contratação de serviço, administração do conflito e monitoramento do processo de não-conformidade, cabendo ao condômino reconhecer como quantia líquida e certa.</p></div>
       </div>
-      <div class="why r r3"><span class="wl">Por quê</span> <p>Isso é regra de convivência do dia a dia. O lugar dela é o regimento interno, e não a convenção. Esse ponto vai ser tratado lá no regimento.</p></div>
+      <div class="why r r3"><span class="wl">Por quê</span> <p>É um ajuste de redação e de organização do texto, pra deixar a regra mais clara e correta, sem mudar o sentido.</p></div>
     </div>
   </section>
   <section class="slide review" data-label="Art. 23, inciso XVII">
     <div class="inner">
       <div class="rev-head r r1">
         <span class="eyebrow">Proposta 11 de 89</span>
-        <span class="badge b-inc"><span class="bsym">+</span> Acrescenta</span>
+        <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
         <span class="regtag">↪ vai pro regimento interno</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 23, inciso XVII</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Não existe na minuta. É um texto novo que estamos propondo acrescentar.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>XVII – Informar à administração do Condomínio para o devido controle de acesso e outras necessidades internas, o nome de todo e qualquer morador ou ocupante de sua Unidade, mesmo em caráter temporário,</p></div>
         <div class="panel ppro"><div class="plabel">O que propomos</div><p>XVII – Informar à administração do Condomínio para o devido controle de acesso e outras necessidades internas, o nome de todo e qualquer morador ou ocupante de sua Unidade, mesmo em caráter temporário, conforme especificidades determinadas pelo regimento interno.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>É um detalhe do dia a dia. A proposta é tratar essa regra no regimento interno. O regimento é mais fácil de mudar: basta a maioria votar, não precisa de 2/3 dos votos. Assim a regra pode ser ajustada quando precisar, sem mexer na convenção inteira.</p></div>
@@ -431,12 +436,12 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
     <div class="inner">
       <div class="rev-head r r1">
         <span class="eyebrow">Proposta 13 de 89</span>
-        <span class="badge b-inc"><span class="bsym">+</span> Acrescenta</span>
+        <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
         <span class="regtag">↪ vai pro regimento interno</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 23, inciso XIX</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Não existe na minuta. É um texto novo que estamos propondo acrescentar.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>XIX – Colaborar com a preservação do patrimônio físico, econômico e moral do Condomínio,</p></div>
         <div class="panel ppro"><div class="plabel">O que propomos</div><p>XIX – Colaborar com a preservação do patrimônio físico, econômico e moral do Condomínio, conforme especificidades determinadas pelo regimento interno.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>É um detalhe do dia a dia. A proposta é tratar essa regra no regimento interno. O regimento é mais fácil de mudar: basta a maioria votar, não precisa de 2/3 dos votos. Assim a regra pode ser ajustada quando precisar, sem mexer na convenção inteira.</p></div>
@@ -446,12 +451,12 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
     <div class="inner">
       <div class="rev-head r r1">
         <span class="eyebrow">Proposta 14 de 89</span>
-        <span class="badge b-inc"><span class="bsym">+</span> Acrescenta</span>
+        <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
         <span class="regtag">↪ vai pro regimento interno</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 23, inciso XX</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Não existe na minuta. É um texto novo que estamos propondo acrescentar.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>XX – Locações por temporada realizadas pelos condôminos, de forma direta ou por meio de aplicativos ou outros meios eletrônicos, deverão ser submetidas às normatizações estabelecidas pela administração do Condomínio, para que seus hóspedes ou inquilinos tenham o direito de admissão ao condomínio, cabendo aos mesmos o respeito e o cumprimento às normatizações condominiais.</p></div>
         <div class="panel ppro"><div class="plabel">O que propomos</div><p>XX – Locações por temporada realizadas pelos condôminos, de forma direta ou por meio de aplicativos ou outros meios eletrônicos, deverão ser submetidas às normatizações estabelecidas pela administração do Condomínio, para que seus hóspedes ou inquilinos tenham o direito de admissão ao condomínio, cabendo aos mesmos o respeito e o cumprimento às normatizações condominiais. A admissibilidade da locação por temporada e as respectivas condições são definidas pelo regimento interno.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>É um detalhe do dia a dia. A proposta é tratar essa regra no regimento interno. O regimento é mais fácil de mudar: basta a maioria votar, não precisa de 2/3 dos votos. Assim a regra pode ser ajustada quando precisar, sem mexer na convenção inteira.</p></div>
@@ -461,12 +466,12 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
     <div class="inner">
       <div class="rev-head r r1">
         <span class="eyebrow">Proposta 15 de 89</span>
-        <span class="badge b-inc"><span class="bsym">+</span> Acrescenta</span>
+        <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
         
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 23, § 3º</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Não existe na minuta. É um texto novo que estamos propondo acrescentar.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>§ 3º São de responsabilidade exclusiva dos condôminos as despesas, a que derem causa, decorrentes de atos praticados por ele e por seus familiares, empregados, inquilinos, prepostos,, bem como por qualquer outra pessoa em trânsito no interior do Condomínio que tenha sido convidada por qualquer das pessoas mencionadas anteriormente.</p></div>
         <div class="panel ppro"><div class="plabel">O que propomos</div><p>§ 3º São de responsabilidade exclusiva dos condôminos as despesas, a que derem causa, decorrentes de atos praticados por ele e por seus familiares, empregados, inquilinos, prepostos, animais domésticos sob sua tutela, bem como por qualquer outra pessoa em trânsito no interior do Condomínio que tenha sido convidada por qualquer das pessoas mencionadas anteriormente.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Cada morador responde pelo que fazem as pessoas e os animais sob sua responsabilidade: filhos, visitas, prestadores de serviço e pets. Se um deles causar problema, a conta é do morador.</p></div>
@@ -476,12 +481,12 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
     <div class="inner">
       <div class="rev-head r r1">
         <span class="eyebrow">Proposta 16 de 89</span>
-        <span class="badge b-inc"><span class="bsym">+</span> Acrescenta</span>
+        <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
         <span class="regtag">↪ vai pro regimento interno</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 23, § 4º</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Não existe na minuta. É um texto novo que estamos propondo acrescentar.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>§ 4º As despesas para reparação ou reposições, no que disser respeito a danos causados às partes comuns, quando não for possível determinar o causador ou responsável, serão repartidas por todos os condôminos equitativamente.</p></div>
         <div class="panel ppro"><div class="plabel">O que propomos</div><p>§ 4º As despesas para reparação ou reposições, no que disser respeito a danos causados às partes comuns, quando não for possível determinar o causador ou responsável devidamente apurado em procedimento especificado em regimento interno, serão repartidas por todos os condôminos equitativamente.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>É um detalhe do dia a dia. A proposta é tratar essa regra no regimento interno. O regimento é mais fácil de mudar: basta a maioria votar, não precisa de 2/3 dos votos. Assim a regra pode ser ajustada quando precisar, sem mexer na convenção inteira.</p></div>
@@ -506,13 +511,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
     <div class="inner">
       <div class="rev-head r r1">
         <span class="eyebrow">Proposta 18 de 89</span>
-        <span class="badge b-sup"><span class="bsym">−</span> Tira da convenção</span>
+        <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
         
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 26, inciso IV</h2>
       <div class="panels r r2">
         <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>IV – O Síndico será eleito em Assembleia Geral, podendo ser condômino ou pessoa estranha ao condomínio, conforme o art. 1.347 do Código Civil. exceto quando a Incorporadora estiver à frente nos primeiros 12 (doze) meses, sendo os 12 (dozes) meses seguintes com direito de escolha de permanecer ou não como Síndica, a qual terá o direito de exercer a escolha do membro que desempenhará este cargo, cabendo unicamente ela destitui-os e substitui-os a qualquer tempo, sem necessidade de Assembleia Geral, bastando documentar tais atos em ata própria.</p></div>
-        <div class="panel ppro"><div class="plabel">O que propomos</div><p>Propomos tirar esse trecho da convenção.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>IV – O Síndico será eleito em Assembleia Geral, podendo ser condômino ou pessoa estranha ao condomínio, conforme o art. 1.347 do Código Civil.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Quem escolhe o síndico são os moradores, votando em assembleia. Isso não pode ficar na mão da incorporadora, que vende as casas e tem interesse diferente do nosso. A lei (Código Civil, art. 1.347) diz que essa escolha é da assembleia. <span class="legalbadge">base legal: CC, art. 1.347</span></p></div>
     </div>
@@ -656,12 +661,12 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
     <div class="inner">
       <div class="rev-head r r1">
         <span class="eyebrow">Proposta 28 de 89</span>
-        <span class="badge b-inc"><span class="bsym">+</span> Acrescenta</span>
+        <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
         
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 27, inciso VI</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Não existe na minuta. É um texto novo que estamos propondo acrescentar.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>VI – Com o auxílio da eventual empresa contratada para administração do condomínio, cadastrar os proprietários e ocupantes das unidades autônomas, fixos e eventuais, com a finalidade de auxiliar o serviço de portaria e outras necessidades, na resolução dos problemas internos,.</p></div>
         <div class="panel ppro"><div class="plabel">O que propomos</div><p>VI – Com o auxílio da eventual empresa contratada para administração do condomínio, cadastrar os proprietários e ocupantes das unidades autônomas, fixos e eventuais, com a finalidade de auxiliar o serviço de portaria e outras necessidades, na resolução dos problemas internos, respeitada e garantida a Lei nº 13.709/2018 (LGPD).</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>O cadastro com os dados dos moradores tem que seguir a Lei de Proteção de Dados (LGPD). Ou seja, os dados são usados com cuidado e só pra aquilo que for necessário. <span class="legalbadge">base legal: Lei nº 13.709/2018 (LGPD)</span></p></div>
@@ -671,12 +676,12 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
     <div class="inner">
       <div class="rev-head r r1">
         <span class="eyebrow">Proposta 29 de 89</span>
-        <span class="badge b-inc"><span class="bsym">+</span> Acrescenta</span>
+        <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
         <span class="regtag">↪ vai pro regimento interno</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 27, inciso VII</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Não existe na minuta. É um texto novo que estamos propondo acrescentar.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>VII – Definir juntamente com o Corpo Diretivo as penalidades a serem aplicadas aos infratores e respectivamente o valor das multas</p></div>
         <div class="panel ppro"><div class="plabel">O que propomos</div><p>VII – Definir juntamente com o Corpo Diretivo as penalidades a serem aplicadas aos infratores e respectivamente o valor das multas conforme regras definidas no regimento interno.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>É um detalhe do dia a dia. A proposta é tratar essa regra no regimento interno. O regimento é mais fácil de mudar: basta a maioria votar, não precisa de 2/3 dos votos. Assim a regra pode ser ajustada quando precisar, sem mexer na convenção inteira.</p></div>
@@ -701,12 +706,12 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
     <div class="inner">
       <div class="rev-head r r1">
         <span class="eyebrow">Proposta 31 de 89</span>
-        <span class="badge b-inc"><span class="bsym">+</span> Acrescenta</span>
+        <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
         
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 27, inciso XXIV</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Não existe na minuta. É um texto novo que estamos propondo acrescentar.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>XXIV – Buscar a aprovação do Conselho Fiscal nas despesas extraordinárias de caráter não urgentes (não previstas no orçamento),</p></div>
         <div class="panel ppro"><div class="plabel">O que propomos</div><p>XXIV – Buscar a aprovação do Conselho Fiscal nas despesas extraordinárias de caráter não urgentes (não previstas no orçamento), num montante de 03 (três) a 05 (cinco) salários-mínimos vigentes, para cada evento necessário.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Coloca um limite pra gastos feitos sem aprovação de todos. Acima desse limite, precisa passar pela assembleia. Gasto grande não sai sem o aval dos moradores.</p></div>
@@ -866,13 +871,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
     <div class="inner">
       <div class="rev-head r r1">
         <span class="eyebrow">Proposta 42 de 89</span>
-        <span class="badge b-sup"><span class="bsym">−</span> Tira da convenção</span>
+        <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
         
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 29, Parágrafo único</h2>
       <div class="panels r r2">
         <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Parágrafo único. O Subsíndico deverá ser eleito em Assembleia Geral. exceto quando a Incorporadora estiver à frente dos dois primeiros mandatos, a qual terá o direito de exercer a escolha do membro que desempenhará este cargo, cabendo unicamente ela destituí-los e substituí-los a qualquer tempo, sem necessidade de Assembleia Geral, bastando documentar tais atos em ata própria. A candidatura para subsíndico deverá obedecer às determinações desta Convenção, e havendo Regulamento/Regimento de Eleição, as suas normatizações.</p></div>
-        <div class="panel ppro"><div class="plabel">O que propomos</div><p>Propomos tirar esse trecho da convenção.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>Parágrafo único. O Subsíndico deverá ser eleito em Assembleia Geral.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Tira um privilégio que a incorporadora tinha e devolve a decisão para a assembleia e para a diretoria do condomínio, ou seja, para os moradores.</p></div>
     </div>
@@ -881,12 +886,12 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
     <div class="inner">
       <div class="rev-head r r1">
         <span class="eyebrow">Proposta 43 de 89</span>
-        <span class="badge b-inc"><span class="bsym">+</span> Acrescenta</span>
+        <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
         
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 30, inciso I</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Não existe na minuta. É um texto novo que estamos propondo acrescentar.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>I – Decidir pelo valor da remuneração do Síndico Profissional, quando este existir,</p></div>
         <div class="panel ppro"><div class="plabel">O que propomos</div><p>I – Decidir pelo valor da remuneração do Síndico Profissional, quando este existir, desde que observado e respeitado o regimento interno.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Em vez de já deixar um valor ou benefício fixo escrito na convenção, a assembleia decide e fiscaliza esse custo. Assim os moradores controlam quanto se gasta, com transparência.</p></div>
@@ -896,12 +901,12 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
     <div class="inner">
       <div class="rev-head r r1">
         <span class="eyebrow">Proposta 44 de 89</span>
-        <span class="badge b-inc"><span class="bsym">+</span> Acrescenta</span>
+        <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
         <span class="regtag">↪ vai pro regimento interno</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 30, inciso IV</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Não existe na minuta. É um texto novo que estamos propondo acrescentar.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>IV – Definir as penalidades e as respectivas multas por infrações cometidas pelos condôminos ou por quem estes forem os responsáveis,</p></div>
         <div class="panel ppro"><div class="plabel">O que propomos</div><p>IV – Definir as penalidades e as respectivas multas por infrações cometidas pelos condôminos ou por quem estes forem os responsáveis, desde que observado e respeitado o regimento interno.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>É um detalhe do dia a dia. A proposta é tratar essa regra no regimento interno. O regimento é mais fácil de mudar: basta a maioria votar, não precisa de 2/3 dos votos. Assim a regra pode ser ajustada quando precisar, sem mexer na convenção inteira.</p></div>
@@ -911,13 +916,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
     <div class="inner">
       <div class="rev-head r r1">
         <span class="eyebrow">Proposta 45 de 89</span>
-        <span class="badge b-sup"><span class="bsym">−</span> Tira da convenção</span>
+        <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
         
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 30, § 1º</h2>
       <div class="panels r r2">
         <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>§ 1º Os cargos de que tratam este artigo serão exercidos voluntariamente, sem qualquer remuneração dos seus membros, sem prejuízo da contratação de terceiros não condôminos, para realizar o suporte administrativo, técnico e operacional, de profissionais para assessoramento na análise dos projetos residenciais e fiscalização de obras e de demais obras e atividades, bem como de serviços gerais de administração, de segurança, técnico e de auditoria externa para suporte ao Corpo Diretivo e Conselhos Fiscal e Consultivo.</p></div>
-        <div class="panel ppro"><div class="plabel">O que propomos</div><p>Propomos tirar esse trecho da convenção.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>§ 1º Os cargos de que tratam este artigo serão exercidos sem prejuízo da contratação de terceiros não condôminos, para realizar o suporte administrativo, técnico e operacional, de profissionais para assessoramento na análise dos projetos residenciais e fiscalização de obras e de demais obras e atividades, bem como de serviços gerais de administração, de segurança, técnico e de auditoria externa para suporte ao Corpo Diretivo e Conselhos Fiscal e Consultivo.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Em vez de já deixar um valor ou benefício fixo escrito na convenção, a assembleia decide e fiscaliza esse custo. Assim os moradores controlam quanto se gasta, com transparência.</p></div>
     </div>
@@ -956,13 +961,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
     <div class="inner">
       <div class="rev-head r r1">
         <span class="eyebrow">Proposta 48 de 89</span>
-        <span class="badge b-sup"><span class="bsym">−</span> Tira da convenção</span>
+        <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
         
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 32, caput</h2>
       <div class="panels r r2">
         <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Art. 32. A Assembleia Geral (Ordinária ou Extraordinária) poderá eleger o Síndico, o Subsíndico e os membros do Conselho Fiscal e do Conselho Consultivo, em parte ou no todo, ou mesmo por indicação/substituição ou destituição da Incorporadora nos primeiros 2 (dois) mandatos ou até que a Incorporadora detenha a propriedade de até 50% (cinquenta por cento) das unidades ou que forem a ela devolvidos por desfazimento de contrato de venda e compra (amigável ou judicial), ou destituí-los sempre que vier a praticar irregularidades, não prestar contas ou não cumprir regularmente as suas funções convenientemente para com o Condomínio, observado o direito à ampla defesa, cujo quorum de instalação deste item e sua respectiva deliberação, deverão respeitar o que estiver determinado nesta Convenção, podendo se dar por votação aberta ou fechada (secreta), cabendo ao Edital de Convocação determinar a forma de votação deste item.</p></div>
-        <div class="panel ppro"><div class="plabel">O que propomos</div><p>Propomos tirar esse trecho da convenção.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>Art. 32. A Assembleia Geral (Ordinária ou Extraordinária) poderá eleger o Síndico, o Subsíndico e os membros do Conselho Fiscal e do Conselho Consultivo, em parte ou no todo, ou destituí-los sempre que vier a praticar irregularidades, não prestar contas ou não cumprir regularmente as suas funções convenientemente para com o Condomínio, observado o direito à ampla defesa, cujo quorum de instalação deste item e sua respectiva deliberação, deverão respeitar o que estiver determinado nesta Convenção, podendo se dar por votação aberta ou fechada (secreta), cabendo ao Edital de Convocação determinar a forma de votação deste item.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>O aviso de convocação (edital) tem que dizer direitinho o que vai ser votado e como: voto aberto ou secreto. Assim ninguém é pego de surpresa.</p></div>
     </div>
@@ -971,12 +976,12 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
     <div class="inner">
       <div class="rev-head r r1">
         <span class="eyebrow">Proposta 49 de 89</span>
-        <span class="badge b-inc"><span class="bsym">+</span> Acrescenta</span>
+        <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
         
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 33, § 1º</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Não existe na minuta. É um texto novo que estamos propondo acrescentar.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>§ 1º As Assembleias Gerais poderão ser presenciais, eletrônicas (digitais ou virtuais) ou híbridas (presencial e eletrônica), e todas deverão seguir os ritos de convocação, instalação, presidência e secretaria dos trabalhos, conforme definido por esta Convenção, podendo suas atas serem elaboradas e disponibilizadas na forma impressa ou eletrônica.</p></div>
         <div class="panel ppro"><div class="plabel">O que propomos</div><p>§ 1º As Assembleias Gerais poderão ser presenciais, eletrônicas (digitais ou virtuais) ou híbridas (presencial e eletrônica), e todas deverão seguir os ritos de convocação, instalação, presidência e secretaria dos trabalhos, conforme definido por esta Convenção, podendo suas atas serem elaboradas e disponibilizadas na forma impressa ou eletrônica. Devendo ser garantido, nas Assembleias realizadas nas modalidades eletrônica (digital ou virtual) ou híbrida, o registro dos votos em tempo real, por meio da plataforma utilizada ou de formulário eletrônico adequado, assegurando-se a integridade, a rastreabilidade, a auditoria das votações e as manifestações de vontade dos condôminos.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Se a votação for pela internet ou misturada (presencial e online), ela tem que ser segura e poder ser conferida depois, pra garantir que o voto de cada um foi contado certinho. (Há legislação de apoio, a confirmar com a assessoria jurídica.)</p></div>
@@ -986,12 +991,12 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
     <div class="inner">
       <div class="rev-head r r1">
         <span class="eyebrow">Proposta 50 de 89</span>
-        <span class="badge b-inc"><span class="bsym">+</span> Acrescenta</span>
+        <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
         
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 33, § 4º</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Não existe na minuta. É um texto novo que estamos propondo acrescentar.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>§ 4º Neste Edital deverá constar o tipo de Assembleia Geral (Ordinária ou Extraordinária), o formato de realização a ser escolhido Presencial ou Híbrida, e nestes casos deverá constar o local de sua realização ou mesmo a opção pela forma Eletrônica. Em qualquer dos formatos escolhidos, deverá constar a Ordem do Dia, a data e os horários de primeira e segunda convocações; sendo que em primeira convocação, a Assembleia Geral deverá ser instalada somente com a presença mínima de 50% mais um (cinquenta por cento mais um) dos condôminos adimplentes, e em segunda convocação, 30 minutos após a primeira convocação, com qualquer número.</p></div>
         <div class="panel ppro"><div class="plabel">O que propomos</div><p>§ 4º Neste Edital deverá constar o tipo de Assembleia Geral (Ordinária ou Extraordinária), o formato de realização a ser escolhido Presencial ou Híbrida, e o tipo de votação, podendo ser aberta ou fechada (secreta) e nestes casos deverá constar o local de sua realização ou mesmo a opção pela forma Eletrônica. Em qualquer dos formatos escolhidos, deverá constar a Ordem do Dia, a data e os horários de primeira e segunda convocações; sendo que em primeira convocação, a Assembleia Geral deverá ser instalada somente com a presença mínima de 50% mais um (cinquenta por cento mais um) dos condôminos adimplentes, e em segunda convocação, 30 minutos após a primeira convocação, com qualquer número.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>O aviso de convocação (edital) tem que dizer direitinho o que vai ser votado e como: voto aberto ou secreto. Assim ninguém é pego de surpresa.</p></div>
@@ -1106,12 +1111,12 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
     <div class="inner">
       <div class="rev-head r r1">
         <span class="eyebrow">Proposta 58 de 89</span>
-        <span class="badge b-inc"><span class="bsym">+</span> Acrescenta</span>
+        <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
         
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 40, § 1º</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Não existe na minuta. É um texto novo que estamos propondo acrescentar.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>§ 1º É de responsabilidade dos conselheiros manifestarem seu parecer, de forma individual e formalmente, em local próprio a ser determinado pela administração, podendo tal ato ser feito no formato impresso ou eletrônico, dentro do prazo máximo de 08 (oito) dias, contados do fechamento dos demonstrativos mensais; sendo que após esse prazo e não havendo manifestação formal por parte dos mesmos, as contas relativas a determinado mês ou período, serão consideradas aprovadas pelo conselheiro omisso;</p></div>
         <div class="panel ppro"><div class="plabel">O que propomos</div><p>§ 1º É de responsabilidade dos conselheiros manifestarem seu parecer, de forma individual e formalmente, em local próprio a ser determinado pela administração, podendo tal ato ser feito no formato impresso ou eletrônico, dentro do prazo máximo de 08 (oito) dias úteis, contados do fechamento dos demonstrativos mensais; sendo que após esse prazo e não havendo manifestação formal por parte dos mesmos, as contas relativas a determinado mês ou período, serão consideradas aprovadas pelo conselheiro omisso;</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Os prazos passam a contar em dias úteis (sem fim de semana e feriado). Fica mais claro e justo pra todo mundo saber até quando tem prazo.</p></div>
@@ -1181,12 +1186,12 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
     <div class="inner">
       <div class="rev-head r r1">
         <span class="eyebrow">Proposta 63 de 89</span>
-        <span class="badge b-inc"><span class="bsym">+</span> Acrescenta</span>
+        <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
         
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 44, § 1º</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Não existe na minuta. É um texto novo que estamos propondo acrescentar.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>§ 1º É de responsabilidade dos conselheiros manifestarem seu parecer, de forma individual e formalmente, em local próprio a ser determinado pela administração, podendo tal ato ser feito no formato impresso ou eletrônico, dentro do prazo máximo de 08 (oito) dias, contados da apresentação das plantas e demais documentos técnicos; sendo que após esse prazo e não havendo manifestação formal por parte deles, caberá ao síndico delegar esta função a alguém de sua confiança.</p></div>
         <div class="panel ppro"><div class="plabel">O que propomos</div><p>§ 1º É de responsabilidade dos conselheiros manifestarem seu parecer, de forma individual e formalmente, em local próprio a ser determinado pela administração, podendo tal ato ser feito no formato impresso ou eletrônico, dentro do prazo máximo de 08 (oito) dias úteis, contados da apresentação das plantas e demais documentos técnicos; sendo que após esse prazo e não havendo manifestação formal por parte deles, caberá ao síndico delegar esta função a alguém de sua confiança.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Os prazos passam a contar em dias úteis (sem fim de semana e feriado). Fica mais claro e justo pra todo mundo saber até quando tem prazo.</p></div>
@@ -1256,13 +1261,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
     <div class="inner">
       <div class="rev-head r r1">
         <span class="eyebrow">Proposta 68 de 89</span>
-        <span class="badge b-sup"><span class="bsym">−</span> Tira da convenção</span>
+        <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
         
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 54, inciso III</h2>
       <div class="panels r r2">
         <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>III – Não possuir em seus registros qualquer penalidade às normas administrativas da Incorporadora e/ou do condomínio nos últimos 02 (dois) anos;</p></div>
-        <div class="panel ppro"><div class="plabel">O que propomos</div><p>Propomos tirar esse trecho da convenção.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>III – Não possuir em seus registros qualquer penalidade às normas administrativas da do condomínio nos últimos 02 (dois) anos;</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Tira um privilégio que a incorporadora tinha e devolve a decisão para a assembleia e para a diretoria do condomínio, ou seja, para os moradores.</p></div>
     </div>
@@ -1376,12 +1381,12 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
     <div class="inner">
       <div class="rev-head r r1">
         <span class="eyebrow">Proposta 76 de 89</span>
-        <span class="badge b-inc"><span class="bsym">+</span> Acrescenta</span>
+        <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
         
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 85, § 1º</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Não existe na minuta. É um texto novo que estamos propondo acrescentar.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>§ 1º Caso haja a necessidade de cobrança de uma cota-parte de contribuição para a filiação e/ou participação do Condomínio nestas instituições, Órgãos ou Conselhos, ou mesmo vier a ser estabelecida uma outra forma de contribuição para este fim, o rateio desta despesa contribuição deverá ser de responsabilidade do Condomínio, através do rateio entre os condôminos, cabendo ao Corpo Diretivo definir a melhor forma de rateio;</p></div>
         <div class="panel ppro"><div class="plabel">O que propomos</div><p>§ 1º Caso haja a necessidade de cobrança de uma cota-parte de contribuição para a filiação e/ou participação do Condomínio nestas instituições, Órgãos ou Conselhos, ou mesmo vier a ser estabelecida uma outra forma de contribuição para este fim, o rateio desta despesa contribuição deverá ser de responsabilidade do Condomínio, através do rateio entre os condôminos, cabendo ao Corpo Diretivo definir a melhor forma de rateio e o valor aprovado em assembleia;</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>São os moradores que decidem se, e quanto, o condomínio paga para entidades de fora (como associações). Esse valor não fica solto: passa pela assembleia.</p></div>
@@ -1481,12 +1486,12 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
     <div class="inner">
       <div class="rev-head r r1">
         <span class="eyebrow">Proposta 83 de 89</span>
-        <span class="badge b-inc"><span class="bsym">+</span> Acrescenta</span>
+        <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
         
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 89, § 3º</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Não existe na minuta. É um texto novo que estamos propondo acrescentar.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>§ 3º O infrator que não se conformar com a aplicação de qualquer penalidade poderá recorrer da sua imposição no prazo de 10 (dez) dias a contar do recebimento da respectiva notificação. O recurso deve ser formulado por escrito e encaminhado à administração, que terá idêntico prazo de 10 (dez) dias para se manifestar pelo cancelamento ou pela manutenção da penalidade.</p></div>
         <div class="panel ppro"><div class="plabel">O que propomos</div><p>§ 3º O infrator que não se conformar com a aplicação de qualquer penalidade poderá recorrer da sua imposição no prazo de 10 (dez) dias úteis a contar do recebimento da respectiva notificação. O recurso deve ser formulado por escrito e encaminhado à administração, que terá idêntico prazo de 10 (dez) dias úteis para se manifestar pelo cancelamento ou pela manutenção da penalidade.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Os prazos passam a contar em dias úteis (sem fim de semana e feriado). Fica mais claro e justo pra todo mundo saber até quando tem prazo.</p></div>
@@ -1496,12 +1501,12 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
     <div class="inner">
       <div class="rev-head r r1">
         <span class="eyebrow">Proposta 84 de 89</span>
-        <span class="badge b-inc"><span class="bsym">+</span> Acrescenta</span>
+        <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
         
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 89, § 4º</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Não existe na minuta. É um texto novo que estamos propondo acrescentar.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>§ 4º Mantida a penalidade após a apreciação do recurso pelo Corpo Diretivo, o condômino poderá apelar para a Assembleia Geral. Em caso de multa pecuniária, porém, a apelação não terá efeito suspensivo, e o prazo para interposição do apelo é de 10 (dez) dias a contar do pagamento.</p></div>
         <div class="panel ppro"><div class="plabel">O que propomos</div><p>§ 4º Mantida a penalidade após a apreciação do recurso pelo Corpo Diretivo, o condômino poderá apelar para a Assembleia Geral. Em caso de multa pecuniária, porém, a apelação não terá efeito suspensivo, e o prazo para interposição do apelo é de 10 (dez) dias úteis a contar do pagamento.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Os prazos passam a contar em dias úteis (sem fim de semana e feriado). Fica mais claro e justo pra todo mundo saber até quando tem prazo.</p></div>
@@ -1511,12 +1516,12 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
     <div class="inner">
       <div class="rev-head r r1">
         <span class="eyebrow">Proposta 85 de 89</span>
-        <span class="badge b-inc"><span class="bsym">+</span> Acrescenta</span>
+        <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
         
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 91, caput</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Não existe na minuta. É um texto novo que estamos propondo acrescentar.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Art. 91. O condômino será o responsável pelo pagamento da penalidade ocasionada por seus parentes, hóspedes, visitantes, prestadores de serviços, ou qualquer pessoa sob sua ordem ou companhia nos recintos do Condomínio.</p></div>
         <div class="panel ppro"><div class="plabel">O que propomos</div><p>Art. 91. O condômino será o responsável pelo pagamento da penalidade ocasionada por seus parentes, hóspedes, visitantes, prestadores de serviços, animais domésticos sob sua tutela ou qualquer pessoa sob sua ordem ou companhia nos recintos do Condomínio.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Cada morador responde pelo que fazem as pessoas e os animais sob sua responsabilidade: filhos, visitas, prestadores de serviço e pets. Se um deles causar problema, a conta é do morador.</p></div>
@@ -1526,12 +1531,12 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
     <div class="inner">
       <div class="rev-head r r1">
         <span class="eyebrow">Proposta 86 de 89</span>
-        <span class="badge b-inc"><span class="bsym">+</span> Acrescenta</span>
+        <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
         
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 94, caput</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Não existe na minuta. É um texto novo que estamos propondo acrescentar.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Art. 94. os prazos especificados nesta Convenção contam-se em dias corridos e, caso expirem ou coincidam com feriados ou finais de semana, serão automaticamente prorrogados para o primeiro dia útil subsequente.</p></div>
         <div class="panel ppro"><div class="plabel">O que propomos</div><p>Art. 94. Salvo disposições expressas em contrário, os prazos especificados nesta Convenção contam-se em dias corridos e, caso expirem ou coincidam com feriados ou finais de semana, serão automaticamente prorrogados para o primeiro dia útil subsequente.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>É um ajuste no começo do artigo pra combinar com a mudança dos prazos para dias úteis, evitando conflito entre as regras.</p></div>
@@ -1541,13 +1546,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
     <div class="inner">
       <div class="rev-head r r1">
         <span class="eyebrow">Proposta 87 de 89</span>
-        <span class="badge b-sup"><span class="bsym">−</span> Tira da convenção</span>
+        <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
         
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 97, caput</h2>
       <div class="panels r r2">
         <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Art. 97. Para compor o Corpo Diretivo do condomínio é necessário, ainda, que no ato da posse, o condômino esteja em situação regular junto à Incorporadora e ao condomínio, não possuindo qualquer infração ou débito em aberto até o ato da sua posse.</p></div>
-        <div class="panel ppro"><div class="plabel">O que propomos</div><p>Propomos tirar esse trecho da convenção.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>Art. 97. Para compor o Corpo Diretivo do condomínio é necessário, ainda, que no ato da posse, o condômino esteja em situação regular ao condomínio, não possuindo qualquer infração ou débito em aberto até o ato da sua posse.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Tira um privilégio que a incorporadora tinha e devolve a decisão para a assembleia e para a diretoria do condomínio, ou seja, para os moradores.</p></div>
     </div>
@@ -1601,7 +1606,7 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   var bar=document.getElementById('bar'),lbl=document.getElementById('lbl'),prev=document.getElementById('prev'),next=document.getElementById('next');
   function pad(x){return (x<9?'0':'')+(x+1);}
   function counted(s){s.querySelectorAll('[data-count]').forEach(function(el){if(el.dataset.done)return;el.dataset.done=1;var t=+el.getAttribute('data-count');if(reduce){el.textContent=t;return;}var st=null,d=900;function step(ts){if(!st)st=ts;var p=Math.min((ts-st)/d,1);el.textContent=Math.round(t*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(step);}requestAnimationFrame(step);});}
-  function go(k){k=Math.max(0,Math.min(n-1,k));slides[i].classList.remove('active');i=k;var s=slides[i];s.classList.add('active');s.querySelector('.inner').scrollTop=0;bar.style.width=(i/(n-1)*100)+'%';lbl.textContent=pad(i)+' / '+pad(n-1)+'  ·  '+(s.getAttribute('data-label')||'');prev.disabled=(i===0);next.disabled=(i===n-1);counted(s);}
+  function go(k){k=Math.max(0,Math.min(n-1,k));slides[i].classList.remove('active');i=k;var s=slides[i];s.classList.add('active');s.querySelector('.inner').scrollTop=0;bar.style.width=(i/(n-1)*100)+'%';lbl.textContent=pad(i)+' / '+pad(n-1)+'  ·  '+(s.getAttribute('data-label')||'');prev.disabled=(i===0);next.disabled=(i===n-1);counted(s);document.body.classList.toggle('firsthint',i===0);}
   next.addEventListener('click',function(){go(i+1)});prev.addEventListener('click',function(){go(i-1)});
   document.addEventListener('keydown',function(e){var a=document.activeElement; if(e.key==='ArrowRight'||e.key==='PageDown'){e.preventDefault();go(i+1)}else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();go(i-1)}else if(e.key===' '){if(slides[i].querySelector('.inner').scrollHeight>slides[i].querySelector('.inner').clientHeight+4)return;e.preventDefault();go(i+1)}else if(e.key==='Home'){go(0)}else if(e.key==='End'){go(n-1)}});
   var x0=null,y0=null;document.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;y0=e.touches[0].clientY},{passive:true});
