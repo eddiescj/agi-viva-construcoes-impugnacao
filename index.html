@@ -62,6 +62,9 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
 .member .nm{font-family:var(--display);font-weight:600;font-size:14.5px;color:var(--ink);line-height:1.15}
 .member .role{font-family:var(--mono);font-size:9.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--ocean);margin-top:3px}
 .teamnote{margin-top:18px;font-size:15px;color:var(--ocean);font-weight:600;max-width:62ch}
+.verbs{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.verbs span{font-family:var(--display);font-weight:600;font-size:15px;color:var(--text);border:1px solid var(--line);background:rgba(255,255,255,.05);border-radius:999px;padding:8px 16px}
+.creditnote{margin-top:22px;font-size:15.5px;color:var(--azure-soft);font-weight:600;max-width:60ch}
 .legbar{margin-top:24px;display:flex;gap:22px;flex-wrap:wrap;font-size:14px;color:var(--muted)}
 .tx-r{color:var(--red);text-decoration:line-through}.tx-g{color:#0e9e78;font-weight:600}.tx-y{background:rgba(242,201,76,.3);padding:0 5px;border-radius:3px}
 .date-big{font-family:var(--display);font-weight:800;font-size:clamp(56px,12vw,160px);line-height:.85;letter-spacing:-.04em;background:linear-gradient(180deg,#fff,var(--azure));-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -83,8 +86,8 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
 .rev-head{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
 .badge{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:5px 11px;border-radius:999px;border:1px solid}
 .b-sup{color:var(--red);border-color:rgba(255,107,107,.5);background:rgba(255,107,107,.1)}
-.b-alt{color:var(--azure);border-color:rgba(39,183,214,.5);background:rgba(39,183,214,.1)}
-.b-inc{color:var(--gold);border-color:rgba(231,182,90,.5);background:rgba(231,182,90,.12)}
+.b-alt{color:var(--yellow);border-color:rgba(242,201,76,.55);background:rgba(242,201,76,.12)}
+.b-inc{color:var(--green);border-color:rgba(39,199,154,.55);background:rgba(39,199,154,.12)}
 .bsym{font-weight:700;margin-right:5px;font-size:13px;vertical-align:-1px}
 .panels{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px}
 .panel{border:1px solid var(--line);border-radius:13px;padding:16px 18px;background:rgba(255,255,255,.03)}
@@ -148,8 +151,18 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
       <div class="eyebrow r r1">Quem fez a revisão</div>
       <h2 class="r r2" style="margin-top:12px">Um trabalho coletivo dos moradores.</h2>
       <p class="lead r r2">O Artur abriu uma enquete no grupo perguntando quem toparia revisar a minuta. O Edcleidson Junior coordenou a revisão, e os demais contribuíram e deliberaram ativamente, ponto a ponto.</p>
-      <div class="team"><div class="member r r3"><span class="av">A</span><div><div class="nm">Artur Sampaio</div><div class="role">abriu a enquete</div></div></div><div class="member r r4"><span class="av">E</span><div><div class="nm">Edcleidson Junior</div><div class="role">coordenou a revisão</div></div></div><div class="member r r5"><span class="av">A</span><div><div class="nm">Andreza</div></div></div><div class="member r r6"><span class="av">C</span><div><div class="nm">Celcimar</div></div></div><div class="member r r3"><span class="av">C</span><div><div class="nm">Clécio</div></div></div><div class="member r r4"><span class="av">D</span><div><div class="nm">Danielle</div></div></div><div class="member r r5"><span class="av">F</span><div><div class="nm">Fernando</div></div></div><div class="member r r6"><span class="av">J</span><div><div class="nm">Jose Alves</div></div></div><div class="member r r3"><span class="av">L</span><div><div class="nm">Lucas Pinheiro</div></div></div><div class="member r r4"><span class="av">M</span><div><div class="nm">Maria Barreto</div></div></div><div class="member r r5"><span class="av">R</span><div><div class="nm">Rayane</div></div></div><div class="member r r6"><span class="av">C</span><div><div class="nm">Cristiane Castro</div></div></div></div>
+      <div class="team"><div class="member r r3"><span class="av">A</span><div><div class="nm">Artur Sampaio</div><div class="role">abriu a enquete</div></div></div><div class="member r r4"><span class="av">E</span><div><div class="nm">Edcleidson Junior</div><div class="role">coordenou a revisão</div></div></div><div class="member r r5"><span class="av">A</span><div><div class="nm">Andreza</div><div class="role">revisou e deliberou</div></div></div><div class="member r r6"><span class="av">C</span><div><div class="nm">Celcimar</div><div class="role">revisou e deliberou</div></div></div><div class="member r r3"><span class="av">C</span><div><div class="nm">Clécio</div><div class="role">revisou e deliberou</div></div></div><div class="member r r4"><span class="av">D</span><div><div class="nm">Danielle</div><div class="role">revisou e deliberou</div></div></div><div class="member r r5"><span class="av">F</span><div><div class="nm">Fernando</div><div class="role">revisou e deliberou</div></div></div><div class="member r r6"><span class="av">J</span><div><div class="nm">Jose Alves</div><div class="role">revisou e deliberou</div></div></div><div class="member r r3"><span class="av">L</span><div><div class="nm">Lucas Pinheiro</div><div class="role">revisou e deliberou</div></div></div><div class="member r r4"><span class="av">M</span><div><div class="nm">Maria Barreto</div><div class="role">revisou e deliberou</div></div></div><div class="member r r5"><span class="av">R</span><div><div class="nm">Rayane</div><div class="role">revisou e deliberou</div></div></div><div class="member r r6"><span class="av">C</span><div><div class="nm">Cristiane Castro</div><div class="role">revisou e deliberou</div></div></div></div>
       <p class="teamnote r r4">É a vizinhança unida revisando o texto que a Viva entregou. A conversa é com a incorporadora, não entre a gente.</p>
+    </div>
+  </section>
+
+  <section class="slide" data-label="O mérito é coletivo">
+    <div class="inner">
+      <div class="eyebrow r r1">O mérito é de todos</div>
+      <h2 class="r r2" style="margin-top:12px">Não foi um ou dois.<br>Foi o grupo inteiro.</h2>
+      <p class="lead r r2">Cada voluntário leu a minuta linha por linha, revisou, debateu ponto a ponto, sugeriu mudanças e defendeu suas posições com muito esforço. As 89 propostas são fruto desse trabalho coletivo, não de uma pessoa só.</p>
+      <div class="verbs r r3"><span>Leram</span><span>Revisaram</span><span>Debateram</span><span>Sugeriram mudanças</span><span>Deliberaram juntos</span></div>
+      <p class="creditnote r r4">Por isso o voto também é de todos nós. A vizinhança unida diante da minuta que a Viva entregou.</p>
     </div>
   </section>
 
