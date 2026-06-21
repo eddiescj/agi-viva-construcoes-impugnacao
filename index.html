@@ -56,6 +56,11 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
 .subnums{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:42px}.subnum{border-top:1px solid var(--line);padding-top:13px}.subnum .n{font-family:var(--display);font-weight:700;font-size:clamp(24px,3.2vw,38px)}.subnum .l{color:var(--muted);font-size:13px;margin-top:5px}
 .exh{display:grid;grid-template-columns:repeat(2,1fr);gap:13px;margin-top:26px}.ex{border:1px solid var(--line);border-left:3px solid var(--azure);border-radius:12px;padding:17px 19px;background:rgba(255,255,255,.03)}.ex .code{font-family:var(--mono);font-size:13px;color:var(--azure)}.ex p{margin-top:8px;font-size:14.5px}.ex small{display:block;margin-top:8px;color:var(--muted);font-size:12.5px}
 .docs{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-top:26px}
+.team{display:grid;grid-template-columns:repeat(auto-fit,minmax(158px,1fr));gap:12px;margin-top:24px}
+.member{display:flex;align-items:center;gap:12px;border:1px solid var(--line-d);border-radius:13px;padding:11px 13px;background:#fff}
+.member .av{flex:0 0 auto;width:38px;height:38px;border-radius:50%;background:linear-gradient(150deg,var(--ocean),var(--azure));color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:700;font-size:15px}
+.member .nm{font-family:var(--display);font-weight:600;font-size:14.5px;color:var(--ink);line-height:1.15}
+.member .role{font-family:var(--mono);font-size:9.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--ocean);margin-top:3px}
 .legbar{margin-top:24px;display:flex;gap:22px;flex-wrap:wrap;font-size:14px;color:var(--muted)}
 .tx-r{color:var(--red);text-decoration:line-through}.tx-g{color:#0e9e78;font-weight:600}.tx-y{background:rgba(242,201,76,.3);padding:0 5px;border-radius:3px}
 .date-big{font-family:var(--display);font-weight:800;font-size:clamp(56px,12vw,160px);line-height:.85;letter-spacing:-.04em;background:linear-gradient(180deg,#fff,var(--azure));-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -79,6 +84,7 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
 .b-sup{color:var(--red);border-color:rgba(255,107,107,.5);background:rgba(255,107,107,.1)}
 .b-alt{color:var(--azure);border-color:rgba(39,183,214,.5);background:rgba(39,183,214,.1)}
 .b-inc{color:var(--gold);border-color:rgba(231,182,90,.5);background:rgba(231,182,90,.12)}
+.bsym{font-weight:700;margin-right:5px;font-size:13px;vertical-align:-1px}
 .panels{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px}
 .panel{border:1px solid var(--line);border-radius:13px;padding:16px 18px;background:rgba(255,255,255,.03)}
 .panel .plabel{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
@@ -136,6 +142,15 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
     </div>
   </section>
 
+  <section class="slide light" data-label="Quem revisou">
+    <div class="inner">
+      <div class="eyebrow r r1">Quem fez a revisão</div>
+      <h2 class="r r2" style="margin-top:12px">A revisão foi voluntária e aberta.</h2>
+      <p class="lead r r2">O Artur abriu uma enquete no grupo perguntando quem se voluntariava para revisar a minuta. Estes foram os voluntários:</p>
+      <div class="team"><div class="member r r3"><span class="av">A</span><div><div class="nm">Artur Sampaio</div><div class="role">abriu a enquete</div></div></div><div class="member r r4"><span class="av">E</span><div><div class="nm">Edcleidson Junior</div></div></div><div class="member r r5"><span class="av">A</span><div><div class="nm">Andreza</div></div></div><div class="member r r6"><span class="av">C</span><div><div class="nm">Celcimar</div></div></div><div class="member r r3"><span class="av">C</span><div><div class="nm">Clécio</div></div></div><div class="member r r4"><span class="av">D</span><div><div class="nm">Danielle</div></div></div><div class="member r r5"><span class="av">F</span><div><div class="nm">Fernando</div></div></div><div class="member r r6"><span class="av">J</span><div><div class="nm">Jose Alves</div></div></div><div class="member r r3"><span class="av">L</span><div><div class="nm">Lucas Pinheiro</div></div></div><div class="member r r4"><span class="av">M</span><div><div class="nm">Maria Barreto</div></div></div><div class="member r r5"><span class="av">R</span><div><div class="nm">Rayane</div></div></div><div class="member r r6"><span class="av">C</span><div><div class="nm">Cristiane Castro</div></div></div></div>
+    </div>
+  </section>
+
   <section class="slide ocean" data-label="Por que mexer">
     <div class="inner cols">
       <div>
@@ -182,9 +197,9 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
       <div class="eyebrow r r1" style="color:#bfe9f4">Os números</div>
       <h2 class="r r2" style="margin-top:12px"><span data-count="89">0</span> propostas, dispositivo a dispositivo.</h2>
       <div class="nums">
-        <div class="num c1 r r3"><div class="n" data-count="32">0</div><div class="l" style="color:#cfe6f4">supressões</div></div>
-        <div class="num c2 r r4"><div class="n" data-count="29">0</div><div class="l" style="color:#cfe6f4">alterações</div></div>
-        <div class="num c3 r r5"><div class="n" data-count="28">0</div><div class="l" style="color:#cfe6f4">inclusões</div></div>
+        <div class="num c1 r r3"><div class="n" data-count="32">0</div><div class="l" style="color:#cfe6f4">trechos que saem</div></div>
+        <div class="num c2 r r4"><div class="n" data-count="29">0</div><div class="l" style="color:#cfe6f4">textos que mudam</div></div>
+        <div class="num c3 r r5"><div class="n" data-count="28">0</div><div class="l" style="color:#cfe6f4">textos novos</div></div>
       </div>
       <div class="subnums">
         <div class="subnum r r3"><div class="n" data-count="32">0</div><div class="l" style="color:#cfe6f4">artigos revisados</div></div>
@@ -207,13 +222,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 15, Parágrafo único">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 1 de 89</span>
-        <span class="badge b-alt">Alteração</span>
+        <span class="eyebrow">Proposta 1 de 89</span>
+        <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 15, Parágrafo único</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>Parágrafo único. O condômino ou possuidor que, por seu reiterado comportamento antissocial, gerar incompatibilidade de convivência com os demais condôminos ou possuidores, poderá ser constrangido a pagar multa correspondente ao décuplo do valor atribuído à contribuição para as despesas condominiais.</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>Parágrafo único. O condômino ou possuidor que, por seu reiterado comportamento antissocial, gerar incompatibilidade de convivência com os demais condôminos ou possuidores, poderá ser constrangido a pagar multa a ser definida em regimento interno para as despesas condominiais.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Parágrafo único. O condômino ou possuidor que, por seu reiterado comportamento antissocial, gerar incompatibilidade de convivência com os demais condôminos ou possuidores, poderá ser constrangido a pagar multa correspondente ao décuplo do valor atribuído à contribuição para as despesas condominiais.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>Parágrafo único. O condômino ou possuidor que, por seu reiterado comportamento antissocial, gerar incompatibilidade de convivência com os demais condôminos ou possuidores, poderá ser constrangido a pagar multa a ser definida em regimento interno para as despesas condominiais.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Detalhe operacional remetido ao regimento interno, que se altera por maioria simples, mantendo a Convenção enxuta e adaptável.</p></div>
     </div>
@@ -221,13 +236,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 23, inciso V">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 2 de 89</span>
-        <span class="badge b-sup">Supressão</span>
+        <span class="eyebrow">Proposta 2 de 89</span>
+        <span class="badge b-sup"><span class="bsym">−</span> Tira da convenção</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 23, inciso V</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>V – Não promover ou deixar que promovam atividades ruidosas em suas respectivas unidades autônomas, de forma a perturbar o sossego, a salubridade e a segurança dos demais condôminos.</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>(dispositivo suprimido)</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>V – Não promover ou deixar que promovam atividades ruidosas em suas respectivas unidades autônomas, de forma a perturbar o sossego, a salubridade e a segurança dos demais condôminos.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>Propomos tirar esse trecho da convenção.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Regra de conduta e convivência, própria do regimento interno.</p></div>
     </div>
@@ -235,13 +250,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 23, inciso VI">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 3 de 89</span>
-        <span class="badge b-sup">Supressão</span>
+        <span class="eyebrow">Proposta 3 de 89</span>
+        <span class="badge b-sup"><span class="bsym">−</span> Tira da convenção</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 23, inciso VI</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>VI – Não remover pó de tapetes, cortinas e similares, senão por meio que disperse a poeira sem causar incômodo a outros condôminos.</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>(dispositivo suprimido)</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>VI – Não remover pó de tapetes, cortinas e similares, senão por meio que disperse a poeira sem causar incômodo a outros condôminos.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>Propomos tirar esse trecho da convenção.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Regra de conduta e convivência, própria do regimento interno.</p></div>
     </div>
@@ -249,13 +264,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 23, inciso VII">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 4 de 89</span>
-        <span class="badge b-sup">Supressão</span>
+        <span class="eyebrow">Proposta 4 de 89</span>
+        <span class="badge b-sup"><span class="bsym">−</span> Tira da convenção</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 23, inciso VII</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>VII – Não estender roupas, tapetes ou quaisquer outros objetos nas janelas ou outro lugar visível do exterior, ou expô-los em locais com risco de caírem.</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>(dispositivo suprimido)</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>VII – Não estender roupas, tapetes ou quaisquer outros objetos nas janelas ou outro lugar visível do exterior, ou expô-los em locais com risco de caírem.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>Propomos tirar esse trecho da convenção.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Regra de conduta e convivência, própria do regimento interno.</p></div>
     </div>
@@ -263,13 +278,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 23, inciso VIII">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 5 de 89</span>
-        <span class="badge b-sup">Supressão</span>
+        <span class="eyebrow">Proposta 5 de 89</span>
+        <span class="badge b-sup"><span class="bsym">−</span> Tira da convenção</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 23, inciso VIII</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>VIII – Não lançar, em hipótese alguma, objetos, mormente líquidos, sobre áreas comuns.</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>(dispositivo suprimido)</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>VIII – Não lançar, em hipótese alguma, objetos, mormente líquidos, sobre áreas comuns.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>Propomos tirar esse trecho da convenção.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Regra de conduta e convivência, própria do regimento interno.</p></div>
     </div>
@@ -277,13 +292,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 23, inciso IX">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 6 de 89</span>
-        <span class="badge b-sup">Supressão</span>
+        <span class="eyebrow">Proposta 6 de 89</span>
+        <span class="badge b-sup"><span class="bsym">−</span> Tira da convenção</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 23, inciso IX</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>IX – Não colocar lixo, detritos de qualquer natureza etc., em lugares diversos dos coletores para tais destinados, e nestes locais colocá-los devidamente embalados.</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>(dispositivo suprimido)</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>IX – Não colocar lixo, detritos de qualquer natureza etc., em lugares diversos dos coletores para tais destinados, e nestes locais colocá-los devidamente embalados.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>Propomos tirar esse trecho da convenção.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Regra de conduta e convivência, própria do regimento interno.</p></div>
     </div>
@@ -291,13 +306,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 23, inciso X">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 7 de 89</span>
-        <span class="badge b-sup">Supressão</span>
+        <span class="eyebrow">Proposta 7 de 89</span>
+        <span class="badge b-sup"><span class="bsym">−</span> Tira da convenção</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 23, inciso X</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>X – Não colocar, nem deixar que coloquem, nas partes comuns do Condomínio, materiais de construção ou instalação, de qualquer natureza que forem.</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>(dispositivo suprimido)</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>X – Não colocar, nem deixar que coloquem, nas partes comuns do Condomínio, materiais de construção ou instalação, de qualquer natureza que forem.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>Propomos tirar esse trecho da convenção.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Regra de conduta e convivência, própria do regimento interno.</p></div>
     </div>
@@ -305,13 +320,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 23, inciso XIV">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 8 de 89</span>
-        <span class="badge b-inc">Inclusão</span>
+        <span class="eyebrow">Proposta 8 de 89</span>
+        <span class="badge b-inc"><span class="bsym">+</span> Acrescenta</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 23, inciso XIV</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>(sem dispositivo correspondente na minuta original)</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>XIV – Reparar os danos que causar, dolosa ou culposamente, por mau uso ou defeito em coisas de suas unidades autônomas, nas partes comuns ou em outras unidades autônomas, bem como fazer cessar imediatamente as causas e ressarcir prejuízos, conforme especificidades trazidas no regimento interno condominial.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Não existe na minuta. É um texto novo que estamos propondo acrescentar.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>XIV – Reparar os danos que causar, dolosa ou culposamente, por mau uso ou defeito em coisas de suas unidades autônomas, nas partes comuns ou em outras unidades autônomas, bem como fazer cessar imediatamente as causas e ressarcir prejuízos, conforme especificidades trazidas no regimento interno condominial.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Detalhe operacional remetido ao regimento interno, que se altera por maioria simples, mantendo a Convenção enxuta e adaptável.</p></div>
     </div>
@@ -319,13 +334,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 23, inciso XV">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 9 de 89</span>
-        <span class="badge b-inc">Inclusão</span>
+        <span class="eyebrow">Proposta 9 de 89</span>
+        <span class="badge b-inc"><span class="bsym">+</span> Acrescenta</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 23, inciso XV</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>(sem dispositivo correspondente na minuta original)</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>XV – Indenizar os danos que causar às partes e coisas comuns, pelo valor que lhe for apresentado pelo Síndico ou seu preposto, correspondente aos custos da reparação devidamente comprovados e validados pelo conselho fiscal, conforme procedimento previsto no regimento interno condominial.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Não existe na minuta. É um texto novo que estamos propondo acrescentar.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>XV – Indenizar os danos que causar às partes e coisas comuns, pelo valor que lhe for apresentado pelo Síndico ou seu preposto, correspondente aos custos da reparação devidamente comprovados e validados pelo conselho fiscal, conforme procedimento previsto no regimento interno condominial.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Detalhe operacional remetido ao regimento interno, que se altera por maioria simples, mantendo a Convenção enxuta e adaptável.</p></div>
     </div>
@@ -333,13 +348,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 23, inciso XVI">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 10 de 89</span>
-        <span class="badge b-sup">Supressão</span>
+        <span class="eyebrow">Proposta 10 de 89</span>
+        <span class="badge b-sup"><span class="bsym">−</span> Tira da convenção</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 23, inciso XVI</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>XVI – Sem prejuízo da indenização acima citada, uma cobrança complementar extraordinária denominada taxa administrativa inclusive poderá ser adicionada a esses custos uma cobrança complementar extraordinária, taxa essa que será deliberada pelo Condomínio em Assembleia Geral ou mesmo pelo próprio Síndico, em virtude do tempo dispendido pela administração para o levantamento de orçamento, contratação de serviço, administração do conflito e monitoramento do processo de não-conformidade, cabendo ao condômino reconhecer como quantia líquida e certa.</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>(dispositivo suprimido)</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>XVI – Sem prejuízo da indenização acima citada, uma cobrança complementar extraordinária denominada taxa administrativa inclusive poderá ser adicionada a esses custos uma cobrança complementar extraordinária, taxa essa que será deliberada pelo Condomínio em Assembleia Geral ou mesmo pelo próprio Síndico, em virtude do tempo dispendido pela administração para o levantamento de orçamento, contratação de serviço, administração do conflito e monitoramento do processo de não-conformidade, cabendo ao condômino reconhecer como quantia líquida e certa.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>Propomos tirar esse trecho da convenção.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Regra de conduta e convivência, própria do regimento interno.</p></div>
     </div>
@@ -347,13 +362,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 23, inciso XVII">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 11 de 89</span>
-        <span class="badge b-inc">Inclusão</span>
+        <span class="eyebrow">Proposta 11 de 89</span>
+        <span class="badge b-inc"><span class="bsym">+</span> Acrescenta</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 23, inciso XVII</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>(sem dispositivo correspondente na minuta original)</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>XVII – Informar à administração do Condomínio para o devido controle de acesso e outras necessidades internas, o nome de todo e qualquer morador ou ocupante de sua Unidade, mesmo em caráter temporário, conforme especificidades determinadas pelo regimento interno.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Não existe na minuta. É um texto novo que estamos propondo acrescentar.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>XVII – Informar à administração do Condomínio para o devido controle de acesso e outras necessidades internas, o nome de todo e qualquer morador ou ocupante de sua Unidade, mesmo em caráter temporário, conforme especificidades determinadas pelo regimento interno.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Detalhe operacional remetido ao regimento interno, que se altera por maioria simples, mantendo a Convenção enxuta e adaptável.</p></div>
     </div>
@@ -361,13 +376,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 23, inciso XVIII">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 12 de 89</span>
-        <span class="badge b-sup">Supressão</span>
+        <span class="eyebrow">Proposta 12 de 89</span>
+        <span class="badge b-sup"><span class="bsym">−</span> Tira da convenção</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 23, inciso XVIII</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>XVIII – Fornecer a administração do Condomínio todos os meios de comunicação possíveis (telefones e endereços fixos e eletrônicos), para o recebimento de informativos e avisos, inclusive das alterações subsequentes.</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>(dispositivo suprimido)</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>XVIII – Fornecer a administração do Condomínio todos os meios de comunicação possíveis (telefones e endereços fixos e eletrônicos), para o recebimento de informativos e avisos, inclusive das alterações subsequentes.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>Propomos tirar esse trecho da convenção.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Regra de conduta e convivência, própria do regimento interno.</p></div>
     </div>
@@ -375,13 +390,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 23, inciso XIX">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 13 de 89</span>
-        <span class="badge b-inc">Inclusão</span>
+        <span class="eyebrow">Proposta 13 de 89</span>
+        <span class="badge b-inc"><span class="bsym">+</span> Acrescenta</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 23, inciso XIX</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>(sem dispositivo correspondente na minuta original)</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>XIX – Colaborar com a preservação do patrimônio físico, econômico e moral do Condomínio, conforme especificidades determinadas pelo regimento interno.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Não existe na minuta. É um texto novo que estamos propondo acrescentar.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>XIX – Colaborar com a preservação do patrimônio físico, econômico e moral do Condomínio, conforme especificidades determinadas pelo regimento interno.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Detalhe operacional remetido ao regimento interno, que se altera por maioria simples, mantendo a Convenção enxuta e adaptável.</p></div>
     </div>
@@ -389,13 +404,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 23, inciso XX">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 14 de 89</span>
-        <span class="badge b-inc">Inclusão</span>
+        <span class="eyebrow">Proposta 14 de 89</span>
+        <span class="badge b-inc"><span class="bsym">+</span> Acrescenta</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 23, inciso XX</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>(sem dispositivo correspondente na minuta original)</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>XX – Locações por temporada realizadas pelos condôminos, de forma direta ou por meio de aplicativos ou outros meios eletrônicos, deverão ser submetidas às normatizações estabelecidas pela administração do Condomínio, para que seus hóspedes ou inquilinos tenham o direito de admissão ao condomínio, cabendo aos mesmos o respeito e o cumprimento às normatizações condominiais. A admissibilidade da locação por temporada e as respectivas condições são definidas pelo regimento interno.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Não existe na minuta. É um texto novo que estamos propondo acrescentar.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>XX – Locações por temporada realizadas pelos condôminos, de forma direta ou por meio de aplicativos ou outros meios eletrônicos, deverão ser submetidas às normatizações estabelecidas pela administração do Condomínio, para que seus hóspedes ou inquilinos tenham o direito de admissão ao condomínio, cabendo aos mesmos o respeito e o cumprimento às normatizações condominiais. A admissibilidade da locação por temporada e as respectivas condições são definidas pelo regimento interno.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Detalhe operacional remetido ao regimento interno, que se altera por maioria simples, mantendo a Convenção enxuta e adaptável.</p></div>
     </div>
@@ -403,13 +418,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 23, § 3º">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 15 de 89</span>
-        <span class="badge b-inc">Inclusão</span>
+        <span class="eyebrow">Proposta 15 de 89</span>
+        <span class="badge b-inc"><span class="bsym">+</span> Acrescenta</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 23, § 3º</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>(sem dispositivo correspondente na minuta original)</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>§ 3º São de responsabilidade exclusiva dos condôminos as despesas, a que derem causa, decorrentes de atos praticados por ele e por seus familiares, empregados, inquilinos, prepostos, animais domésticos sob sua tutela, bem como por qualquer outra pessoa em trânsito no interior do Condomínio que tenha sido convidada por qualquer das pessoas mencionadas anteriormente.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Não existe na minuta. É um texto novo que estamos propondo acrescentar.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>§ 3º São de responsabilidade exclusiva dos condôminos as despesas, a que derem causa, decorrentes de atos praticados por ele e por seus familiares, empregados, inquilinos, prepostos, animais domésticos sob sua tutela, bem como por qualquer outra pessoa em trânsito no interior do Condomínio que tenha sido convidada por qualquer das pessoas mencionadas anteriormente.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Responsabiliza o condômino pelos atos e penalidades de seus dependentes, convidados, prepostos e animais sob sua tutela.</p></div>
     </div>
@@ -417,13 +432,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 23, § 4º">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 16 de 89</span>
-        <span class="badge b-inc">Inclusão</span>
+        <span class="eyebrow">Proposta 16 de 89</span>
+        <span class="badge b-inc"><span class="bsym">+</span> Acrescenta</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 23, § 4º</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>(sem dispositivo correspondente na minuta original)</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>§ 4º As despesas para reparação ou reposições, no que disser respeito a danos causados às partes comuns, quando não for possível determinar o causador ou responsável devidamente apurado em procedimento especificado em regimento interno, serão repartidas por todos os condôminos equitativamente.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Não existe na minuta. É um texto novo que estamos propondo acrescentar.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>§ 4º As despesas para reparação ou reposições, no que disser respeito a danos causados às partes comuns, quando não for possível determinar o causador ou responsável devidamente apurado em procedimento especificado em regimento interno, serão repartidas por todos os condôminos equitativamente.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Detalhe operacional remetido ao regimento interno, que se altera por maioria simples, mantendo a Convenção enxuta e adaptável.</p></div>
     </div>
@@ -431,13 +446,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 26, inciso III">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 17 de 89</span>
-        <span class="badge b-alt">Alteração</span>
+        <span class="eyebrow">Proposta 17 de 89</span>
+        <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 26, inciso III</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>III – O mandato do Síndico será de 01 (um) ano para exercer as suas funções e atribuições, podendo ser reeleito, uma única vez, por igual período.</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>III – O mandato do Síndico será de 02 (dois) anos para exercer as suas funções e atribuições, podendo ser reeleito, uma única vez por igual período, fazendo-se necessário um intervalo de duas eleições para que ele possa se candidatar novamente ao cargo.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>III – O mandato do Síndico será de 01 (um) ano para exercer as suas funções e atribuições, podendo ser reeleito, uma única vez, por igual período.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>III – O mandato do Síndico será de 02 (dois) anos para exercer as suas funções e atribuições, podendo ser reeleito, uma única vez por igual período, fazendo-se necessário um intervalo de duas eleições para que ele possa se candidatar novamente ao cargo.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Estabilidade de gestão com rodízio; previne a perpetuação no cargo.</p></div>
     </div>
@@ -445,13 +460,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 26, inciso IV">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 18 de 89</span>
-        <span class="badge b-sup">Supressão</span>
+        <span class="eyebrow">Proposta 18 de 89</span>
+        <span class="badge b-sup"><span class="bsym">−</span> Tira da convenção</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 26, inciso IV</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>IV – O Síndico será eleito em Assembleia Geral, podendo ser condômino ou pessoa estranha ao condomínio, conforme o art. 1.347 do Código Civil. exceto quando a Incorporadora estiver à frente nos primeiros 12 (doze) meses, sendo os 12 (dozes) meses seguintes com direito de escolha de permanecer ou não como Síndica, a qual terá o direito de exercer a escolha do membro que desempenhará este cargo, cabendo unicamente ela destitui-os e substitui-os a qualquer tempo, sem necessidade de Assembleia Geral, bastando documentar tais atos em ata própria.</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>(dispositivo suprimido)</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>IV – O Síndico será eleito em Assembleia Geral, podendo ser condômino ou pessoa estranha ao condomínio, conforme o art. 1.347 do Código Civil. exceto quando a Incorporadora estiver à frente nos primeiros 12 (doze) meses, sendo os 12 (dozes) meses seguintes com direito de escolha de permanecer ou não como Síndica, a qual terá o direito de exercer a escolha do membro que desempenhará este cargo, cabendo unicamente ela destitui-os e substitui-os a qualquer tempo, sem necessidade de Assembleia Geral, bastando documentar tais atos em ata própria.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>Propomos tirar esse trecho da convenção.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>A escolha do síndico é competência da assembleia, que não se transfere a terceiro; a incorporadora tem interesse comercial conflitante com os condôminos. <span class="legalbadge">base legal: CC, art. 1.347</span></p></div>
     </div>
@@ -459,13 +474,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 26, inciso V">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 19 de 89</span>
-        <span class="badge b-alt">Alteração</span>
+        <span class="eyebrow">Proposta 19 de 89</span>
+        <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 26, inciso V</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>V – O Síndico para o exercício de suas atribuições, receberá a isenção da taxa condominial ordinária de 01 (uma) unidade e poderá ter direito a uma ajuda de custo para pagamento de reembolsos e/ou despesas que forem inerentes ao condomínio, desde que venha a apresentar e a comprovar junto ao Conselho Fiscal, e condicionada à aprovação dessas despesas por seus conselheiros.</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>V – O Síndico para o exercício de suas atribuições, receberá remuneração a ser definida em Assembleia Geral Ordinária.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>V – O Síndico para o exercício de suas atribuições, receberá a isenção da taxa condominial ordinária de 01 (uma) unidade e poderá ter direito a uma ajuda de custo para pagamento de reembolsos e/ou despesas que forem inerentes ao condomínio, desde que venha a apresentar e a comprovar junto ao Conselho Fiscal, e condicionada à aprovação dessas despesas por seus conselheiros.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>V – O Síndico para o exercício de suas atribuições, receberá remuneração a ser definida em Assembleia Geral Ordinária.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Transparência e controle do custo pela assembleia, no lugar de benefício fixo predefinido.</p></div>
     </div>
@@ -473,13 +488,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 26, inciso VI">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 20 de 89</span>
-        <span class="badge b-sup">Supressão</span>
+        <span class="eyebrow">Proposta 20 de 89</span>
+        <span class="badge b-sup"><span class="bsym">−</span> Tira da convenção</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 26, inciso VI</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>VI – Atendendo a finalidade dos serviços de administração e em consonância com os conceitos e características próprias do empreendimento, o Síndico (condômino ou profissional não-condômino), a empresa de administração de condomínios e o Subsíndico em seus 2 (dois) primeiros mandatos ou até que a Incorporadora detenha a propriedade de até 50% (cinquenta por cento) das unidades ou que forem a ela devolvidos por desfazimento de contrato de venda e compra (amigável ou judicial), deverão ser indicados e escolhidos pela Incorporadora, sem necessidade de aprovação em Assembleia Geral.</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>(dispositivo suprimido)</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>VI – Atendendo a finalidade dos serviços de administração e em consonância com os conceitos e características próprias do empreendimento, o Síndico (condômino ou profissional não-condômino), a empresa de administração de condomínios e o Subsíndico em seus 2 (dois) primeiros mandatos ou até que a Incorporadora detenha a propriedade de até 50% (cinquenta por cento) das unidades ou que forem a ela devolvidos por desfazimento de contrato de venda e compra (amigável ou judicial), deverão ser indicados e escolhidos pela Incorporadora, sem necessidade de aprovação em Assembleia Geral.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>Propomos tirar esse trecho da convenção.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>A escolha do síndico é competência da assembleia, que não se transfere a terceiro; a incorporadora tem interesse comercial conflitante com os condôminos. <span class="legalbadge">base legal: CC, art. 1.347</span></p></div>
     </div>
@@ -487,13 +502,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 26, inciso VII">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 21 de 89</span>
-        <span class="badge b-sup">Supressão</span>
+        <span class="eyebrow">Proposta 21 de 89</span>
+        <span class="badge b-sup"><span class="bsym">−</span> Tira da convenção</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 26, inciso VII</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>VII – A posteriori dessas 2 (duas) condições, caberá a Assembleia Geral definir a escolha do Síndico por condôminos e/ou decidir por ter um Síndico profissional e um Subsíndico condômino voluntário e eleger os membros também voluntários ao Conselho Fiscal e ao Conselho Consultivo.</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>(dispositivo suprimido)</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>VII – A posteriori dessas 2 (duas) condições, caberá a Assembleia Geral definir a escolha do Síndico por condôminos e/ou decidir por ter um Síndico profissional e um Subsíndico condômino voluntário e eleger os membros também voluntários ao Conselho Fiscal e ao Conselho Consultivo.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>Propomos tirar esse trecho da convenção.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Dispositivo atrelado ao regime de escolha do síndico pela incorporadora, suprimido em conjunto com os incisos IV a VIII; a escolha cabe à assembleia.</p></div>
     </div>
@@ -501,13 +516,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 26, inciso VIII">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 22 de 89</span>
-        <span class="badge b-sup">Supressão</span>
+        <span class="eyebrow">Proposta 22 de 89</span>
+        <span class="badge b-sup"><span class="bsym">−</span> Tira da convenção</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 26, inciso VIII</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>VIII – No caso da decisão por um Síndico profissional, caberá ao Condomínio a devida contratação e remuneração.</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>(dispositivo suprimido)</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>VIII – No caso da decisão por um Síndico profissional, caberá ao Condomínio a devida contratação e remuneração.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>Propomos tirar esse trecho da convenção.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Transparência e controle do custo pela assembleia, no lugar de benefício fixo predefinido.</p></div>
     </div>
@@ -515,13 +530,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 26, § 1º">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 23 de 89</span>
-        <span class="badge b-sup">Supressão</span>
+        <span class="eyebrow">Proposta 23 de 89</span>
+        <span class="badge b-sup"><span class="bsym">−</span> Tira da convenção</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 26, § 1º</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>§ 1º Quando a Incorporadora, por sua mera liberalidade, decidir por renunciar a sua condição de escolha do Síndico, do Subsíndico e dos membros aos órgãos sociais, caberá ao Corpo Diretivo (Síndico, Subsíndico, ao Conselho Fiscal e ao Conselho Consultivo), definir sobre o valor da remuneração da prestação de serviços a ser exercida por um Síndico profissional (não-condômino), ou mesmo se assim entender mais adequado, levar tal decisão a uma Assembleia Geral.</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>(dispositivo suprimido)</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>§ 1º Quando a Incorporadora, por sua mera liberalidade, decidir por renunciar a sua condição de escolha do Síndico, do Subsíndico e dos membros aos órgãos sociais, caberá ao Corpo Diretivo (Síndico, Subsíndico, ao Conselho Fiscal e ao Conselho Consultivo), definir sobre o valor da remuneração da prestação de serviços a ser exercida por um Síndico profissional (não-condômino), ou mesmo se assim entender mais adequado, levar tal decisão a uma Assembleia Geral.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>Propomos tirar esse trecho da convenção.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Transparência e controle do custo pela assembleia, no lugar de benefício fixo predefinido.</p></div>
     </div>
@@ -529,13 +544,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 26, § 2º">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 24 de 89</span>
-        <span class="badge b-sup">Supressão</span>
+        <span class="eyebrow">Proposta 24 de 89</span>
+        <span class="badge b-sup"><span class="bsym">−</span> Tira da convenção</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 26, § 2º</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>§ 2º Para a gestão do Condomínio nos 2 (dois) primeiros mandatos ou até que a Incorporadora detenha a propriedade de até 50% (cinquenta por cento) das unidades ou que foram a ela devolvidos por desfazimento de contrato de venda (amigável ou judicial), poderão não serem eleitos os Conselhos Fiscal e Consultivo, caso a Incorporadora entender desnecessário. Neste caso, todas as funções e atribuições destes Conselhos ficarão sob a responsabilidade do Síndico, que poderá requerer o apoio e o suporte do Subsíndico.</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>(dispositivo suprimido)</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>§ 2º Para a gestão do Condomínio nos 2 (dois) primeiros mandatos ou até que a Incorporadora detenha a propriedade de até 50% (cinquenta por cento) das unidades ou que foram a ela devolvidos por desfazimento de contrato de venda (amigável ou judicial), poderão não serem eleitos os Conselhos Fiscal e Consultivo, caso a Incorporadora entender desnecessário. Neste caso, todas as funções e atribuições destes Conselhos ficarão sob a responsabilidade do Síndico, que poderá requerer o apoio e o suporte do Subsíndico.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>Propomos tirar esse trecho da convenção.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Retira privilégio da incorporadora e devolve a decisão à assembleia e ao Corpo Diretivo.</p></div>
     </div>
@@ -543,13 +558,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 26, § 3º">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 25 de 89</span>
-        <span class="badge b-alt">Alteração</span>
+        <span class="eyebrow">Proposta 25 de 89</span>
+        <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 26, § 3º</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>§ 3º A posteriori dos 02 (dois) primeiros mandatos ou até que a Incorporadora detenha a propriedade de até 50 % (cinquenta por cento) das unidades ou que forem a ela devolvidos por desfazimento de contrato de venda (amigável ou judicial), caso haja a ausência de candidatos a ocupar o Conselho Fiscal e o Conselho Consultivo, poderá o Síndico além de suas responsabilidades diretas relativas ao seu cargo, exercer também as funções e atribuições destes Conselhos, e havendo Subsíndico, contar com o seu devido apoio e suporte, até que uma próxima Assembleia Geral venha a ser convocada para a composição destes órgãos, conforme tratado neste instrumento de Convenção.</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>§ 3º Caso haja a ausência de candidatos a ocupar o Conselho Fiscal e o Conselho Consultivo, poderá o sub-síndico além de suas responsabilidades diretas relativas ao seu cargo, exercer também as funções e atribuições desses Conselhos. Devendo ser convocada uma Assembleia Geral Extraordinária no prazo máximo de 30 dias corridos para a composição destes órgãos, conforme tratado neste instrumento de Convenção.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>§ 3º A posteriori dos 02 (dois) primeiros mandatos ou até que a Incorporadora detenha a propriedade de até 50 % (cinquenta por cento) das unidades ou que forem a ela devolvidos por desfazimento de contrato de venda (amigável ou judicial), caso haja a ausência de candidatos a ocupar o Conselho Fiscal e o Conselho Consultivo, poderá o Síndico além de suas responsabilidades diretas relativas ao seu cargo, exercer também as funções e atribuições destes Conselhos, e havendo Subsíndico, contar com o seu devido apoio e suporte, até que uma próxima Assembleia Geral venha a ser convocada para a composição destes órgãos, conforme tratado neste instrumento de Convenção.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>§ 3º Caso haja a ausência de candidatos a ocupar o Conselho Fiscal e o Conselho Consultivo, poderá o sub-síndico além de suas responsabilidades diretas relativas ao seu cargo, exercer também as funções e atribuições desses Conselhos. Devendo ser convocada uma Assembleia Geral Extraordinária no prazo máximo de 30 dias corridos para a composição destes órgãos, conforme tratado neste instrumento de Convenção.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Retira privilégio da incorporadora e devolve a decisão à assembleia e ao Corpo Diretivo.</p></div>
     </div>
@@ -557,13 +572,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 26, § 4º">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 26 de 89</span>
-        <span class="badge b-sup">Supressão</span>
+        <span class="eyebrow">Proposta 26 de 89</span>
+        <span class="badge b-sup"><span class="bsym">−</span> Tira da convenção</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 26, § 4º</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>§ 4º Enquanto a Incorporadora estiver no direito de proceder com a eleição direta ou a escolha do Síndico, do Subsíndico e dos demais órgãos sociais, dentro das condições elencadas nesta Convenção, não haverá a obrigatoriedade de realização de Assembleias Gerais para este fim, podendo a Prestação de Contas, o Plano Orçamentário anual, a definição da taxa condominial e demais assuntos eletivos e deliberativos serem tratados em reunião do Corpo Diretivo, formada apenas pelos cargos existentes, com ata própria para configurar tais decisões.</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>(dispositivo suprimido)</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>§ 4º Enquanto a Incorporadora estiver no direito de proceder com a eleição direta ou a escolha do Síndico, do Subsíndico e dos demais órgãos sociais, dentro das condições elencadas nesta Convenção, não haverá a obrigatoriedade de realização de Assembleias Gerais para este fim, podendo a Prestação de Contas, o Plano Orçamentário anual, a definição da taxa condominial e demais assuntos eletivos e deliberativos serem tratados em reunião do Corpo Diretivo, formada apenas pelos cargos existentes, com ata própria para configurar tais decisões.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>Propomos tirar esse trecho da convenção.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>A lei obriga assembleia anual para aprovar orçamento, contribuições e prestação de contas, decisões que não podem ser subtraídas dos condôminos. <span class="legalbadge">base legal: CC, art. 1.350</span></p></div>
     </div>
@@ -571,13 +586,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 27, inciso II">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 27 de 89</span>
-        <span class="badge b-alt">Alteração</span>
+        <span class="eyebrow">Proposta 27 de 89</span>
+        <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 27, inciso II</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>II – Defender o patrimônio do Condomínio, mantendo áreas comuns em boas condições de uso, de conservação e de boa aparência, e para tal, tem o direito de executar quaisquer consertos ou reparos de vulto, ou de caráter urgente e emergencial nas instalações, eventual ou acidentalmente danificadas, independentemente de consulta aos condôminos, assim como determinar a execução de obras de manutenção e serviços necessários ao normal funcionamento do condomínio.</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>II – Defender o patrimônio do Condomínio, mantendo as áreas comuns em boas condições de uso, conservação, segurança e boa aparência. Para esse fim, poderá determinar e executar quaisquer consertos, reparos, obras de manutenção e serviços necessários ao regular funcionamento do Condomínio destinados a reparar instalações eventual ou acidentalmente danificadas, independentemente de prévia consulta aos condôminos, desde que o respectivo custo não ultrapasse porcentagem do orçamento anual e regras definidas em regimento interno.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>II – Defender o patrimônio do Condomínio, mantendo áreas comuns em boas condições de uso, de conservação e de boa aparência, e para tal, tem o direito de executar quaisquer consertos ou reparos de vulto, ou de caráter urgente e emergencial nas instalações, eventual ou acidentalmente danificadas, independentemente de consulta aos condôminos, assim como determinar a execução de obras de manutenção e serviços necessários ao normal funcionamento do condomínio.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>II – Defender o patrimônio do Condomínio, mantendo as áreas comuns em boas condições de uso, conservação, segurança e boa aparência. Para esse fim, poderá determinar e executar quaisquer consertos, reparos, obras de manutenção e serviços necessários ao regular funcionamento do Condomínio destinados a reparar instalações eventual ou acidentalmente danificadas, independentemente de prévia consulta aos condôminos, desde que o respectivo custo não ultrapasse porcentagem do orçamento anual e regras definidas em regimento interno.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Detalhe operacional remetido ao regimento interno, que se altera por maioria simples, mantendo a Convenção enxuta e adaptável.</p></div>
     </div>
@@ -585,13 +600,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 27, inciso VI">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 28 de 89</span>
-        <span class="badge b-inc">Inclusão</span>
+        <span class="eyebrow">Proposta 28 de 89</span>
+        <span class="badge b-inc"><span class="bsym">+</span> Acrescenta</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 27, inciso VI</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>(sem dispositivo correspondente na minuta original)</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>VI – Com o auxílio da eventual empresa contratada para administração do condomínio, cadastrar os proprietários e ocupantes das unidades autônomas, fixos e eventuais, com a finalidade de auxiliar o serviço de portaria e outras necessidades, na resolução dos problemas internos, respeitada e garantida a Lei nº 13.709/2018 (LGPD).</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Não existe na minuta. É um texto novo que estamos propondo acrescentar.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>VI – Com o auxílio da eventual empresa contratada para administração do condomínio, cadastrar os proprietários e ocupantes das unidades autônomas, fixos e eventuais, com a finalidade de auxiliar o serviço de portaria e outras necessidades, na resolução dos problemas internos, respeitada e garantida a Lei nº 13.709/2018 (LGPD).</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Conformidade com a proteção de dados pessoais no tratamento do cadastro de moradores. <span class="legalbadge">base legal: Lei nº 13.709/2018 (LGPD)</span></p></div>
     </div>
@@ -599,13 +614,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 27, inciso VII">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 29 de 89</span>
-        <span class="badge b-inc">Inclusão</span>
+        <span class="eyebrow">Proposta 29 de 89</span>
+        <span class="badge b-inc"><span class="bsym">+</span> Acrescenta</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 27, inciso VII</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>(sem dispositivo correspondente na minuta original)</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>VII – Definir juntamente com o Corpo Diretivo as penalidades a serem aplicadas aos infratores e respectivamente o valor das multas conforme regras definidas no regimento interno.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Não existe na minuta. É um texto novo que estamos propondo acrescentar.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>VII – Definir juntamente com o Corpo Diretivo as penalidades a serem aplicadas aos infratores e respectivamente o valor das multas conforme regras definidas no regimento interno.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Detalhe operacional remetido ao regimento interno, que se altera por maioria simples, mantendo a Convenção enxuta e adaptável.</p></div>
     </div>
@@ -613,13 +628,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 27, inciso XXII">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 30 de 89</span>
-        <span class="badge b-alt">Alteração</span>
+        <span class="eyebrow">Proposta 30 de 89</span>
+        <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 27, inciso XXII</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>XXII – Pagar pontualmente as obrigações e as dívidas do Condomínio, podendo, excepcionalmente, mediante autorização do Conselho Fiscal, não ultrapassando o teto de 20 (Vinte) salários-mínimos, valer-se de recursos do Fundo de Reserva,</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>XXII – Pagar pontualmente as obrigações e as dívidas do Condomínio, podendo, excepcionalmente, mediante autorização do Conselho Fiscal, valer-se de recursos do Fundo de Reserva, desde que observados os limites impostos no regimento interno.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>XXII – Pagar pontualmente as obrigações e as dívidas do Condomínio, podendo, excepcionalmente, mediante autorização do Conselho Fiscal, não ultrapassando o teto de 20 (Vinte) salários-mínimos, valer-se de recursos do Fundo de Reserva,</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>XXII – Pagar pontualmente as obrigações e as dívidas do Condomínio, podendo, excepcionalmente, mediante autorização do Conselho Fiscal, valer-se de recursos do Fundo de Reserva, desde que observados os limites impostos no regimento interno.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Proporcionalidade e limite de gasto sem aprovação coletiva.</p></div>
     </div>
@@ -627,13 +642,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 27, inciso XXIV">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 31 de 89</span>
-        <span class="badge b-inc">Inclusão</span>
+        <span class="eyebrow">Proposta 31 de 89</span>
+        <span class="badge b-inc"><span class="bsym">+</span> Acrescenta</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 27, inciso XXIV</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>(sem dispositivo correspondente na minuta original)</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>XXIV – Buscar a aprovação do Conselho Fiscal nas despesas extraordinárias de caráter não urgentes (não previstas no orçamento), num montante de 03 (três) a 05 (cinco) salários-mínimos vigentes, para cada evento necessário.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Não existe na minuta. É um texto novo que estamos propondo acrescentar.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>XXIV – Buscar a aprovação do Conselho Fiscal nas despesas extraordinárias de caráter não urgentes (não previstas no orçamento), num montante de 03 (três) a 05 (cinco) salários-mínimos vigentes, para cada evento necessário.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Proporcionalidade e limite de gasto sem aprovação coletiva.</p></div>
     </div>
@@ -641,13 +656,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 27, § 2º">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 32 de 89</span>
-        <span class="badge b-alt">Alteração</span>
+        <span class="eyebrow">Proposta 32 de 89</span>
+        <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 27, § 2º</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>§ 2º O parecer formal do Conselho Fiscal, na forma impressa ou eletrônica, deverá ser dado num prazo máximo de 48 (quarenta e oito) horas, contados da data da solicitação de apreciação encaminhada pelo Síndico com as devidas justificativas formais.</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>§ 2º O parecer formal do Conselho Fiscal, na forma impressa ou eletrônica, deverá ser dado num prazo máximo de 03 (três) dias úteis, contados da data da solicitação de apreciação encaminhada pelo Síndico com as devidas justificativas formais.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>§ 2º O parecer formal do Conselho Fiscal, na forma impressa ou eletrônica, deverá ser dado num prazo máximo de 48 (quarenta e oito) horas, contados da data da solicitação de apreciação encaminhada pelo Síndico com as devidas justificativas formais.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>§ 2º O parecer formal do Conselho Fiscal, na forma impressa ou eletrônica, deverá ser dado num prazo máximo de 03 (três) dias úteis, contados da data da solicitação de apreciação encaminhada pelo Síndico com as devidas justificativas formais.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Previsibilidade e clareza na contagem dos prazos (dias úteis).</p></div>
     </div>
@@ -655,13 +670,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 27, inciso XXV">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 33 de 89</span>
-        <span class="badge b-alt">Alteração</span>
+        <span class="eyebrow">Proposta 33 de 89</span>
+        <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 27, inciso XXV</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>XXV – Elaborar, alterar e aprovar através do Corpo Diretivo, Regulamentos e Regimentos Internos e outras normatizações que se fizerem relevantes e necessárias para o bom e pleno funcionamento do Condomínio, valendo de pronto as suas decisões, até que elas venham a ser retificadas ou modificadas por Assembleia Geral.</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>XXV – Elaborar, alterar e aprovar através do Corpo Diretivo, Regulamentos e Regimentos Internos e outras normatizações que se fizerem relevantes e necessárias para o bom e pleno funcionamento do Condomínio, valendo de pronto as suas decisões, até que elas venham a ser retificadas ou modificadas por Assembleia Geral devendo ser submetidos à ratificação em Assembleia Geral no prazo máximo de 30 (trinta) dias consecutivos, sob pena de perda de eficácia.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>XXV – Elaborar, alterar e aprovar através do Corpo Diretivo, Regulamentos e Regimentos Internos e outras normatizações que se fizerem relevantes e necessárias para o bom e pleno funcionamento do Condomínio, valendo de pronto as suas decisões, até que elas venham a ser retificadas ou modificadas por Assembleia Geral.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>XXV – Elaborar, alterar e aprovar através do Corpo Diretivo, Regulamentos e Regimentos Internos e outras normatizações que se fizerem relevantes e necessárias para o bom e pleno funcionamento do Condomínio, valendo de pronto as suas decisões, até que elas venham a ser retificadas ou modificadas por Assembleia Geral devendo ser submetidos à ratificação em Assembleia Geral no prazo máximo de 30 (trinta) dias consecutivos, sob pena de perda de eficácia.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Continuidade da administração com legitimidade eleitoral, mediante assembleia em prazo definido.</p></div>
     </div>
@@ -669,13 +684,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 27, § 6º">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 34 de 89</span>
-        <span class="badge b-sup">Supressão</span>
+        <span class="eyebrow">Proposta 34 de 89</span>
+        <span class="badge b-sup"><span class="bsym">−</span> Tira da convenção</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 27, § 6º</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>§ 6º O Síndico não receberá remuneração mensal, tendo direito à isenção da taxa condominial ordinária de uma de suas unidades, podendo por aprovação do Conselho Fiscal receber ajuda de custo ou reembolsos de despesas, bem como não poderá delegar suas funções a terceiros estranhos à Administração do Condomínio, ressalvada a hipótese da contratação de Síndico profissional (não condômino).</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>(dispositivo suprimido)</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>§ 6º O Síndico não receberá remuneração mensal, tendo direito à isenção da taxa condominial ordinária de uma de suas unidades, podendo por aprovação do Conselho Fiscal receber ajuda de custo ou reembolsos de despesas, bem como não poderá delegar suas funções a terceiros estranhos à Administração do Condomínio, ressalvada a hipótese da contratação de Síndico profissional (não condômino).</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>Propomos tirar esse trecho da convenção.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Transparência e controle do custo pela assembleia, no lugar de benefício fixo predefinido.</p></div>
     </div>
@@ -683,13 +698,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 28, caput">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 35 de 89</span>
-        <span class="badge b-sup">Supressão</span>
+        <span class="eyebrow">Proposta 35 de 89</span>
+        <span class="badge b-sup"><span class="bsym">−</span> Tira da convenção</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 28, caput</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>Art. 28. Em caso de ausência por morte, afastamento temporário (até 90 (noventa) dias), afastamento definitivo (por impossibilidade de cumprimento do mandato por acidentes ou incidentes de natureza física, motora, neurológica, desaparecimento, etc.), ou por renúncia, omissão, impedimento ou destituição do Síndico, caberá a este responder pela prestação de contas de sua gestão, devendo ser substituído pelo Subsíndico até o final do mandato, que, nos mesmos casos acima (ausência por morte, afastamentos, renúncia, omissão, impedimento, destituição ou recusa em assumir tal função), deverá ser substituído pelo Presidente do Conselho Fiscal, ou nos mesmos casos acima e inclusive de sua recusa em assumir esta função, deverá ser substituído por quaisquer dos demais conselheiros, e havendo os mesmos casos acima e inclusive a recusa destes, deverá ser substituído pelo Presidente do Conselho Consultivo que dispuser a fazê-lo, ou nos mesmos casos acima (ausência por morte, afastamentos, renúncia, omissão, impedimento, destituição ou recusa em assumir tal função), por quaisquer outro membro deste Conselho que vier a ser pelos demais membros o escolhido.</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>(dispositivo suprimido)</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Art. 28. Em caso de ausência por morte, afastamento temporário (até 90 (noventa) dias), afastamento definitivo (por impossibilidade de cumprimento do mandato por acidentes ou incidentes de natureza física, motora, neurológica, desaparecimento, etc.), ou por renúncia, omissão, impedimento ou destituição do Síndico, caberá a este responder pela prestação de contas de sua gestão, devendo ser substituído pelo Subsíndico até o final do mandato, que, nos mesmos casos acima (ausência por morte, afastamentos, renúncia, omissão, impedimento, destituição ou recusa em assumir tal função), deverá ser substituído pelo Presidente do Conselho Fiscal, ou nos mesmos casos acima e inclusive de sua recusa em assumir esta função, deverá ser substituído por quaisquer dos demais conselheiros, e havendo os mesmos casos acima e inclusive a recusa destes, deverá ser substituído pelo Presidente do Conselho Consultivo que dispuser a fazê-lo, ou nos mesmos casos acima (ausência por morte, afastamentos, renúncia, omissão, impedimento, destituição ou recusa em assumir tal função), por quaisquer outro membro deste Conselho que vier a ser pelos demais membros o escolhido.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>Propomos tirar esse trecho da convenção.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Reescreve a sucessão de cargos vagos, com assunção pelo Subsíndico ou pelo Conselho e convocação de assembleia, no lugar da cadeia anterior vinculada à incorporadora.</p></div>
     </div>
@@ -697,13 +712,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 28, Parágrafo único">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 36 de 89</span>
-        <span class="badge b-sup">Supressão</span>
+        <span class="eyebrow">Proposta 36 de 89</span>
+        <span class="badge b-sup"><span class="bsym">−</span> Tira da convenção</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 28, Parágrafo único</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>Parágrafo único. Na renúncia, destituição, ausência, impedimento ou recusa de membros do Corpo Diretivo para substituir o Síndico, poderá ser realizada uma reunião aberta aos condôminos, sem a necessidade de convocação de Assembleia Geral, para que seja escolhido entre eles, um condômino para representar o condomínio em caráter temporário, o qual será denominado por essa Convenção como “administrador transitório”, que terá a responsabilidade de responder pelas funções de Síndico e demais funções e atribuições neste interim, cabendo a ele a obrigação de convocar uma Assembleia Geral, no prazo máximo de 15 (quinze) dias contados da data desta reunião, cabendo a ele instalar e presidir a Assembleia Geral, a qual deverá eleger um novo síndico e/ou demais cargos, visando o cumprimento do complemento de mandato dos renunciantes, impedidos, omissos ou destituídos.</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>(dispositivo suprimido)</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Parágrafo único. Na renúncia, destituição, ausência, impedimento ou recusa de membros do Corpo Diretivo para substituir o Síndico, poderá ser realizada uma reunião aberta aos condôminos, sem a necessidade de convocação de Assembleia Geral, para que seja escolhido entre eles, um condômino para representar o condomínio em caráter temporário, o qual será denominado por essa Convenção como “administrador transitório”, que terá a responsabilidade de responder pelas funções de Síndico e demais funções e atribuições neste interim, cabendo a ele a obrigação de convocar uma Assembleia Geral, no prazo máximo de 15 (quinze) dias contados da data desta reunião, cabendo a ele instalar e presidir a Assembleia Geral, a qual deverá eleger um novo síndico e/ou demais cargos, visando o cumprimento do complemento de mandato dos renunciantes, impedidos, omissos ou destituídos.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>Propomos tirar esse trecho da convenção.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Reescreve a sucessão de cargos vagos, com assunção pelo Subsíndico ou pelo Conselho e convocação de assembleia, no lugar da cadeia anterior vinculada à incorporadora.</p></div>
     </div>
@@ -711,13 +726,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 28, caput">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 37 de 89</span>
-        <span class="badge b-inc">Inclusão</span>
+        <span class="eyebrow">Proposta 37 de 89</span>
+        <span class="badge b-inc"><span class="bsym">+</span> Acrescenta</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 28, caput</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>(sem dispositivo correspondente na minuta original)</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>Art. 28. Em caso de morte, afastamento temporário de até 90 (noventa) dias, afastamento definitivo, renúncia, omissão, impedimento ou destituição do Síndico, caberá a este responder pela prestação de contas dos atos praticados durante sua gestão, sendo substituído pelo Subsíndico.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Não existe na minuta. É um texto novo que estamos propondo acrescentar.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>Art. 28. Em caso de morte, afastamento temporário de até 90 (noventa) dias, afastamento definitivo, renúncia, omissão, impedimento ou destituição do Síndico, caberá a este responder pela prestação de contas dos atos praticados durante sua gestão, sendo substituído pelo Subsíndico.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Reescreve a sucessão de cargos vagos, com assunção pelo Subsíndico ou pelo Conselho e convocação de assembleia, no lugar da cadeia anterior vinculada à incorporadora.</p></div>
     </div>
@@ -725,13 +740,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 28, § 1º">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 38 de 89</span>
-        <span class="badge b-inc">Inclusão</span>
+        <span class="eyebrow">Proposta 38 de 89</span>
+        <span class="badge b-inc"><span class="bsym">+</span> Acrescenta</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 28, § 1º</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>(sem dispositivo correspondente na minuta original)</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>§ 1º Na hipótese de afastamento definitivo, renúncia, impedimento, destituição, morte ou recusa do Subsíndico em assumir ou permanecer no exercício do cargo de Síndico, o Presidente do Conselho Fiscal assumirá interinamente a administração do Condomínio, devendo convocar Assembleia Geral, no prazo máximo de 30 (trinta) dias consecutivos, para eleição de novo Síndico e Subsíndico, que exercerão mandato complementar correspondente ao período remanescente do mandato em curso.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Não existe na minuta. É um texto novo que estamos propondo acrescentar.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>§ 1º Na hipótese de afastamento definitivo, renúncia, impedimento, destituição, morte ou recusa do Subsíndico em assumir ou permanecer no exercício do cargo de Síndico, o Presidente do Conselho Fiscal assumirá interinamente a administração do Condomínio, devendo convocar Assembleia Geral, no prazo máximo de 30 (trinta) dias consecutivos, para eleição de novo Síndico e Subsíndico, que exercerão mandato complementar correspondente ao período remanescente do mandato em curso.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Continuidade da administração com legitimidade eleitoral, mediante assembleia em prazo definido.</p></div>
     </div>
@@ -739,13 +754,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 28, § 2º">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 39 de 89</span>
-        <span class="badge b-inc">Inclusão</span>
+        <span class="eyebrow">Proposta 39 de 89</span>
+        <span class="badge b-inc"><span class="bsym">+</span> Acrescenta</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 28, § 2º</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>(sem dispositivo correspondente na minuta original)</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>§ 2º Na impossibilidade ou recusa do Presidente do Conselho Fiscal, assumirá interinamente um dos demais membros do Conselho Fiscal, escolhido entre seus integrantes. Persistindo a impossibilidade ou recusa, assumirá o Presidente do Conselho Consultivo e, na impossibilidade ou recusa deste, outro membro desse Conselho, escolhido por seus pares, aplicando-se, em qualquer hipótese, a obrigação de convocação da Assembleia Geral para a eleição prevista no parágrafo anterior.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Não existe na minuta. É um texto novo que estamos propondo acrescentar.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>§ 2º Na impossibilidade ou recusa do Presidente do Conselho Fiscal, assumirá interinamente um dos demais membros do Conselho Fiscal, escolhido entre seus integrantes. Persistindo a impossibilidade ou recusa, assumirá o Presidente do Conselho Consultivo e, na impossibilidade ou recusa deste, outro membro desse Conselho, escolhido por seus pares, aplicando-se, em qualquer hipótese, a obrigação de convocação da Assembleia Geral para a eleição prevista no parágrafo anterior.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Reescreve a sucessão de cargos vagos, com assunção pelo Subsíndico ou pelo Conselho e convocação de assembleia, no lugar da cadeia anterior vinculada à incorporadora.</p></div>
     </div>
@@ -753,13 +768,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 29, caput">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 40 de 89</span>
-        <span class="badge b-sup">Supressão</span>
+        <span class="eyebrow">Proposta 40 de 89</span>
+        <span class="badge b-sup"><span class="bsym">−</span> Tira da convenção</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 29, caput</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>Art. 29. O Subsíndico exercerá as suas funções que o Síndico assim determinar, sem qualquer remuneração, além das atribuições normais a que a lei lhe confere, para um mandato de 02 (dois) anos, podendo ser reeleito.</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>(dispositivo suprimido)</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Art. 29. O Subsíndico exercerá as suas funções que o Síndico assim determinar, sem qualquer remuneração, além das atribuições normais a que a lei lhe confere, para um mandato de 02 (dois) anos, podendo ser reeleito.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>Propomos tirar esse trecho da convenção.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Estabilidade de gestão com rodízio; previne a perpetuação no cargo.</p></div>
     </div>
@@ -767,13 +782,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 29, caput">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 41 de 89</span>
-        <span class="badge b-inc">Inclusão</span>
+        <span class="eyebrow">Proposta 41 de 89</span>
+        <span class="badge b-inc"><span class="bsym">+</span> Acrescenta</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 29, caput</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>(sem dispositivo correspondente na minuta original)</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>Art. 29. O Subsíndico exercerá as suas funções que o Síndico assim determinar, além das atribuições normais a que a lei lhe confere, para um mandato de 02 (dois) anos, podendo ser reeleito para o mesmo cargo, uma única vez por igual período, fazendo-se necessário um intervalo de duas eleições para que ele possa se candidatar novamente ao cargo, e sua contraprestação será definida em Assembleia Geral Ordinária.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Não existe na minuta. É um texto novo que estamos propondo acrescentar.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>Art. 29. O Subsíndico exercerá as suas funções que o Síndico assim determinar, além das atribuições normais a que a lei lhe confere, para um mandato de 02 (dois) anos, podendo ser reeleito para o mesmo cargo, uma única vez por igual período, fazendo-se necessário um intervalo de duas eleições para que ele possa se candidatar novamente ao cargo, e sua contraprestação será definida em Assembleia Geral Ordinária.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Estabilidade de gestão com rodízio; previne a perpetuação no cargo.</p></div>
     </div>
@@ -781,13 +796,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 29, Parágrafo único">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 42 de 89</span>
-        <span class="badge b-sup">Supressão</span>
+        <span class="eyebrow">Proposta 42 de 89</span>
+        <span class="badge b-sup"><span class="bsym">−</span> Tira da convenção</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 29, Parágrafo único</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>Parágrafo único. O Subsíndico deverá ser eleito em Assembleia Geral. exceto quando a Incorporadora estiver à frente dos dois primeiros mandatos, a qual terá o direito de exercer a escolha do membro que desempenhará este cargo, cabendo unicamente ela destituí-los e substituí-los a qualquer tempo, sem necessidade de Assembleia Geral, bastando documentar tais atos em ata própria. A candidatura para subsíndico deverá obedecer às determinações desta Convenção, e havendo Regulamento/Regimento de Eleição, as suas normatizações.</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>(dispositivo suprimido)</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Parágrafo único. O Subsíndico deverá ser eleito em Assembleia Geral. exceto quando a Incorporadora estiver à frente dos dois primeiros mandatos, a qual terá o direito de exercer a escolha do membro que desempenhará este cargo, cabendo unicamente ela destituí-los e substituí-los a qualquer tempo, sem necessidade de Assembleia Geral, bastando documentar tais atos em ata própria. A candidatura para subsíndico deverá obedecer às determinações desta Convenção, e havendo Regulamento/Regimento de Eleição, as suas normatizações.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>Propomos tirar esse trecho da convenção.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Retira privilégio da incorporadora e devolve a decisão à assembleia e ao Corpo Diretivo.</p></div>
     </div>
@@ -795,13 +810,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 30, inciso I">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 43 de 89</span>
-        <span class="badge b-inc">Inclusão</span>
+        <span class="eyebrow">Proposta 43 de 89</span>
+        <span class="badge b-inc"><span class="bsym">+</span> Acrescenta</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 30, inciso I</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>(sem dispositivo correspondente na minuta original)</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>I – Decidir pelo valor da remuneração do Síndico Profissional, quando este existir, desde que observado e respeitado o regimento interno.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Não existe na minuta. É um texto novo que estamos propondo acrescentar.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>I – Decidir pelo valor da remuneração do Síndico Profissional, quando este existir, desde que observado e respeitado o regimento interno.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Transparência e controle do custo pela assembleia, no lugar de benefício fixo predefinido.</p></div>
     </div>
@@ -809,13 +824,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 30, inciso IV">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 44 de 89</span>
-        <span class="badge b-inc">Inclusão</span>
+        <span class="eyebrow">Proposta 44 de 89</span>
+        <span class="badge b-inc"><span class="bsym">+</span> Acrescenta</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 30, inciso IV</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>(sem dispositivo correspondente na minuta original)</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>IV – Definir as penalidades e as respectivas multas por infrações cometidas pelos condôminos ou por quem estes forem os responsáveis, desde que observado e respeitado o regimento interno.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Não existe na minuta. É um texto novo que estamos propondo acrescentar.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>IV – Definir as penalidades e as respectivas multas por infrações cometidas pelos condôminos ou por quem estes forem os responsáveis, desde que observado e respeitado o regimento interno.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Detalhe operacional remetido ao regimento interno, que se altera por maioria simples, mantendo a Convenção enxuta e adaptável.</p></div>
     </div>
@@ -823,13 +838,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 30, § 1º">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 45 de 89</span>
-        <span class="badge b-sup">Supressão</span>
+        <span class="eyebrow">Proposta 45 de 89</span>
+        <span class="badge b-sup"><span class="bsym">−</span> Tira da convenção</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 30, § 1º</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>§ 1º Os cargos de que tratam este artigo serão exercidos voluntariamente, sem qualquer remuneração dos seus membros, sem prejuízo da contratação de terceiros não condôminos, para realizar o suporte administrativo, técnico e operacional, de profissionais para assessoramento na análise dos projetos residenciais e fiscalização de obras e de demais obras e atividades, bem como de serviços gerais de administração, de segurança, técnico e de auditoria externa para suporte ao Corpo Diretivo e Conselhos Fiscal e Consultivo.</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>(dispositivo suprimido)</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>§ 1º Os cargos de que tratam este artigo serão exercidos voluntariamente, sem qualquer remuneração dos seus membros, sem prejuízo da contratação de terceiros não condôminos, para realizar o suporte administrativo, técnico e operacional, de profissionais para assessoramento na análise dos projetos residenciais e fiscalização de obras e de demais obras e atividades, bem como de serviços gerais de administração, de segurança, técnico e de auditoria externa para suporte ao Corpo Diretivo e Conselhos Fiscal e Consultivo.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>Propomos tirar esse trecho da convenção.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Transparência e controle do custo pela assembleia, no lugar de benefício fixo predefinido.</p></div>
     </div>
@@ -837,13 +852,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 30, § 2º">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 46 de 89</span>
-        <span class="badge b-sup">Supressão</span>
+        <span class="eyebrow">Proposta 46 de 89</span>
+        <span class="badge b-sup"><span class="bsym">−</span> Tira da convenção</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 30, § 2º</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>§ 2º Enquanto não houver quórum mínimo de condôminos residentes no Condomínio interessados em compor o cargo de Síndico, Subsíndico e para compor o Conselho Fiscal e o Conselho Consultivo, admite-se a composição por condôminos não residentes.</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>(dispositivo suprimido)</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>§ 2º Enquanto não houver quórum mínimo de condôminos residentes no Condomínio interessados em compor o cargo de Síndico, Subsíndico e para compor o Conselho Fiscal e o Conselho Consultivo, admite-se a composição por condôminos não residentes.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>Propomos tirar esse trecho da convenção.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Remove a exceção que mantinha cargos sem eleição por falta de quórum, em linha com a competência da assembleia.</p></div>
     </div>
@@ -851,13 +866,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 30, § 3º">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 47 de 89</span>
-        <span class="badge b-sup">Supressão</span>
+        <span class="eyebrow">Proposta 47 de 89</span>
+        <span class="badge b-sup"><span class="bsym">−</span> Tira da convenção</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 30, § 3º</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>§ 3º O disposto no parágrafo 1º. deste artigo (vedação à remuneração dos cargos), não se aplica na hipótese de vir a ser contratado um Síndico Profissional (não condômino).</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>(dispositivo suprimido)</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>§ 3º O disposto no parágrafo 1º. deste artigo (vedação à remuneração dos cargos), não se aplica na hipótese de vir a ser contratado um Síndico Profissional (não condômino).</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>Propomos tirar esse trecho da convenção.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Transparência e controle do custo pela assembleia, no lugar de benefício fixo predefinido.</p></div>
     </div>
@@ -865,13 +880,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 32, caput">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 48 de 89</span>
-        <span class="badge b-sup">Supressão</span>
+        <span class="eyebrow">Proposta 48 de 89</span>
+        <span class="badge b-sup"><span class="bsym">−</span> Tira da convenção</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 32, caput</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>Art. 32. A Assembleia Geral (Ordinária ou Extraordinária) poderá eleger o Síndico, o Subsíndico e os membros do Conselho Fiscal e do Conselho Consultivo, em parte ou no todo, ou mesmo por indicação/substituição ou destituição da Incorporadora nos primeiros 2 (dois) mandatos ou até que a Incorporadora detenha a propriedade de até 50% (cinquenta por cento) das unidades ou que forem a ela devolvidos por desfazimento de contrato de venda e compra (amigável ou judicial), ou destituí-los sempre que vier a praticar irregularidades, não prestar contas ou não cumprir regularmente as suas funções convenientemente para com o Condomínio, observado o direito à ampla defesa, cujo quorum de instalação deste item e sua respectiva deliberação, deverão respeitar o que estiver determinado nesta Convenção, podendo se dar por votação aberta ou fechada (secreta), cabendo ao Edital de Convocação determinar a forma de votação deste item.</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>(dispositivo suprimido)</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Art. 32. A Assembleia Geral (Ordinária ou Extraordinária) poderá eleger o Síndico, o Subsíndico e os membros do Conselho Fiscal e do Conselho Consultivo, em parte ou no todo, ou mesmo por indicação/substituição ou destituição da Incorporadora nos primeiros 2 (dois) mandatos ou até que a Incorporadora detenha a propriedade de até 50% (cinquenta por cento) das unidades ou que forem a ela devolvidos por desfazimento de contrato de venda e compra (amigável ou judicial), ou destituí-los sempre que vier a praticar irregularidades, não prestar contas ou não cumprir regularmente as suas funções convenientemente para com o Condomínio, observado o direito à ampla defesa, cujo quorum de instalação deste item e sua respectiva deliberação, deverão respeitar o que estiver determinado nesta Convenção, podendo se dar por votação aberta ou fechada (secreta), cabendo ao Edital de Convocação determinar a forma de votação deste item.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>Propomos tirar esse trecho da convenção.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Detalha o conteúdo obrigatório do edital de convocação, inclusive o formato e o tipo de votação (aberta ou secreta).</p></div>
     </div>
@@ -879,13 +894,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 33, § 1º">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 49 de 89</span>
-        <span class="badge b-inc">Inclusão</span>
+        <span class="eyebrow">Proposta 49 de 89</span>
+        <span class="badge b-inc"><span class="bsym">+</span> Acrescenta</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 33, § 1º</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>(sem dispositivo correspondente na minuta original)</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>§ 1º As Assembleias Gerais poderão ser presenciais, eletrônicas (digitais ou virtuais) ou híbridas (presencial e eletrônica), e todas deverão seguir os ritos de convocação, instalação, presidência e secretaria dos trabalhos, conforme definido por esta Convenção, podendo suas atas serem elaboradas e disponibilizadas na forma impressa ou eletrônica. Devendo ser garantido, nas Assembleias realizadas nas modalidades eletrônica (digital ou virtual) ou híbrida, o registro dos votos em tempo real, por meio da plataforma utilizada ou de formulário eletrônico adequado, assegurando-se a integridade, a rastreabilidade, a auditoria das votações e as manifestações de vontade dos condôminos.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Não existe na minuta. É um texto novo que estamos propondo acrescentar.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>§ 1º As Assembleias Gerais poderão ser presenciais, eletrônicas (digitais ou virtuais) ou híbridas (presencial e eletrônica), e todas deverão seguir os ritos de convocação, instalação, presidência e secretaria dos trabalhos, conforme definido por esta Convenção, podendo suas atas serem elaboradas e disponibilizadas na forma impressa ou eletrônica. Devendo ser garantido, nas Assembleias realizadas nas modalidades eletrônica (digital ou virtual) ou híbrida, o registro dos votos em tempo real, por meio da plataforma utilizada ou de formulário eletrônico adequado, assegurando-se a integridade, a rastreabilidade, a auditoria das votações e as manifestações de vontade dos condôminos.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Garante integridade, rastreabilidade e auditoria do voto em assembleias eletrônicas ou híbridas. (Há legislação de apoio, a confirmar com assessoria jurídica.)</p></div>
     </div>
@@ -893,13 +908,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 33, § 4º">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 50 de 89</span>
-        <span class="badge b-inc">Inclusão</span>
+        <span class="eyebrow">Proposta 50 de 89</span>
+        <span class="badge b-inc"><span class="bsym">+</span> Acrescenta</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 33, § 4º</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>(sem dispositivo correspondente na minuta original)</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>§ 4º Neste Edital deverá constar o tipo de Assembleia Geral (Ordinária ou Extraordinária), o formato de realização a ser escolhido Presencial ou Híbrida, e o tipo de votação, podendo ser aberta ou fechada (secreta) e nestes casos deverá constar o local de sua realização ou mesmo a opção pela forma Eletrônica. Em qualquer dos formatos escolhidos, deverá constar a Ordem do Dia, a data e os horários de primeira e segunda convocações; sendo que em primeira convocação, a Assembleia Geral deverá ser instalada somente com a presença mínima de 50% mais um (cinquenta por cento mais um) dos condôminos adimplentes, e em segunda convocação, 30 minutos após a primeira convocação, com qualquer número.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Não existe na minuta. É um texto novo que estamos propondo acrescentar.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>§ 4º Neste Edital deverá constar o tipo de Assembleia Geral (Ordinária ou Extraordinária), o formato de realização a ser escolhido Presencial ou Híbrida, e o tipo de votação, podendo ser aberta ou fechada (secreta) e nestes casos deverá constar o local de sua realização ou mesmo a opção pela forma Eletrônica. Em qualquer dos formatos escolhidos, deverá constar a Ordem do Dia, a data e os horários de primeira e segunda convocações; sendo que em primeira convocação, a Assembleia Geral deverá ser instalada somente com a presença mínima de 50% mais um (cinquenta por cento mais um) dos condôminos adimplentes, e em segunda convocação, 30 minutos após a primeira convocação, com qualquer número.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Detalha o conteúdo obrigatório do edital de convocação, inclusive o formato e o tipo de votação (aberta ou secreta).</p></div>
     </div>
@@ -907,13 +922,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 33, alínea b">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 51 de 89</span>
-        <span class="badge b-sup">Supressão</span>
+        <span class="eyebrow">Proposta 51 de 89</span>
+        <span class="badge b-sup"><span class="bsym">−</span> Tira da convenção</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 33, alínea b</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>b) Para a aprovação das alterações ao Instrumento de Convenção, além da aprovação da Assembleia Geral, após o atingimento dos quóruns qualificados, deverá ser obtida pelo Corpo Diretivo a sanção da Incorporadora, sendo consideradas aprovadas apenas as alterações que obtiverem a sua direta aprovação, enquanto esta detiver a propriedade de no mínimo 50 % (cinquenta por cento) dos lotes.</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>(dispositivo suprimido)</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>b) Para a aprovação das alterações ao Instrumento de Convenção, além da aprovação da Assembleia Geral, após o atingimento dos quóruns qualificados, deverá ser obtida pelo Corpo Diretivo a sanção da Incorporadora, sendo consideradas aprovadas apenas as alterações que obtiverem a sua direta aprovação, enquanto esta detiver a propriedade de no mínimo 50 % (cinquenta por cento) dos lotes.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>Propomos tirar esse trecho da convenção.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>A alteração da Convenção se dá por quórum de 2/3; a lei não prevê sanção de terceiro, e a incorporadora não é órgão condominial. Equivaleria a veto perpétuo dos condôminos. <span class="legalbadge">base legal: CC, art. 1.333</span></p></div>
     </div>
@@ -921,13 +936,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 33, alínea c">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 52 de 89</span>
-        <span class="badge b-alt">Alteração</span>
+        <span class="eyebrow">Proposta 52 de 89</span>
+        <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 33, alínea c</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>c) Ser maior de 21 (vinte e um) anos;</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>c) Ser maior de 18 (dezoito) anos;</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>c) Ser maior de 21 (vinte e um) anos;</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>c) Ser maior de 18 (dezoito) anos;</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Alinhamento à maioridade civil (capacidade plena aos 18 anos).</p></div>
     </div>
@@ -935,13 +950,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 33, item 12.5">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 53 de 89</span>
-        <span class="badge b-inc">Inclusão</span>
+        <span class="eyebrow">Proposta 53 de 89</span>
+        <span class="badge b-inc"><span class="bsym">+</span> Acrescenta</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 33, item 12.5</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>(sem dispositivo correspondente na minuta original)</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>12.5 É assegurado o direito de representação por procuração nas assembleias gerais. Contudo, fica expressamente proibida a concentração de votos, de modo que nenhum representante, seja ele condômino ou terceiro, poderá portar mais de 01 (uma) procuração por ato assemblear.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Não existe na minuta. É um texto novo que estamos propondo acrescentar.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>12.5 É assegurado o direito de representação por procuração nas assembleias gerais. Contudo, fica expressamente proibida a concentração de votos, de modo que nenhum representante, seja ele condômino ou terceiro, poderá portar mais de 01 (uma) procuração por ato assemblear.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Evita a captura da assembleia pelo acúmulo de procurações em um único representante.</p></div>
     </div>
@@ -949,13 +964,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 37, inciso I">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 54 de 89</span>
-        <span class="badge b-alt">Alteração</span>
+        <span class="eyebrow">Proposta 54 de 89</span>
+        <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 37, inciso I</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>I – A cada um ano ou em caso de vacância de cargos por renúncia, destituição, impedimento, omissão ou afastamento definitivo, realizar a eleição do Síndico, do Subsíndico, dos membros do Conselho Fiscal e do Conselho Consultivo, total ou parcialmente, para um mandato de 01 (um) ano</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>I – A cada um ano ou em caso de vacância de cargos por renúncia, destituição, impedimento, omissão ou afastamento definitivo, realizar a eleição do Síndico, do Subsíndico, dos membros do Conselho Fiscal e do Conselho Consultivo, total ou parcialmente, para um mandato de para um mandato de 02 (dois) anos, podendo ser reeleito para o mesmo cargo, uma única vez por igual período, fazendo-se necessário um intervalo de duas eleições para que ele possa se candidatar novamente ao cargo.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>I – A cada um ano ou em caso de vacância de cargos por renúncia, destituição, impedimento, omissão ou afastamento definitivo, realizar a eleição do Síndico, do Subsíndico, dos membros do Conselho Fiscal e do Conselho Consultivo, total ou parcialmente, para um mandato de 01 (um) ano</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>I – A cada um ano ou em caso de vacância de cargos por renúncia, destituição, impedimento, omissão ou afastamento definitivo, realizar a eleição do Síndico, do Subsíndico, dos membros do Conselho Fiscal e do Conselho Consultivo, total ou parcialmente, para um mandato de para um mandato de 02 (dois) anos, podendo ser reeleito para o mesmo cargo, uma única vez por igual período, fazendo-se necessário um intervalo de duas eleições para que ele possa se candidatar novamente ao cargo.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Estabilidade de gestão com rodízio; previne a perpetuação no cargo.</p></div>
     </div>
@@ -963,13 +978,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 39, caput">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 55 de 89</span>
-        <span class="badge b-alt">Alteração</span>
+        <span class="eyebrow">Proposta 55 de 89</span>
+        <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 39, caput</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>Art. 39. O Conselho Fiscal é um órgão fiscalizador e de assessoramento à administração, com finalidade de suporte ao Síndico e aos demais integrantes do Corpo Diretivo do Condomínio. Será composto por até 03 (três) membros efetivos e por até 02 (dois) membros suplentes, que deverão ser condôminos adimplentes, para um mandato de 01 (um) ano, podendo ser reeleitos. As candidaturas deverão obedecer às determinações desta Convenção, e havendo Regulamento/Regimento de Eleição, as suas normatizações. As vagas serão ocupadas pelos eleitos em Assembleia Geral. exceto quando a Incorporadora estiver à frente dos dois primeiros mandatos, a qual terá o direito de exercer a escolha destes membros, cabendo unicamente ela destituí-los e substituí-los a qualquer tempo, sem necessidade de Assembleia Geral, bastando documentar tais atos em ata própria.</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>Art. 39. O Conselho Fiscal é um órgão fiscalizador e de assessoramento à administração, com finalidade de suporte ao Síndico e aos demais integrantes do Corpo Diretivo do Condomínio. Será composto por até 03 (três) membros efetivos e por até 02 (dois) membros suplentes, que deverão ser condôminos adimplentes, para um mandato de 02 (dois) anos, podendo ser reeleitos. As candidaturas deverão obedecer às determinações desta Convenção, e havendo Regulamento/Regimento de Eleição, as suas normatizações. As vagas serão ocupadas pelos eleitos em Assembleia Geral.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Art. 39. O Conselho Fiscal é um órgão fiscalizador e de assessoramento à administração, com finalidade de suporte ao Síndico e aos demais integrantes do Corpo Diretivo do Condomínio. Será composto por até 03 (três) membros efetivos e por até 02 (dois) membros suplentes, que deverão ser condôminos adimplentes, para um mandato de 01 (um) ano, podendo ser reeleitos. As candidaturas deverão obedecer às determinações desta Convenção, e havendo Regulamento/Regimento de Eleição, as suas normatizações. As vagas serão ocupadas pelos eleitos em Assembleia Geral. exceto quando a Incorporadora estiver à frente dos dois primeiros mandatos, a qual terá o direito de exercer a escolha destes membros, cabendo unicamente ela destituí-los e substituí-los a qualquer tempo, sem necessidade de Assembleia Geral, bastando documentar tais atos em ata própria.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>Art. 39. O Conselho Fiscal é um órgão fiscalizador e de assessoramento à administração, com finalidade de suporte ao Síndico e aos demais integrantes do Corpo Diretivo do Condomínio. Será composto por até 03 (três) membros efetivos e por até 02 (dois) membros suplentes, que deverão ser condôminos adimplentes, para um mandato de 02 (dois) anos, podendo ser reeleitos. As candidaturas deverão obedecer às determinações desta Convenção, e havendo Regulamento/Regimento de Eleição, as suas normatizações. As vagas serão ocupadas pelos eleitos em Assembleia Geral.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Estabilidade de gestão com rodízio; previne a perpetuação no cargo.</p></div>
     </div>
@@ -977,13 +992,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 39, § 1º">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 56 de 89</span>
-        <span class="badge b-alt">Alteração</span>
+        <span class="eyebrow">Proposta 56 de 89</span>
+        <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 39, § 1º</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>§ 1º Os membros efetivos e suplentes não poderão receber qualquer remuneração</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>§ 1º Os membros efetivos e suplentes poderão receber contraprestação a ser definida em Assembleia Geral Ordinária e poderão ser reeleitos para um mandato de 02 (dois) anos, podendo ser reeleito para o mesmo cargo, uma única vez por igual período, fazendo-se necessário um intervalo de duas eleições para que ele possa se candidatar novamente ao cargo.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>§ 1º Os membros efetivos e suplentes não poderão receber qualquer remuneração</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>§ 1º Os membros efetivos e suplentes poderão receber contraprestação a ser definida em Assembleia Geral Ordinária e poderão ser reeleitos para um mandato de 02 (dois) anos, podendo ser reeleito para o mesmo cargo, uma única vez por igual período, fazendo-se necessário um intervalo de duas eleições para que ele possa se candidatar novamente ao cargo.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Estabilidade de gestão com rodízio; previne a perpetuação no cargo.</p></div>
     </div>
@@ -991,13 +1006,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 39, § 5º">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 57 de 89</span>
-        <span class="badge b-alt">Alteração</span>
+        <span class="eyebrow">Proposta 57 de 89</span>
+        <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 39, § 5º</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>§ 5º Havendo apenas 1 (um) único conselheiro com mandato vigente, as reuniões do Conselho Fiscal não poderão ser convocadas e realizadas, sendo que deverão ser substituídas pelas reuniões do Corpo Diretivo e no caso de sua não existência, pelo Síndico, seu substituto legal ou seu preposto.</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>§ 5º Havendo apenas 1 (um) único conselheiro com mandato vigente, o Síndico deverá convocar em até 30 (trinta) dias consecutivos Assembleia Geral Extraordinária para eleição dos membros faltantes para exercer mandato pelo período complementar.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>§ 5º Havendo apenas 1 (um) único conselheiro com mandato vigente, as reuniões do Conselho Fiscal não poderão ser convocadas e realizadas, sendo que deverão ser substituídas pelas reuniões do Corpo Diretivo e no caso de sua não existência, pelo Síndico, seu substituto legal ou seu preposto.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>§ 5º Havendo apenas 1 (um) único conselheiro com mandato vigente, o Síndico deverá convocar em até 30 (trinta) dias consecutivos Assembleia Geral Extraordinária para eleição dos membros faltantes para exercer mandato pelo período complementar.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Continuidade da administração com legitimidade eleitoral, mediante assembleia em prazo definido.</p></div>
     </div>
@@ -1005,13 +1020,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 40, § 1º">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 58 de 89</span>
-        <span class="badge b-inc">Inclusão</span>
+        <span class="eyebrow">Proposta 58 de 89</span>
+        <span class="badge b-inc"><span class="bsym">+</span> Acrescenta</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 40, § 1º</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>(sem dispositivo correspondente na minuta original)</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>§ 1º É de responsabilidade dos conselheiros manifestarem seu parecer, de forma individual e formalmente, em local próprio a ser determinado pela administração, podendo tal ato ser feito no formato impresso ou eletrônico, dentro do prazo máximo de 08 (oito) dias úteis, contados do fechamento dos demonstrativos mensais; sendo que após esse prazo e não havendo manifestação formal por parte dos mesmos, as contas relativas a determinado mês ou período, serão consideradas aprovadas pelo conselheiro omisso;</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Não existe na minuta. É um texto novo que estamos propondo acrescentar.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>§ 1º É de responsabilidade dos conselheiros manifestarem seu parecer, de forma individual e formalmente, em local próprio a ser determinado pela administração, podendo tal ato ser feito no formato impresso ou eletrônico, dentro do prazo máximo de 08 (oito) dias úteis, contados do fechamento dos demonstrativos mensais; sendo que após esse prazo e não havendo manifestação formal por parte dos mesmos, as contas relativas a determinado mês ou período, serão consideradas aprovadas pelo conselheiro omisso;</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Previsibilidade e clareza na contagem dos prazos (dias úteis).</p></div>
     </div>
@@ -1019,13 +1034,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 40, inciso XI">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 59 de 89</span>
-        <span class="badge b-alt">Alteração</span>
+        <span class="eyebrow">Proposta 59 de 89</span>
+        <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 40, inciso XI</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>XI – Deliberar sobre despesas extraordinárias de caráter não urgentes (não previstas no orçamento), num montante de 10 (dez) à 20 (vinte) salários-mínimos vigentes.</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>XI – Deliberar sobre despesas extraordinárias de caráter não urgentes (não previstas no orçamento), num montante de 3 (três) a 5 (cinco) salários-mínimos vigentes por evento.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>XI – Deliberar sobre despesas extraordinárias de caráter não urgentes (não previstas no orçamento), num montante de 10 (dez) à 20 (vinte) salários-mínimos vigentes.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>XI – Deliberar sobre despesas extraordinárias de caráter não urgentes (não previstas no orçamento), num montante de 3 (três) a 5 (cinco) salários-mínimos vigentes por evento.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Proporcionalidade e limite de gasto sem aprovação coletiva.</p></div>
     </div>
@@ -1033,13 +1048,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 43, caput">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 60 de 89</span>
-        <span class="badge b-alt">Alteração</span>
+        <span class="eyebrow">Proposta 60 de 89</span>
+        <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 43, caput</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>Art. 43. O Conselho Consultivo é um órgão de assessoramento técnico do condomínio, na forma desta Convenção e será composto por até 08 (oito) membros efetivos, e havendo candidatos até 04 (quatro) membros suplentes, para um mandato de 01 (um) ano 02 (dois) anos, podendo ser reeleitos, uma única vez, por igual período</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>Art. 43. O Conselho Consultivo é um órgão de assessoramento técnico do condomínio, na forma desta Convenção e será composto por até 08 (oito) membros efetivos, e havendo candidatos até 04 (quatro) membros suplentes, podendo ser eleitos para um mandato de 02 (dois) anos, podendo ser reeleito para o mesmo cargo, uma única vez por igual período, fazendo-se necessário um intervalo de duas eleições para que ele possa se candidatar novamente ao cargo.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Art. 43. O Conselho Consultivo é um órgão de assessoramento técnico do condomínio, na forma desta Convenção e será composto por até 08 (oito) membros efetivos, e havendo candidatos até 04 (quatro) membros suplentes, para um mandato de 01 (um) ano 02 (dois) anos, podendo ser reeleitos, uma única vez, por igual período</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>Art. 43. O Conselho Consultivo é um órgão de assessoramento técnico do condomínio, na forma desta Convenção e será composto por até 08 (oito) membros efetivos, e havendo candidatos até 04 (quatro) membros suplentes, podendo ser eleitos para um mandato de 02 (dois) anos, podendo ser reeleito para o mesmo cargo, uma única vez por igual período, fazendo-se necessário um intervalo de duas eleições para que ele possa se candidatar novamente ao cargo.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Estabilidade de gestão com rodízio; previne a perpetuação no cargo.</p></div>
     </div>
@@ -1047,13 +1062,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 43, § 1º">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 61 de 89</span>
-        <span class="badge b-alt">Alteração</span>
+        <span class="eyebrow">Proposta 61 de 89</span>
+        <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 43, § 1º</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>§ 1º Os membros efetivos e suplentes não poderão receber qualquer remuneração e poderão ser reeleitos.</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>§ 1º Os membros efetivos e suplentes terão sua contraprestação definida no regimento interno, podendo ser eleitos para um mandato de 02 (dois) anos, podendo ser reeleito para o mesmo cargo, uma única vez por igual período, fazendo-se necessário um intervalo de duas eleições para que ele possa se candidatar novamente ao cargo.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>§ 1º Os membros efetivos e suplentes não poderão receber qualquer remuneração e poderão ser reeleitos.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>§ 1º Os membros efetivos e suplentes terão sua contraprestação definida no regimento interno, podendo ser eleitos para um mandato de 02 (dois) anos, podendo ser reeleito para o mesmo cargo, uma única vez por igual período, fazendo-se necessário um intervalo de duas eleições para que ele possa se candidatar novamente ao cargo.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Estabilidade de gestão com rodízio; previne a perpetuação no cargo.</p></div>
     </div>
@@ -1061,13 +1076,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 43, § 5º">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 62 de 89</span>
-        <span class="badge b-alt">Alteração</span>
+        <span class="eyebrow">Proposta 62 de 89</span>
+        <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 43, § 5º</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>§ 5º Havendo apenas 1 (um) único conselheiro com mandato vigente, as reuniões do Conselho Consultivo não poderão ser convocadas e realizadas, sendo que deverão ser substituídas pelas reuniões do Corpo Diretivo e no caso de sua não existência, pelo Síndico, seu substituto legal ou seu preposto.</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>§ 5ºHavendo apenas 1 (um) único conselheiro com mandato vigente, o Síndico deverá convocar em até 30 (trinta) dias consecutivos Assembleia Geral Extraordinária para eleição dos membros faltantes para exercer mandato pelo período complementar.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>§ 5º Havendo apenas 1 (um) único conselheiro com mandato vigente, as reuniões do Conselho Consultivo não poderão ser convocadas e realizadas, sendo que deverão ser substituídas pelas reuniões do Corpo Diretivo e no caso de sua não existência, pelo Síndico, seu substituto legal ou seu preposto.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>§ 5ºHavendo apenas 1 (um) único conselheiro com mandato vigente, o Síndico deverá convocar em até 30 (trinta) dias consecutivos Assembleia Geral Extraordinária para eleição dos membros faltantes para exercer mandato pelo período complementar.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Continuidade da administração com legitimidade eleitoral, mediante assembleia em prazo definido.</p></div>
     </div>
@@ -1075,13 +1090,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 44, § 1º">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 63 de 89</span>
-        <span class="badge b-inc">Inclusão</span>
+        <span class="eyebrow">Proposta 63 de 89</span>
+        <span class="badge b-inc"><span class="bsym">+</span> Acrescenta</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 44, § 1º</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>(sem dispositivo correspondente na minuta original)</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>§ 1º É de responsabilidade dos conselheiros manifestarem seu parecer, de forma individual e formalmente, em local próprio a ser determinado pela administração, podendo tal ato ser feito no formato impresso ou eletrônico, dentro do prazo máximo de 08 (oito) dias úteis, contados da apresentação das plantas e demais documentos técnicos; sendo que após esse prazo e não havendo manifestação formal por parte deles, caberá ao síndico delegar esta função a alguém de sua confiança.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Não existe na minuta. É um texto novo que estamos propondo acrescentar.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>§ 1º É de responsabilidade dos conselheiros manifestarem seu parecer, de forma individual e formalmente, em local próprio a ser determinado pela administração, podendo tal ato ser feito no formato impresso ou eletrônico, dentro do prazo máximo de 08 (oito) dias úteis, contados da apresentação das plantas e demais documentos técnicos; sendo que após esse prazo e não havendo manifestação formal por parte deles, caberá ao síndico delegar esta função a alguém de sua confiança.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Previsibilidade e clareza na contagem dos prazos (dias úteis).</p></div>
     </div>
@@ -1089,13 +1104,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 49, caput">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 64 de 89</span>
-        <span class="badge b-alt">Alteração</span>
+        <span class="eyebrow">Proposta 64 de 89</span>
+        <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 49, caput</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>Art. 49. As Comissões de Trabalho poderão ser formadas por condôminos, pessoas físicas, maiores de 21 (vinte e um) anos, capazes, ou pelos representantes legais de pessoa jurídica que preencham esses requisitos, ou mesmo, por moradores das unidades autônomas, e desde que apresentem à Administração do Condomínio uma autorização formal do condômino proprietário da unidade, a quem este irá representar, o qual deverá obrigatoriamente estar adimplente com as suas obrigações perante o Condomínio, para que possa representá-lo em quaisquer Comissões de Trabalho.</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>Art. 49. As Comissões de Trabalho poderão ser formadas por condôminos, pessoas físicas, maiores de 18 (dezoito) anos, capazes, ou pelos representantes legais de pessoa jurídica que preencham esses requisitos, ou mesmo, por moradores das unidades autônomas, e desde que apresentem à Administração do Condomínio uma autorização formal do condômino proprietário da unidade, a quem este irá representar, o qual deverá obrigatoriamente estar adimplente com as suas obrigações perante o Condomínio, para que possa representá-lo em quaisquer Comissões de Trabalho.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Art. 49. As Comissões de Trabalho poderão ser formadas por condôminos, pessoas físicas, maiores de 21 (vinte e um) anos, capazes, ou pelos representantes legais de pessoa jurídica que preencham esses requisitos, ou mesmo, por moradores das unidades autônomas, e desde que apresentem à Administração do Condomínio uma autorização formal do condômino proprietário da unidade, a quem este irá representar, o qual deverá obrigatoriamente estar adimplente com as suas obrigações perante o Condomínio, para que possa representá-lo em quaisquer Comissões de Trabalho.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>Art. 49. As Comissões de Trabalho poderão ser formadas por condôminos, pessoas físicas, maiores de 18 (dezoito) anos, capazes, ou pelos representantes legais de pessoa jurídica que preencham esses requisitos, ou mesmo, por moradores das unidades autônomas, e desde que apresentem à Administração do Condomínio uma autorização formal do condômino proprietário da unidade, a quem este irá representar, o qual deverá obrigatoriamente estar adimplente com as suas obrigações perante o Condomínio, para que possa representá-lo em quaisquer Comissões de Trabalho.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Alinhamento à maioridade civil (capacidade plena aos 18 anos).</p></div>
     </div>
@@ -1103,13 +1118,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 50, inciso III">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 65 de 89</span>
-        <span class="badge b-alt">Alteração</span>
+        <span class="eyebrow">Proposta 65 de 89</span>
+        <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 50, inciso III</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>III – As funções desempenhadas pelos membros das Comissões de Trabalho não serão remuneradas.</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>III – As funções desempenhadas pelos membros das Comissões de Trabalho terão suas contraprestações definidas em regimento interno.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>III – As funções desempenhadas pelos membros das Comissões de Trabalho não serão remuneradas.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>III – As funções desempenhadas pelos membros das Comissões de Trabalho terão suas contraprestações definidas em regimento interno.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Transparência e controle do custo pela assembleia, no lugar de benefício fixo predefinido.</p></div>
     </div>
@@ -1117,13 +1132,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 51, § 3º">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 66 de 89</span>
-        <span class="badge b-alt">Alteração</span>
+        <span class="eyebrow">Proposta 66 de 89</span>
+        <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 51, § 3º</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>§ 3º Um Regulamento de Eleição poderá ser elaborado e aprovado pela Incorporadora para ser válido a partir de um mandato condominial em que o empreendedor não exercer mais o seu direito na indicação de membros a Síndico, Subsíndico e aos citados Conselhos, de forma total ou parcial, cabendo nos mandatos sucessórios, a decisão do Corpo Diretivo pela elaboração, manutenção ou adequação deste Regulamento de Eleição, cujo conteúdo norteará os próximos processos eleitorais.</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>§ 3º Um Regulamento de Eleição poderá ser elaborado e aprovado em Assembleia Geral, cabendo nos mandatos sucessórios, a decisão do Corpo Diretivo pela elaboração, manutenção ou adequação deste Regulamento de Eleição, cujo conteúdo norteará os próximos processos eleitorais.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>§ 3º Um Regulamento de Eleição poderá ser elaborado e aprovado pela Incorporadora para ser válido a partir de um mandato condominial em que o empreendedor não exercer mais o seu direito na indicação de membros a Síndico, Subsíndico e aos citados Conselhos, de forma total ou parcial, cabendo nos mandatos sucessórios, a decisão do Corpo Diretivo pela elaboração, manutenção ou adequação deste Regulamento de Eleição, cujo conteúdo norteará os próximos processos eleitorais.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>§ 3º Um Regulamento de Eleição poderá ser elaborado e aprovado em Assembleia Geral, cabendo nos mandatos sucessórios, a decisão do Corpo Diretivo pela elaboração, manutenção ou adequação deste Regulamento de Eleição, cujo conteúdo norteará os próximos processos eleitorais.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>O Regulamento de Eleição rege o processo eleitoral dos condôminos e deve ser elaborado e aprovado em assembleia. Nenhum poder sobre as eleições do condomínio deve permanecer com a incorporadora, cujo interesse é conflitante.</p></div>
     </div>
@@ -1131,13 +1146,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 54, inciso I">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 67 de 89</span>
-        <span class="badge b-alt">Alteração</span>
+        <span class="eyebrow">Proposta 67 de 89</span>
+        <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 54, inciso I</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>I – Ter mais de 21 (vinte e um) anos, na data da posse;</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>I – Ter mais de 18 (dezoito) anos, na data da posse;</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>I – Ter mais de 21 (vinte e um) anos, na data da posse;</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>I – Ter mais de 18 (dezoito) anos, na data da posse;</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Alinhamento à maioridade civil (capacidade plena aos 18 anos).</p></div>
     </div>
@@ -1145,13 +1160,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 54, inciso III">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 68 de 89</span>
-        <span class="badge b-sup">Supressão</span>
+        <span class="eyebrow">Proposta 68 de 89</span>
+        <span class="badge b-sup"><span class="bsym">−</span> Tira da convenção</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 54, inciso III</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>III – Não possuir em seus registros qualquer penalidade às normas administrativas da Incorporadora e/ou do condomínio nos últimos 02 (dois) anos;</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>(dispositivo suprimido)</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>III – Não possuir em seus registros qualquer penalidade às normas administrativas da Incorporadora e/ou do condomínio nos últimos 02 (dois) anos;</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>Propomos tirar esse trecho da convenção.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Retira privilégio da incorporadora e devolve a decisão à assembleia e ao Corpo Diretivo.</p></div>
     </div>
@@ -1159,13 +1174,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 54, inciso VI">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 69 de 89</span>
-        <span class="badge b-inc">Inclusão</span>
+        <span class="eyebrow">Proposta 69 de 89</span>
+        <span class="badge b-inc"><span class="bsym">+</span> Acrescenta</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 54, inciso VI</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>(sem dispositivo correspondente na minuta original)</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>VI – Não possuir vínculo com a construtora/incorporadora em qualquer modalidade.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Não existe na minuta. É um texto novo que estamos propondo acrescentar.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>VI – Não possuir vínculo com a construtora/incorporadora em qualquer modalidade.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Retira privilégio da incorporadora e devolve a decisão à assembleia e ao Corpo Diretivo.</p></div>
     </div>
@@ -1173,13 +1188,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 55, caput">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 70 de 89</span>
-        <span class="badge b-alt">Alteração</span>
+        <span class="eyebrow">Proposta 70 de 89</span>
+        <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 55, caput</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>Art. 55. Nos mandatos em que a Incorporadora não vier a indicar ou a eleger o Síndico, o Subsíndico e os órgãos sociais, e não havendo inscrição de candidaturas a nenhum dos cargos do Corpo Diretivo, deverá ser agendada nova data para que eleições possam ser realizadas em até 60 (sessenta) dias.</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>Art. 55.Não havendo inscrição de candidaturas a nenhum dos cargos do Corpo Diretivo, deverá ser agendada nova data para que eleições possam ser realizadas em até 60 (sessenta) dias consecutivos.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Art. 55. Nos mandatos em que a Incorporadora não vier a indicar ou a eleger o Síndico, o Subsíndico e os órgãos sociais, e não havendo inscrição de candidaturas a nenhum dos cargos do Corpo Diretivo, deverá ser agendada nova data para que eleições possam ser realizadas em até 60 (sessenta) dias.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>Art. 55.Não havendo inscrição de candidaturas a nenhum dos cargos do Corpo Diretivo, deverá ser agendada nova data para que eleições possam ser realizadas em até 60 (sessenta) dias consecutivos.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Retira privilégio da incorporadora e devolve a decisão à assembleia e ao Corpo Diretivo.</p></div>
     </div>
@@ -1187,13 +1202,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 59, § 4º">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 71 de 89</span>
-        <span class="badge b-inc">Inclusão</span>
+        <span class="eyebrow">Proposta 71 de 89</span>
+        <span class="badge b-inc"><span class="bsym">+</span> Acrescenta</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 59, § 4º</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>(sem dispositivo correspondente na minuta original)</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>§ 4º Caberá à incorporadora o pagamento integral das taxas condominiais referentes às suas unidades não comercializadas, de forma isonômica em relação aos demais proprietários.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Não existe na minuta. É um texto novo que estamos propondo acrescentar.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>§ 4º Caberá à incorporadora o pagamento integral das taxas condominiais referentes às suas unidades não comercializadas, de forma isonômica em relação aos demais proprietários.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Isonomia: as unidades da incorporadora devem custear o condomínio como qualquer proprietário.</p></div>
     </div>
@@ -1201,13 +1216,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 63, inciso III">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 72 de 89</span>
-        <span class="badge b-alt">Alteração</span>
+        <span class="eyebrow">Proposta 72 de 89</span>
+        <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 63, inciso III</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>III – Renúncia de taxa condominial de Síndico</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>III – contraprestações e remunerações do corpo diretivo a ser definido em assembleia.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>III – Renúncia de taxa condominial de Síndico</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>III – contraprestações e remunerações do corpo diretivo a ser definido em assembleia.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Transparência e controle do custo pela assembleia, no lugar de benefício fixo predefinido.</p></div>
     </div>
@@ -1215,13 +1230,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 66, § 2º">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 73 de 89</span>
-        <span class="badge b-alt">Alteração</span>
+        <span class="eyebrow">Proposta 73 de 89</span>
+        <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 66, § 2º</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>§ 2º Não sendo urgentes, as obras, reparos, aquisição de produtos ou equipamentos, ou a contratação de serviços, que importarem em despesas excessivas, além do valor limite de 20 (vinte) salários mínimos estabelecido neste instrumento, somente poderão ser efetuadas após autorização da Assembleia Geral, especialmente convocada pelo Síndico ou por seu substituto, ou em caso de omissão ou impedimento deste, conforme estabelecido nesta Convenção para os efeitos de convocação, instalação e presidência das Assembleias Gerais.</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>§ 2º Não sendo urgentes, as obras, reparos, aquisição de produtos ou equipamentos, ou a contratação de serviços, que importarem em despesas excessivas, além do valor limite de 3 (três) a 5 (cinco) salários mínimos estabelecido neste instrumento, somente poderão ser efetuadas após autorização da Assembleia Geral, especialmente convocada pelo Síndico ou por seu substituto, ou em caso de omissão ou impedimento deste, conforme estabelecido nesta Convenção para os efeitos de convocação, instalação e presidência das Assembleias Gerais.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>§ 2º Não sendo urgentes, as obras, reparos, aquisição de produtos ou equipamentos, ou a contratação de serviços, que importarem em despesas excessivas, além do valor limite de 20 (vinte) salários mínimos estabelecido neste instrumento, somente poderão ser efetuadas após autorização da Assembleia Geral, especialmente convocada pelo Síndico ou por seu substituto, ou em caso de omissão ou impedimento deste, conforme estabelecido nesta Convenção para os efeitos de convocação, instalação e presidência das Assembleias Gerais.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>§ 2º Não sendo urgentes, as obras, reparos, aquisição de produtos ou equipamentos, ou a contratação de serviços, que importarem em despesas excessivas, além do valor limite de 3 (três) a 5 (cinco) salários mínimos estabelecido neste instrumento, somente poderão ser efetuadas após autorização da Assembleia Geral, especialmente convocada pelo Síndico ou por seu substituto, ou em caso de omissão ou impedimento deste, conforme estabelecido nesta Convenção para os efeitos de convocação, instalação e presidência das Assembleias Gerais.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Proporcionalidade e limite de gasto sem aprovação coletiva.</p></div>
     </div>
@@ -1229,13 +1244,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 74, § 2º">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 74 de 89</span>
-        <span class="badge b-alt">Alteração</span>
+        <span class="eyebrow">Proposta 74 de 89</span>
+        <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 74, § 2º</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>§ 2º As árvores existentes nas áreas comuns do Condomínio deverão ser mantidas intactas, sendo que qualquer decisão contrária deverá ser tomada em Assembleia Geral, na forma desta Convenção.</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>§ 2º As árvores existentes nas áreas comuns do Condomínio deverão ser preservadas, sendo que qualquer decisão contrária deverá ser tomada em Assembleia Geral, na forma desta Convenção.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>§ 2º As árvores existentes nas áreas comuns do Condomínio deverão ser mantidas intactas, sendo que qualquer decisão contrária deverá ser tomada em Assembleia Geral, na forma desta Convenção.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>§ 2º As árvores existentes nas áreas comuns do Condomínio deverão ser preservadas, sendo que qualquer decisão contrária deverá ser tomada em Assembleia Geral, na forma desta Convenção.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Clareza redacional e reforço da proteção ambiental das áreas comuns.</p></div>
     </div>
@@ -1243,13 +1258,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 80, caput">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 75 de 89</span>
-        <span class="badge b-alt">Alteração</span>
+        <span class="eyebrow">Proposta 75 de 89</span>
+        <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 80, caput</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>Art. 80. Os portões ou cancelas do Condomínio permanecerão fechados e todas as pessoas que pretendem adentrar terão obrigatoriamente que se identificar na portaria e informar o destino.</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>Art. 80. Os portões ou cancelas do Condomínio permanecerão fechados e todas as pessoas que pretendem adentrar terão obrigatoriamente que se identificar. conforme normas definidas no regimento interno.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Art. 80. Os portões ou cancelas do Condomínio permanecerão fechados e todas as pessoas que pretendem adentrar terão obrigatoriamente que se identificar na portaria e informar o destino.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>Art. 80. Os portões ou cancelas do Condomínio permanecerão fechados e todas as pessoas que pretendem adentrar terão obrigatoriamente que se identificar. conforme normas definidas no regimento interno.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Detalhe operacional remetido ao regimento interno, que se altera por maioria simples, mantendo a Convenção enxuta e adaptável.</p></div>
     </div>
@@ -1257,13 +1272,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 85, § 1º">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 76 de 89</span>
-        <span class="badge b-inc">Inclusão</span>
+        <span class="eyebrow">Proposta 76 de 89</span>
+        <span class="badge b-inc"><span class="bsym">+</span> Acrescenta</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 85, § 1º</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>(sem dispositivo correspondente na minuta original)</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>§ 1º Caso haja a necessidade de cobrança de uma cota-parte de contribuição para a filiação e/ou participação do Condomínio nestas instituições, Órgãos ou Conselhos, ou mesmo vier a ser estabelecida uma outra forma de contribuição para este fim, o rateio desta despesa contribuição deverá ser de responsabilidade do Condomínio, através do rateio entre os condôminos, cabendo ao Corpo Diretivo definir a melhor forma de rateio e o valor aprovado em assembleia;</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Não existe na minuta. É um texto novo que estamos propondo acrescentar.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>§ 1º Caso haja a necessidade de cobrança de uma cota-parte de contribuição para a filiação e/ou participação do Condomínio nestas instituições, Órgãos ou Conselhos, ou mesmo vier a ser estabelecida uma outra forma de contribuição para este fim, o rateio desta despesa contribuição deverá ser de responsabilidade do Condomínio, através do rateio entre os condôminos, cabendo ao Corpo Diretivo definir a melhor forma de rateio e o valor aprovado em assembleia;</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Controle, pelos condôminos, do valor de contribuição a entidades externas.</p></div>
     </div>
@@ -1271,13 +1286,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 88, caput">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 77 de 89</span>
-        <span class="badge b-alt">Alteração</span>
+        <span class="eyebrow">Proposta 77 de 89</span>
+        <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 88, caput</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>Art. 88. A falta de cumprimento ou a inobservância de qualquer disposição desta Convenção e dos demais Regulamentos e Regimentos Internos submeterá o infrator a penas de advertência ou pecuniárias, que, no caso destas últimas, reverterão ao Condomínio, e que variam conforme a gravidade da infração, consoante a seguinte</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>Art. 88. A falta de cumprimento ou a inobservância de qualquer disposição desta Convenção e dos demais Regulamentos e Regimentos Internos submeterá o infrator a penas de advertência ou pecuniárias, que, no caso destas últimas, reverterão ao Condomínio, e que variam conforme a gravidade da infração, consoante a graduação e normas definidas em regimento interno e assegurado o direito de defesa.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Art. 88. A falta de cumprimento ou a inobservância de qualquer disposição desta Convenção e dos demais Regulamentos e Regimentos Internos submeterá o infrator a penas de advertência ou pecuniárias, que, no caso destas últimas, reverterão ao Condomínio, e que variam conforme a gravidade da infração, consoante a seguinte</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>Art. 88. A falta de cumprimento ou a inobservância de qualquer disposição desta Convenção e dos demais Regulamentos e Regimentos Internos submeterá o infrator a penas de advertência ou pecuniárias, que, no caso destas últimas, reverterão ao Condomínio, e que variam conforme a gravidade da infração, consoante a graduação e normas definidas em regimento interno e assegurado o direito de defesa.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Graduação das penalidades remetida ao regimento interno, assegurado o direito de defesa; permite calibrar sem alterar a Convenção.</p></div>
     </div>
@@ -1285,13 +1300,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 88, alínea a">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 78 de 89</span>
-        <span class="badge b-sup">Supressão</span>
+        <span class="eyebrow">Proposta 78 de 89</span>
+        <span class="badge b-sup"><span class="bsym">−</span> Tira da convenção</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 88, alínea a</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>a) infração leve – correspondente a violação de pouca significância, cujos efeitos práticos podem ser relevados, e que implicará em advertência por escrito e registro nos prontuários do Condomínio;</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>(dispositivo suprimido)</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>a) infração leve – correspondente a violação de pouca significância, cujos efeitos práticos podem ser relevados, e que implicará em advertência por escrito e registro nos prontuários do Condomínio;</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>Propomos tirar esse trecho da convenção.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Graduação das penalidades remetida ao regimento interno, assegurado o direito de defesa; permite calibrar sem alterar a Convenção.</p></div>
     </div>
@@ -1299,13 +1314,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 88, alínea b">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 79 de 89</span>
-        <span class="badge b-sup">Supressão</span>
+        <span class="eyebrow">Proposta 79 de 89</span>
+        <span class="badge b-sup"><span class="bsym">−</span> Tira da convenção</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 88, alínea b</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>b) infração moderada – correspondente a violação de menor gravidade, cujos efeitos práticos são de fácil superação, e que implicará no pagamento de multa no valor de 1 (uma) taxa condominial ordinária mensal;</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>(dispositivo suprimido)</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>b) infração moderada – correspondente a violação de menor gravidade, cujos efeitos práticos são de fácil superação, e que implicará no pagamento de multa no valor de 1 (uma) taxa condominial ordinária mensal;</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>Propomos tirar esse trecho da convenção.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Graduação das penalidades remetida ao regimento interno, assegurado o direito de defesa; permite calibrar sem alterar a Convenção.</p></div>
     </div>
@@ -1313,13 +1328,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 88, alínea c">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 80 de 89</span>
-        <span class="badge b-sup">Supressão</span>
+        <span class="eyebrow">Proposta 80 de 89</span>
+        <span class="badge b-sup"><span class="bsym">−</span> Tira da convenção</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 88, alínea c</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>c) infração grave – correspondente a violação grave, cujos efeitos práticos não são passíveis de ser relevados ou superados, e que implicará no pagamento de multa no valor de 3 (três) taxas condominiais ordinárias mensais; e</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>(dispositivo suprimido)</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>c) infração grave – correspondente a violação grave, cujos efeitos práticos não são passíveis de ser relevados ou superados, e que implicará no pagamento de multa no valor de 3 (três) taxas condominiais ordinárias mensais; e</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>Propomos tirar esse trecho da convenção.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Graduação das penalidades remetida ao regimento interno, assegurado o direito de defesa; permite calibrar sem alterar a Convenção.</p></div>
     </div>
@@ -1327,13 +1342,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 88, alínea d">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 81 de 89</span>
-        <span class="badge b-sup">Supressão</span>
+        <span class="eyebrow">Proposta 81 de 89</span>
+        <span class="badge b-sup"><span class="bsym">−</span> Tira da convenção</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 88, alínea d</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>d) infração gravíssima – correspondente a violação gravíssima, cujos efeitos práticos comprometem o patrimônio do Condomínio ou afetam os costumes ou interesses gerais dos condôminos, e que implicará no pagamento de multa no valor de 5 (cinco) taxas condominiais ordinárias mensais.</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>(dispositivo suprimido)</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>d) infração gravíssima – correspondente a violação gravíssima, cujos efeitos práticos comprometem o patrimônio do Condomínio ou afetam os costumes ou interesses gerais dos condôminos, e que implicará no pagamento de multa no valor de 5 (cinco) taxas condominiais ordinárias mensais.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>Propomos tirar esse trecho da convenção.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Graduação das penalidades remetida ao regimento interno, assegurado o direito de defesa; permite calibrar sem alterar a Convenção.</p></div>
     </div>
@@ -1341,13 +1356,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 89, § 2º">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 82 de 89</span>
-        <span class="badge b-alt">Alteração</span>
+        <span class="eyebrow">Proposta 82 de 89</span>
+        <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 89, § 2º</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>§ 2º A notificação da penalização informará a infração cometida e as circunstâncias de fato em que se deu. Informará, outrossim, que eventual multa correspondente será cobrada juntamente primeira taxa condominial mensal que se seguir, salvo na hipótese de o sistema bancário, e/ou administrativo, já haver emitido os boletos de cobrança das taxas seguintes, hipótese em que a multa será cobrada no mês subsequente.</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>§ 2º A notificação da penalização informará a infração cometida e as circunstâncias de fato em que se deu. Informará, outrossim, que eventual multa correspondente será cobrada na mesma data da primeira taxa condominial mensal que se seguir, em cobranças separadas, salvo na hipótese de o sistema bancário, e/ou administrativo, já haver emitido os boletos de cobrança das taxas seguintes, hipótese em que a multa será cobrada no mês subsequente.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>§ 2º A notificação da penalização informará a infração cometida e as circunstâncias de fato em que se deu. Informará, outrossim, que eventual multa correspondente será cobrada juntamente primeira taxa condominial mensal que se seguir, salvo na hipótese de o sistema bancário, e/ou administrativo, já haver emitido os boletos de cobrança das taxas seguintes, hipótese em que a multa será cobrada no mês subsequente.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>§ 2º A notificação da penalização informará a infração cometida e as circunstâncias de fato em que se deu. Informará, outrossim, que eventual multa correspondente será cobrada na mesma data da primeira taxa condominial mensal que se seguir, em cobranças separadas, salvo na hipótese de o sistema bancário, e/ou administrativo, já haver emitido os boletos de cobrança das taxas seguintes, hipótese em que a multa será cobrada no mês subsequente.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Disciplina a notificação da penalidade, com a descrição da infração e o prazo de defesa, assegurando o contraditório.</p></div>
     </div>
@@ -1355,13 +1370,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 89, § 3º">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 83 de 89</span>
-        <span class="badge b-inc">Inclusão</span>
+        <span class="eyebrow">Proposta 83 de 89</span>
+        <span class="badge b-inc"><span class="bsym">+</span> Acrescenta</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 89, § 3º</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>(sem dispositivo correspondente na minuta original)</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>§ 3º O infrator que não se conformar com a aplicação de qualquer penalidade poderá recorrer da sua imposição no prazo de 10 (dez) dias úteis a contar do recebimento da respectiva notificação. O recurso deve ser formulado por escrito e encaminhado à administração, que terá idêntico prazo de 10 (dez) dias úteis para se manifestar pelo cancelamento ou pela manutenção da penalidade.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Não existe na minuta. É um texto novo que estamos propondo acrescentar.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>§ 3º O infrator que não se conformar com a aplicação de qualquer penalidade poderá recorrer da sua imposição no prazo de 10 (dez) dias úteis a contar do recebimento da respectiva notificação. O recurso deve ser formulado por escrito e encaminhado à administração, que terá idêntico prazo de 10 (dez) dias úteis para se manifestar pelo cancelamento ou pela manutenção da penalidade.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Previsibilidade e clareza na contagem dos prazos (dias úteis).</p></div>
     </div>
@@ -1369,13 +1384,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 89, § 4º">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 84 de 89</span>
-        <span class="badge b-inc">Inclusão</span>
+        <span class="eyebrow">Proposta 84 de 89</span>
+        <span class="badge b-inc"><span class="bsym">+</span> Acrescenta</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 89, § 4º</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>(sem dispositivo correspondente na minuta original)</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>§ 4º Mantida a penalidade após a apreciação do recurso pelo Corpo Diretivo, o condômino poderá apelar para a Assembleia Geral. Em caso de multa pecuniária, porém, a apelação não terá efeito suspensivo, e o prazo para interposição do apelo é de 10 (dez) dias úteis a contar do pagamento.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Não existe na minuta. É um texto novo que estamos propondo acrescentar.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>§ 4º Mantida a penalidade após a apreciação do recurso pelo Corpo Diretivo, o condômino poderá apelar para a Assembleia Geral. Em caso de multa pecuniária, porém, a apelação não terá efeito suspensivo, e o prazo para interposição do apelo é de 10 (dez) dias úteis a contar do pagamento.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Previsibilidade e clareza na contagem dos prazos (dias úteis).</p></div>
     </div>
@@ -1383,13 +1398,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 91, caput">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 85 de 89</span>
-        <span class="badge b-inc">Inclusão</span>
+        <span class="eyebrow">Proposta 85 de 89</span>
+        <span class="badge b-inc"><span class="bsym">+</span> Acrescenta</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 91, caput</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>(sem dispositivo correspondente na minuta original)</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>Art. 91. O condômino será o responsável pelo pagamento da penalidade ocasionada por seus parentes, hóspedes, visitantes, prestadores de serviços, animais domésticos sob sua tutela ou qualquer pessoa sob sua ordem ou companhia nos recintos do Condomínio.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Não existe na minuta. É um texto novo que estamos propondo acrescentar.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>Art. 91. O condômino será o responsável pelo pagamento da penalidade ocasionada por seus parentes, hóspedes, visitantes, prestadores de serviços, animais domésticos sob sua tutela ou qualquer pessoa sob sua ordem ou companhia nos recintos do Condomínio.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Responsabiliza o condômino pelos atos e penalidades de seus dependentes, convidados, prepostos e animais sob sua tutela.</p></div>
     </div>
@@ -1397,13 +1412,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 94, caput">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 86 de 89</span>
-        <span class="badge b-inc">Inclusão</span>
+        <span class="eyebrow">Proposta 86 de 89</span>
+        <span class="badge b-inc"><span class="bsym">+</span> Acrescenta</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 94, caput</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>(sem dispositivo correspondente na minuta original)</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>Art. 94. Salvo disposições expressas em contrário, os prazos especificados nesta Convenção contam-se em dias corridos e, caso expirem ou coincidam com feriados ou finais de semana, serão automaticamente prorrogados para o primeiro dia útil subsequente.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Não existe na minuta. É um texto novo que estamos propondo acrescentar.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>Art. 94. Salvo disposições expressas em contrário, os prazos especificados nesta Convenção contam-se em dias corridos e, caso expirem ou coincidam com feriados ou finais de semana, serão automaticamente prorrogados para o primeiro dia útil subsequente.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Ressalva inicial para compatibilizar a contagem de prazos com os dispositivos que passam a adotar dias úteis.</p></div>
     </div>
@@ -1411,13 +1426,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 97, caput">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 87 de 89</span>
-        <span class="badge b-sup">Supressão</span>
+        <span class="eyebrow">Proposta 87 de 89</span>
+        <span class="badge b-sup"><span class="bsym">−</span> Tira da convenção</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 97, caput</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>Art. 97. Para compor o Corpo Diretivo do condomínio é necessário, ainda, que no ato da posse, o condômino esteja em situação regular junto à Incorporadora e ao condomínio, não possuindo qualquer infração ou débito em aberto até o ato da sua posse.</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>(dispositivo suprimido)</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Art. 97. Para compor o Corpo Diretivo do condomínio é necessário, ainda, que no ato da posse, o condômino esteja em situação regular junto à Incorporadora e ao condomínio, não possuindo qualquer infração ou débito em aberto até o ato da sua posse.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>Propomos tirar esse trecho da convenção.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Retira privilégio da incorporadora e devolve a decisão à assembleia e ao Corpo Diretivo.</p></div>
     </div>
@@ -1425,13 +1440,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 100 (artigo inteiro)">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 88 de 89</span>
-        <span class="badge b-sup">Supressão</span>
+        <span class="eyebrow">Proposta 88 de 89</span>
+        <span class="badge b-sup"><span class="bsym">−</span> Tira da convenção</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 100 (artigo inteiro)</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>Art. 100. O Condomínio não se responsabiliza em nenhuma hipótese pela reparação em caso de roubo, furto ou dano de qualquer espécie no interior do Condomínio ou de imóveis residenciais, ainda que em construção, e de pertences dos condôminos, residentes e/ou visitantes.</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>(artigo suprimido)</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Art. 100. O Condomínio não se responsabiliza em nenhuma hipótese pela reparação em caso de roubo, furto ou dano de qualquer espécie no interior do Condomínio ou de imóveis residenciais, ainda que em construção, e de pertences dos condôminos, residentes e/ou visitantes.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>Propomos tirar esse artigo inteiro da convenção.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>A isenção total de responsabilidade do condomínio é subjetiva: um funcionário do próprio condomínio pode causar o dano, hipótese em que o condomínio deve se responsabilizar. A matéria deve ser disciplinada no regimento interno.</p></div>
     </div>
@@ -1439,13 +1454,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:60ch;margin
   <section class="slide review" data-label="Art. 101, caput">
     <div class="inner">
       <div class="rev-head r r1">
-        <span class="eyebrow">Impugnação 89 de 89</span>
-        <span class="badge b-alt">Alteração</span>
+        <span class="eyebrow">Proposta 89 de 89</span>
+        <span class="badge b-alt"><span class="bsym">↻</span> Muda o texto</span>
       </div>
       <h2 class="r r1" style="margin-top:10px">Art. 101, caput</h2>
       <div class="panels r r2">
-        <div class="panel pmin"><div class="plabel">Na minuta</div><p>Art. 101. Caberá ao Condomínio, de seu Corpo Diretivo, permitir a Incorporadora de manter, a título gratuito, a colocação de luminosos, placas, logomarca, totens, faixas e demais equipamentos ou meios físicos e eletrônicos, em qualquer espaço nas áreas do Condomínio e/ou em unidades imobiliárias não vendidas, para a promoção e venda destas ou para a manutenção de sua marca e/ou símbolo institucional, em locais a ser por ela escolhido, observando-se o padrão arquitetônico do empreendimento, os quais deverão serem mantidos e conservados às expensas da Incorporadora.</p></div>
-        <div class="panel ppro"><div class="plabel">Proposta</div><p>Art. 101. Caberá ao Condomínio, mediante decisão de seu Corpo Diretivo, permitir a Incorporadora de manter, a título oneroso, a colocação de luminosos, placas, logomarca, totens, faixas e demais equipamentos ou meios físicos e eletrônicos, em qualquer espaço nas áreas do Condomínio e/ou em unidades imobiliárias não vendidas, para a promoção e venda destas ou para a manutenção de sua marca e/ou símbolo institucional, em locais a ser por ela escolhido, observando-se o padrão arquitetônico do empreendimento, os quais deverão serem mantidos e conservados às expensas da Incorporadora.</p></div>
+        <div class="panel pmin"><div class="plabel">O que a Viva escreveu</div><p>Art. 101. Caberá ao Condomínio, de seu Corpo Diretivo, permitir a Incorporadora de manter, a título gratuito, a colocação de luminosos, placas, logomarca, totens, faixas e demais equipamentos ou meios físicos e eletrônicos, em qualquer espaço nas áreas do Condomínio e/ou em unidades imobiliárias não vendidas, para a promoção e venda destas ou para a manutenção de sua marca e/ou símbolo institucional, em locais a ser por ela escolhido, observando-se o padrão arquitetônico do empreendimento, os quais deverão serem mantidos e conservados às expensas da Incorporadora.</p></div>
+        <div class="panel ppro"><div class="plabel">O que propomos</div><p>Art. 101. Caberá ao Condomínio, mediante decisão de seu Corpo Diretivo, permitir a Incorporadora de manter, a título oneroso, a colocação de luminosos, placas, logomarca, totens, faixas e demais equipamentos ou meios físicos e eletrônicos, em qualquer espaço nas áreas do Condomínio e/ou em unidades imobiliárias não vendidas, para a promoção e venda destas ou para a manutenção de sua marca e/ou símbolo institucional, em locais a ser por ela escolhido, observando-se o padrão arquitetônico do empreendimento, os quais deverão serem mantidos e conservados às expensas da Incorporadora.</p></div>
       </div>
       <div class="why r r3"><span class="wl">Por quê</span> <p>Retira privilégio da incorporadora e devolve a decisão à assembleia e ao Corpo Diretivo.</p></div>
     </div>
